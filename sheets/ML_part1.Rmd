@@ -3574,6 +3574,125 @@ g
 
 ]
 
+---
+
+
+name: yourturn
+class: clear
+
+.left-column[
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+## <i class="fa fa-edit"></i> <br> Your turn
+
+
+]
+
+.right-column[
+
+To get warmed up, let's load the `mtpl` data and do some .KULbginline[basic investigations] into the variables. The idea is to get a feel for the data.
+
+.hi-pink[Q]: you will work through the following exploratory steps.
+
+1. Visualize the distribution of the `ageph` with a histogram.
+
+2. For each age recorded in the data set `mtpl`: what is the total number of observations, the total exposure, and the corresponding total number of claims reported?
+
+3. Calculate the empirical claim frequency, per unit of exposure, for each age and picture it. Discuss this figure.
+
+4. Repeat the above for `bm`, the level occupied by the policyholder in the Belgian bonus- malus scale.
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Q.1] a histogram of `ageph`
+
+```{r, out.width='70%'}
+ggplot(data = mtpl, aes(ageph)) + theme_bw() +
+  geom_histogram(binwidth = 2, alpha = .5,
+                 col = KULbg, fill = KULbg) +
+  labs(y = "Absolure frequency") +
+  ggtitle("MTPL - age policyholder")
+```
+
+]
+
+.pull-right[
+
+.hi-pink[Q.2] for each `ageph` recorded
+
+```{r, eval = FALSE}
+mtpl %>% 
+  group_by(ageph) %>% 
+  summarize(tot_claims = sum(nclaims),
+            tot_expo = sum(expo),
+            tot_obs = n())
+```
+
+```{r, echo = FALSE}
+mtpl %>% 
+  group_by(ageph) %>% 
+  summarize(tot_claims = sum(nclaims),
+            tot_expo = sum(expo),
+            tot_obs = n()) %>% 
+  slice(1:7) %>% kable(format = 'html')
+```
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Q.3] for each `ageph` recorded
+
+```{r, eval = FALSE}
+freq_by_age <- mtpl %>% 
+  group_by(ageph) %>% 
+  summarize(emp_freq = sum(nclaims) / sum(expo))
+
+ggplot(data = freq_by_age,
+       aes(x = ageph, y = emp_freq)) + theme_bw() +
+  geom_bar(stat = 'identity', alpha = .5,
+           color = KULbg, fill = KULbg) +
+  ggtitle('MTPL - empirical claim freq per 
+          age policyholder')
+```
+
+
+.hi-pink[Q.4] recycle the above instructions and replace `ageph` with `bm`
+
+]
+
+.pull-right[
+
+<br>
+
+```{r, echo = FALSE, out.width='80%'}
+freq_by_age <- mtpl %>% 
+  group_by(ageph) %>% 
+  summarize(emp_freq = sum(nclaims) / sum(expo))
+
+ggplot(data = freq_by_age,
+       aes(x = ageph, y = emp_freq)) + theme_bw() +
+  geom_bar(stat = 'identity', alpha = .5,
+           color = KULbg, fill = KULbg) +
+  ggtitle('MTPL - empirical claim freq per 
+          age policyholder')
+```
+
+]
+
+
 
 ---
 
@@ -4160,6 +4279,120 @@ library(mgcv)
 freq_gam <- gam(nclaims ~ s(ageph), offset = log(expo), family = poisson(link = "log"), data = mtpl)
 plot(freq_gam, scheme = 4)
 ```
+
+---
+
+# More on GAMs
+
+.pull-left[
+So, a GAM is a GLM where the linear predictor depends on .hi-pink[smooth functions] of covariates.
+
+Consider a GAM with the following predictor:
+
+$$\color{#e64173}{x}^{'}\color{#20B2AA}{\beta}+f_j(x_j).$$
+
+GAMs use .hi-pink[basis functions] to estimate the smooth effect $f_j(.)$
+
+$$f_j(x_j) = \sum_{m=1}^M \beta_{jm} b_{jm}(x_j),$$
+
+where the $b_{jm}(x)$ are known basis functions and $\beta_{jm}$ are coefficients that have to be estimated.
+]
+
+.pull-right[
+
+GAMs avoid overfitting by adding a .hi-pink[wiggliness penalty] to the likelihood
+
+$$\int \left( f_j(x)'' \right)^2 = \beta_j^t \mathbf{S}_j\beta_j.$$
+GAMs then balance goodness-of-fit and wiggliness via
+
+$$\log \mathcal{L}(\beta,\beta_j) - \lambda_j \cdot \beta_j^t \mathbf{S}_j\beta_j,$$
+
+with $\lambda_j$ the .hi-pink[smoothing parameter].
+
+The smoothing parameter $\lambda_j$ controls the trade-off between fit & smoothness.
+]
+
+---
+
+class: clear
+
+Let's run some experiments to illustrate the effect of the smoothing parameter (   `sp = .`), the number (`k = .`) and type of basis functions (`bs = .`). We use the `mcycle` data from {MASS}.
+
+```{r, echo = FALSE, fig.width=12, fig.height = 5}
+KULbg <- "#116E8A"
+
+# number 1
+library(MASS)
+bias_model <- gam(accel ~ s(times, sp = 0, k = 2), data = mcycle)
+mcycle$predictions <- predict(bias_model, mcycle)
+p_1 <- ggplot(mcycle, aes(times, accel)) + theme_bw() +
+  geom_point(alpha = .3) +
+  geom_line(aes(times, predictions), size = 1.0, color = KULbg) +
+  theme(axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()) +
+  scale_x_continuous(expand = c(0, 0)) + 
+  ggtitle("sp = 0 and k = 2")
+# number 2
+bias_model <- gam(accel ~ s(times, sp = 0, k = 5), data = mcycle)
+mcycle$predictions <- predict(bias_model, mcycle)
+p_2 <- ggplot(mcycle, aes(times, accel)) + theme_bw() +
+  geom_point(alpha = .3) +
+  geom_line(aes(times, predictions), size = 1.0, color = KULbg) +
+  theme(axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()) +
+  scale_x_continuous(expand = c(0, 0)) +
+  ggtitle("sp = 0 and k = 5")
+# number 3
+bias_model <- gam(accel ~ s(times, sp = 0, k = 55), data = mcycle)
+mcycle$predictions <- predict(bias_model, mcycle)
+p_3 <- ggplot(mcycle, aes(times, accel)) + theme_bw() +
+  geom_point(alpha = .3) +
+  geom_line(aes(times, predictions), size = 1.0, color = KULbg) +
+  theme(axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()) +
+  scale_x_continuous(expand = c(0, 0)) + 
+  ggtitle("sp = 0 and k = 15")
+# number 4
+library(MASS)
+bias_model <- gam(accel ~ s(times), data = mcycle)
+mcycle$predictions <- predict(bias_model, mcycle)
+p_4 <- ggplot(mcycle, aes(times, accel)) + theme_bw() + 
+  geom_point(alpha = .3) +
+  geom_line(aes(times, predictions), size = 1.0, color = KULbg) +
+  theme(axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()) +
+  scale_x_continuous(expand = c(0, 0)) + 
+  ggtitle("optimal sp and default k")
+# number 5
+bias_model <- gam(accel ~ s(times, sp = 3), data = mcycle)
+mcycle$predictions <- predict(bias_model, mcycle)
+p_5 <- ggplot(mcycle, aes(times, accel)) + theme_bw() +
+  geom_point(alpha = .3) +
+  geom_line(aes(times, predictions), size = 1.0, color = KULbg) +
+  theme(axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()) +
+  scale_x_continuous(expand = c(0, 0)) + 
+  ggtitle("sp = 3 and default k")
+# number 6
+bias_model <- gam(accel ~ s(times, sp = 20), data = mcycle)
+mcycle$predictions <- predict(bias_model, mcycle)
+p_6 <- ggplot(mcycle, aes(times, accel)) + theme_bw() +
+  geom_point(alpha = .3) +
+  geom_line(aes(times, predictions), size = 1.0, color = KULbg) +
+  theme(axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()) +
+  scale_x_continuous(expand = c(0, 0)) +
+  ggtitle("sp = 10 and default k")
+
+gridExtra::grid.arrange(p_1, p_2, p_3, p_4, p_5, p_6, nrow = 2)
+```
+
 
 ---
 

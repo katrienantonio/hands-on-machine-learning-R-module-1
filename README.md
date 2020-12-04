@@ -8,8 +8,8 @@ Course materials for the *Hands-on Machine Learning in R* course
 Instituut.
 
 📆 Module 1 on December 10 and 17, 2020, Module 2 on Jan 14 and 21, 2021
-and Module 3 on Jan 28 and Feb 4, 2021 <br> ⏱ From 9.30 am to 12.30 pm
-or from 1.30 pm to 4.30 pm <br> 📌 online, organized by Actuarieel
+and Module 3 on Jan 28 and Feb 4, 2021 <br> 🕑 From 9.30 am to 12.30 pm
+or from 1.30 pm to 4.30 pm <br> 📍 online, organized by Actuarieel
 Instituut
 
 Course materials will be posted in the week before the workshop. You are
@@ -110,10 +110,10 @@ easy and accessible. Make sure one of these options works smoothly
 before coming to the workshop. A technical test session will be
 organized to get you started in case of problems or doubts.
 
-### R Studio Cloud
+### RStudio Cloud
 
 If you prefer not to work with a local installation of R (and the
-necessary packages), you can join our workspace on R Studio Cloud. This
+necessary packages), you can join our workspace on RStudio Cloud. This
 should be a **very accessible set-up** for working with R in the cloud
 for the less experienced user\!
 

@@ -3831,6 +3831,165 @@ g
 
 ]
 
+---
+
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+To get warmed up, let's load the `mtpl` data and do some .KULbginline[basic investigations] into the variables. The idea is to get a feel for the data.
+
+.hi-pink[Q]: you will work through the following exploratory steps.
+
+1. Visualize the distribution of the `ageph` with a histogram.
+
+2. For each age recorded in the data set `mtpl`: what is the total number of observations, the total exposure, and the corresponding total number of claims reported?
+
+3. Calculate the empirical claim frequency, per unit of exposure, for each age and picture it. Discuss this figure.
+
+4. Repeat the above for `bm`, the level occupied by the policyholder in the Belgian bonus- malus scale.
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Q.1] a histogram of `ageph`
+
+
+```r
+ggplot(data = mtpl, aes(ageph)) + theme_bw() +
+  geom_histogram(binwidth = 2, alpha = .5,
+                 col = KULbg, fill = KULbg) +
+  labs(y = "Absolure frequency") +
+  ggtitle("MTPL - age policyholder")
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-175-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+.hi-pink[Q.2] for each `ageph` recorded
+
+
+```r
+mtpl %&gt;% 
+  group_by(ageph) %&gt;% 
+  summarize(tot_claims = sum(nclaims),
+            tot_expo = sum(expo),
+            tot_obs = n())
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; ageph &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; tot_claims &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; tot_expo &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; tot_obs &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.621918 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 93.021918 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 116 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 113 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 342.284932 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 393 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 165 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 597.389041 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 701 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 202 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 778.827397 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 952 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 297 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1165.358904 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1379 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 426 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1752.249315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2028 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Q.3] for each `ageph` recorded
+
+
+```r
+freq_by_age &lt;- mtpl %&gt;% 
+  group_by(ageph) %&gt;% 
+  summarize(emp_freq = sum(nclaims) / sum(expo))
+
+ggplot(data = freq_by_age,
+       aes(x = ageph, y = emp_freq)) + theme_bw() +
+  geom_bar(stat = 'identity', alpha = .5,
+           color = KULbg, fill = KULbg) +
+  ggtitle('MTPL - empirical claim freq per 
+          age policyholder')
+```
+
+
+.hi-pink[Q.4] recycle the above instructions and replace `ageph` with `bm`
+
+]
+
+.pull-right[
+
+&lt;br&gt;
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-179-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
 
 ---
 
@@ -3842,7 +4001,7 @@ Modeling claim .hi-pink[frequency] and .hi-pink[severity] in the `mtpl` data set
 
 Target variable `nclaims` (frequency)
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-175-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-180-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
 
 
 Suitable distributions: Poisson, Negative Binomial.
@@ -3853,7 +4012,7 @@ Suitable distributions: Poisson, Negative Binomial.
 
 ...  and `avg` (severity).
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-176-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-181-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
 
 
 Suitable distributions: log-normal, gamma.
@@ -3961,16 +4120,16 @@ freq_glm_1 %&gt;% broom::tidy()
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -1.9076 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0133 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -143.186 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.9076251 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0133227 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -143.186324 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; sexmale &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0866 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0157 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -5.523 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0866198 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0156837 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -5.522931 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -3995,12 +4154,12 @@ freq_glm_1 %&gt;% broom::augment(type.predict = "response")
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1361 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1361164 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1484 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1484325 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -4021,10 +4180,10 @@ Let's see how the fitted values at `"response"` level are constructed:
 ```r
 exp(coef(freq_glm_1)[1])
 ## (Intercept) 
-##      0.1484
+##   0.1484325
 exp(coef(freq_glm_1)[1] + coef(freq_glm_1)[2])
 ## (Intercept) 
-##      0.1361
+##   0.1361164
 ```
 
 Do you recognize these numbers?
@@ -4091,8 +4250,8 @@ predict(freq_glm_1, newdata = male_driver,
 
 
 ```
-##      1 
-## 0.1361
+##         1 
+## 0.1361164
 ```
 
 ]
@@ -4109,8 +4268,8 @@ predict(freq_glm_1, newdata = male_driver,
 
 
 ```
-##      1 
-## 0.1361
+##         1 
+## 0.1361164
 ```
 
 At the level of the linear predictor: 
@@ -4123,8 +4282,8 @@ predict(freq_glm_1, newdata = male_driver,
 
 
 ```
-##      1 
-## -1.994
+##         1 
+## -1.994245
 ```
 
 
@@ -4135,8 +4294,8 @@ exp(predict(freq_glm_1, newdata = male_driver,
 
 
 ```
-##      1 
-## 0.1361
+##         1 
+## 0.1361164
 ```
 
 ]
@@ -4160,12 +4319,12 @@ sev_glm_1
 ## 
 ## Coefficients:
 ## (Intercept)      sexmale  
-##       7.573       -0.258  
+##      7.5730      -0.2581  
 ## 
 ## Degrees of Freedom: 18294 Total (i.e. Null);  18293 Residual
 ##   (144936 observations deleted due to missingness)
-## Null Deviance:	    46700 
-## Residual Deviance: 46400 	AIC: 3e+05
+## Null Deviance:	    46690 
+## Residual Deviance: 46440 	AIC: 299700
 ```
 
 ---
@@ -4219,7 +4378,7 @@ With .hi-pink[Generalized Additive Models (GAMs)]
 .pull-left[
 We continue working with `mtpl` and now focus on `ageph`.
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-197-1.svg" width="75%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-202-1.svg" width="75%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4278,7 +4437,7 @@ df &lt;- data.frame(a, b_glm_age, l_glm_age, u_glm_age)
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-201-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-206-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 ---
@@ -4314,7 +4473,7 @@ df &lt;- data.frame(a, b_glm_age_f,
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-204-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-209-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4352,7 +4511,7 @@ df &lt;- data.frame(a, b_glm_age_c,
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-207-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-212-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4390,7 +4549,7 @@ df &lt;- data.frame(a, b_gam_age,
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-210-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-215-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4407,7 +4566,48 @@ freq_gam &lt;- gam(nclaims ~ s(ageph), offset = log(expo), family = poisson(link
 plot(freq_gam, scheme = 4)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-211-1.svg" width="35%" height="10%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-216-1.svg" width="35%" height="10%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# More on GAMs
+
+.pull-left[
+So, a GAM is a GLM where the linear predictor depends on .hi-pink[smooth functions] of covariates.
+
+Consider a GAM with the following predictor:
+
+`$$\color{#e64173}{x}^{'}\color{#20B2AA}{\beta}+f_j(x_j).$$`
+
+GAMs use .hi-pink[basis functions] to estimate the smooth effect `\(f_j(.)\)`
+
+`$$f_j(x_j) = \sum_{m=1}^M \beta_{jm} b_{jm}(x_j),$$`
+
+where the `\(b_{jm}(x)\)` are known basis functions and `\(\beta_{jm}\)` are coefficients that have to be estimated.
+]
+
+.pull-right[
+
+GAMs avoid overfitting by adding a .hi-pink[wiggliness penalty] to the likelihood
+
+`$$\int \left( f_j(x)'' \right)^2 = \beta_j^t \mathbf{S}_j\beta_j.$$`
+GAMs then balance goodness-of-fit and wiggliness via
+
+`$$\log \mathcal{L}(\beta,\beta_j) - \lambda_j \cdot \beta_j^t \mathbf{S}_j\beta_j,$$`
+
+with `\(\lambda_j\)` the .hi-pink[smoothing parameter].
+
+The smoothing parameter `\(\lambda_j\)` controls the trade-off between fit &amp; smoothness.
+]
+
+---
+
+class: clear
+
+Let's run some experiments to illustrate the effect of the smoothing parameter (   `sp = .`), the number (`k = .`) and type of basis functions (`bs = .`). We use the `mcycle` data from {MASS}.
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-217-1.svg" style="display: block; margin: auto;" /&gt;
+
 
 ---
 
@@ -4464,18 +4664,18 @@ summary(freq_gam_2)
 ## nclaims ~ sex + fuel + use + s(ageph) + s(bm)
 ## 
 ## Parametric coefficients:
-##              Estimate Std. Error z value Pr(&gt;|z|)    
-## (Intercept)  -1.91780    0.01812 -105.82   &lt;2e-16 ***
-## sexmale       0.00918    0.01604    0.57    0.567    
-## fuelgasoline -0.15276    0.01510  -10.12   &lt;2e-16 ***
-## usework      -0.05516    0.03309   -1.67    0.096 .  
+##               Estimate Std. Error  z value Pr(&gt;|z|)    
+## (Intercept)  -1.917801   0.018124 -105.818   &lt;2e-16 ***
+## sexmale       0.009177   0.016043    0.572   0.5673    
+## fuelgasoline -0.152756   0.015100  -10.116   &lt;2e-16 ***
+## usework      -0.055156   0.033092   -1.667   0.0956 .  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Approximate significance of smooth terms:
-##           edf Ref.df Chi.sq p-value    
-## s(ageph) 5.45   6.50    229  &lt;2e-16 ***
-## s(bm)    8.49   8.87   1228  &lt;2e-16 ***
+##            edf Ref.df Chi.sq p-value    
+## s(ageph) 5.451  6.502  228.8  &lt;2e-16 ***
+## s(bm)    8.490  8.866 1228.1  &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -4493,7 +4693,7 @@ summary(freq_gam_2)
 plot(freq_gam_2, select = 1)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-214-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-220-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -4501,7 +4701,7 @@ plot(freq_gam_2, select = 1)
 plot(freq_gam_2, select = 2)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-215-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-221-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4580,13 +4780,13 @@ predict(freq_gam_2, newdata = drivers,
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 0.3969 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3969310 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 0.1727 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1727430 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 0.0951 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0951124 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -4845,37 +5045,37 @@ tidy(fit)
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.6608 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.631 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6607581 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.630762 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.6312 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.486 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0553 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6312350 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.485890 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0552832 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.5875 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.354 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1459 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5874616 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.353887 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1458910 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.5476 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.234 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2211 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5475769 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.233612 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2211153 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.5112 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.124 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2836 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5112354 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.124021 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2835678 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -4893,7 +5093,7 @@ class: clear
 plot(fit, `label = TRUE`)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-229-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-235-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4904,7 +5104,7 @@ plot(fit, `label = TRUE`)
 plot(fit, label = TRUE, `xvar = 'lambda'`)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-231-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-237-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4919,7 +5119,7 @@ class: clear
 plot(fit, `xvar = 'dev'`, label = TRUE)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-233-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-239-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4931,74 +5131,74 @@ print(fit)
 ## 
 ## Call:  glmnet(x = x, y = y, family = "gaussian", alpha = 1, standardize = TRUE,      intercept = TRUE) 
 ## 
-##    Df %Dev Lambda
-## 1   0  0.0  1.630
-## 2   2  5.5  1.490
-## 3   2 14.6  1.350
-## 4   2 22.1  1.230
-## 5   2 28.4  1.120
-## 6   2 33.5  1.020
-## 7   4 39.0  0.933
-## 8   5 45.6  0.850
-## 9   5 51.5  0.775
-## 10  6 57.4  0.706
-## 11  6 62.5  0.643
-## 12  6 66.9  0.586
-## 13  6 70.5  0.534
-## 14  6 73.4  0.487
-## 15  7 76.2  0.443
-## 16  7 78.6  0.404
-## 17  7 80.5  0.368
-## 18  7 82.2  0.335
-## 19  7 83.5  0.306
-## 20  7 84.6  0.278
-## 21  7 85.6  0.254
-## 22  7 86.3  0.231
-## 23  8 87.1  0.211
-## 24  8 87.7  0.192
-## 25  8 88.2  0.175
-## 26  8 88.7  0.159
-## 27  8 89.0  0.145
-## 28  8 89.3  0.132
-## 29  8 89.6  0.121
-## 30  8 89.8  0.110
-## 31  9 89.9  0.100
-## 32  9 90.1  0.091
-## 33  9 90.2  0.083
-## 34  9 90.3  0.076
-## 35 10 90.4  0.069
-## 36 11 90.5  0.063
-## 37 11 90.6  0.057
-## 38 12 90.7  0.052
-## 39 15 90.8  0.048
-## 40 16 90.9  0.043
-## 41 16 90.9  0.040
-## 42 16 91.0  0.036
-## 43 17 91.0  0.033
-## 44 17 91.1  0.030
-## 45 18 91.1  0.027
-## 46 18 91.1  0.025
-## 47 19 91.2  0.023
-## 48 19 91.2  0.021
-## 49 19 91.2  0.019
-## 50 19 91.2  0.017
-## 51 19 91.2  0.016
-## 52 19 91.3  0.014
-## 53 19 91.3  0.013
-## 54 19 91.3  0.012
-## 55 19 91.3  0.011
-## 56 19 91.3  0.010
-## 57 19 91.3  0.009
-## 58 19 91.3  0.008
-## 59 19 91.3  0.007
-## 60 19 91.3  0.007
-## 61 19 91.3  0.006
-## 62 20 91.3  0.006
-## 63 20 91.3  0.005
-## 64 20 91.3  0.005
-## 65 20 91.3  0.004
-## 66 20 91.3  0.004
-## 67 20 91.3  0.004
+##    Df  %Dev  Lambda
+## 1   0  0.00 1.63100
+## 2   2  5.53 1.48600
+## 3   2 14.59 1.35400
+## 4   2 22.11 1.23400
+## 5   2 28.36 1.12400
+## 6   2 33.54 1.02400
+## 7   4 39.04 0.93320
+## 8   5 45.60 0.85030
+## 9   5 51.54 0.77470
+## 10  6 57.35 0.70590
+## 11  6 62.55 0.64320
+## 12  6 66.87 0.58610
+## 13  6 70.46 0.53400
+## 14  6 73.44 0.48660
+## 15  7 76.21 0.44330
+## 16  7 78.57 0.40400
+## 17  7 80.53 0.36810
+## 18  7 82.15 0.33540
+## 19  7 83.50 0.30560
+## 20  7 84.62 0.27840
+## 21  7 85.55 0.25370
+## 22  7 86.33 0.23120
+## 23  8 87.06 0.21060
+## 24  8 87.69 0.19190
+## 25  8 88.21 0.17490
+## 26  8 88.65 0.15930
+## 27  8 89.01 0.14520
+## 28  8 89.31 0.13230
+## 29  8 89.56 0.12050
+## 30  8 89.76 0.10980
+## 31  9 89.94 0.10010
+## 32  9 90.10 0.09117
+## 33  9 90.23 0.08307
+## 34  9 90.34 0.07569
+## 35 10 90.43 0.06897
+## 36 11 90.53 0.06284
+## 37 11 90.62 0.05726
+## 38 12 90.70 0.05217
+## 39 15 90.78 0.04754
+## 40 16 90.86 0.04331
+## 41 16 90.93 0.03947
+## 42 16 90.98 0.03596
+## 43 17 91.03 0.03277
+## 44 17 91.07 0.02985
+## 45 18 91.11 0.02720
+## 46 18 91.14 0.02479
+## 47 19 91.17 0.02258
+## 48 19 91.20 0.02058
+## 49 19 91.22 0.01875
+## 50 19 91.24 0.01708
+## 51 19 91.25 0.01557
+## 52 19 91.26 0.01418
+## 53 19 91.27 0.01292
+## 54 19 91.28 0.01178
+## 55 19 91.29 0.01073
+## 56 19 91.29 0.00978
+## 57 19 91.30 0.00891
+## 58 19 91.30 0.00812
+## 59 19 91.31 0.00739
+## 60 19 91.31 0.00674
+## 61 19 91.31 0.00614
+## 62 20 91.31 0.00559
+## 63 20 91.31 0.00510
+## 64 20 91.31 0.00464
+## 65 20 91.32 0.00423
+## 66 20 91.32 0.00386
+## 67 20 91.32 0.00351
 ```
 
 ]
@@ -5019,28 +5219,28 @@ coef(fit, `s = 0.1`)
 
 ```
 ## 21 x 1 sparse Matrix of class "dgCMatrix"
-##                     1
-## (Intercept)  0.150928
-## V1           1.320597
-## V2           .       
-## V3           0.675110
-## V4           .       
-## V5          -0.817412
-## V6           0.521437
-## V7           0.004829
-## V8           0.319416
-## V9           .       
-## V10          .       
-## V11          0.142499
-## V12          .       
-## V13          .       
-## V14         -1.059979
-## V15          .       
-## V16          .       
-## V17          .       
-## V18          .       
-## V19          .       
-## V20         -1.021874
+##                        1
+## (Intercept)  0.150928072
+## V1           1.320597195
+## V2           .          
+## V3           0.675110234
+## V4           .          
+## V5          -0.817411518
+## V6           0.521436671
+## V7           0.004829335
+## V8           0.319415917
+## V9           .          
+## V10          .          
+## V11          0.142498519
+## V12          .          
+## V13          .          
+## V14         -1.059978702
+## V15          .          
+## V16          .          
+## V17          .          
+## V18          .          
+## V19          .          
+## V20         -1.021873704
 ```
 
 
@@ -5066,7 +5266,7 @@ We can pick the `lambda` that minimizes the cross-validation error.
 
 ```r
 cv_fit$lambda.min
-## [1] 0.07569
+## [1] 0.07569327
 ```
 
 Or we use the one-standard-error-rule. 
@@ -5074,7 +5274,7 @@ Or we use the one-standard-error-rule.
 
 ```r
 cv_fit$lambda.1se
-## [1] 0.1593
+## [1] 0.1593271
 ```
 
 ]
@@ -5090,7 +5290,7 @@ We plot the cross-validation error for the inspected grid of `lambda` values.
 plot(cv_fit)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-242-1.svg" width="45%" height="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-248-1.svg" width="45%" height="40%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -5114,28 +5314,28 @@ coef(fit, s = cv_fit$lambda.min)
 
 ```
 ## 21 x 1 sparse Matrix of class "dgCMatrix"
-##                    1
-## (Intercept)  0.14867
-## V1           1.33378
-## V2           .      
-## V3           0.69788
-## V4           .      
-## V5          -0.83727
-## V6           0.54334
-## V7           0.02669
-## V8           0.33741
-## V9           .      
-## V10          .      
-## V11          0.17105
-## V12          .      
-## V13          .      
-## V14         -1.07553
-## V15          .      
-## V16          .      
-## V17          .      
-## V18          .      
-## V19          .      
-## V20         -1.05279
+##                       1
+## (Intercept)  0.14867414
+## V1           1.33377821
+## V2           .         
+## V3           0.69787701
+## V4           .         
+## V5          -0.83726751
+## V6           0.54334327
+## V7           0.02668633
+## V8           0.33741131
+## V9           .         
+## V10          .         
+## V11          0.17105029
+## V12          .         
+## V13          .         
+## V14         -1.07552680
+## V15          .         
+## V16          .         
+## V17          .         
+## V18          .         
+## V19          .         
+## V20         -1.05278699
 ```
 
 ]
@@ -5185,73 +5385,73 @@ What do you observe when comparing the estimates below with those shown on the p
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1417 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0996 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4231 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1582 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1416891 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0995658 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4230704 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1581730 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; V1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.3747 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0968 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 14.1980 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3746695 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0968211 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.1980421 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; V3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.7688 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0943 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 8.1567 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7688247 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0942568 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.1567012 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; V5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.8992 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1034 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -8.6981 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.8991610 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1033747 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -8.6980793 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; V6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.6116 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0901 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 6.7888 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6115910 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0900882 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.7888025 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; V7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0947 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0973 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.9736 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.3329 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0947279 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0972959 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.9736059 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3328618 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; V8 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.3934 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0920 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 4.2738 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3933822 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0920456 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.2737767 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000477 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; V11 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2601 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0994 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2.6159 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0104 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2600734 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0994215 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.6158659 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0104367 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; V14 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -1.1240 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0885 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -12.6963 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.1239616 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0885267 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -12.6963039 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; V20 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -1.1491 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1117 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -10.2863 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.1491267 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1117142 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -10.2863111 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -5384,13 +5584,20 @@ Let's check the input matrix `x`
 
 
 ```
-##   coverageFO coveragePO coverageTPL fuelgasoline usework fleetY sexmale ageph bm agec power
-## 1          0          0           1            1       0      0       1    50  5   12    77
-## 2          0          1           0            1       0      0       0    64  5    3    66
-## 3          0          0           1            0       0      0       1    60  0   10    70
-## 4          0          0           1            1       0      0       1    77  0   15    57
-## 5          0          0           1            1       0      0       0    28  9    7    70
-## 6          0          0           1            1       0      0       1    26 11   12    70
+##   coverageFO coveragePO coverageTPL fuelgasoline usework fleetY sexmale ageph bm agec
+## 1          0          0           1            1       0      0       1    50  5   12
+## 2          0          1           0            1       0      0       0    64  5    3
+## 3          0          0           1            0       0      0       1    60  0   10
+## 4          0          0           1            1       0      0       1    77  0   15
+## 5          0          0           1            1       0      0       0    28  9    7
+## 6          0          0           1            1       0      0       1    26 11   12
+##   power
+## 1    77
+## 2    66
+## 3    70
+## 4    57
+## 5    70
+## 6    70
 ```
 
 You are now ready to fit a regularized Poisson GLM for `y` with input `x`. 
@@ -5455,8 +5662,9 @@ mtpl_glmnet &lt;- glmnet(x = x, y = y,
 
 ```r
 row.names(mtpl_glmnet$beta) 
-##  [1] "coverageFO"   "coveragePO"   "coverageTPL"  "fuelgasoline" "usework"      "fleetY"       "sexmale"      "ageph"        "bm"          
-## [10] "agec"         "power"
+##  [1] "coverageFO"   "coveragePO"   "coverageTPL"  "fuelgasoline" "usework"     
+##  [6] "fleetY"       "sexmale"      "ageph"        "bm"           "agec"        
+## [11] "power"
 ```
 
 ]
@@ -5470,7 +5678,7 @@ row.names(mtpl_glmnet$beta)
 plot(mtpl_glmnet, xvar = 'lambda', label = TRUE)  
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-256-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-262-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -5498,7 +5706,7 @@ mtpl_glmnet_cv &lt;- cv.glmnet(x, y, family = "poisson",
 plot(mtpl_glmnet_cv)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-257-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-263-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -5509,19 +5717,19 @@ plot(mtpl_glmnet_cv)
 ```r
 coef(mtpl_glmnet_cv, s = "lambda.min")
 ## 12 x 1 sparse Matrix of class "dgCMatrix"
-##                      1
-## (Intercept)  -2.106681
-## coverageFO   -0.006500
-## coveragePO    .       
-## coverageTPL   0.050002
-## fuelgasoline -0.165865
-## usework      -0.069292
-## fleetY       -0.049284
-## sexmale      -0.013718
-## ageph        -0.006347
-## bm            0.058564
-## agec         -0.002004
-## power         0.003448
+##                         1
+## (Intercept)  -2.106680933
+## coverageFO   -0.006499730
+## coveragePO    .          
+## coverageTPL   0.050002173
+## fuelgasoline -0.165864612
+## usework      -0.069292342
+## fleetY       -0.049283838
+## sexmale      -0.013718073
+## ageph        -0.006347490
+## bm            0.058564280
+## agec         -0.002004356
+## power         0.003448081
 ```
 
 ]
@@ -5549,7 +5757,7 @@ mtpl_glmnet_cv &lt;- cv.glmnet(x, y, family = "poisson",
 plot(mtpl_glmnet_cv)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-259-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-265-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -5560,18 +5768,18 @@ plot(mtpl_glmnet_cv)
 ```r
 coef(mtpl_glmnet_cv, s = "lambda.1se")
 ## 12 x 1 sparse Matrix of class "dgCMatrix"
-##                      1
-## (Intercept)  -2.124040
-## coverageFO    .       
-## coveragePO    .       
-## coverageTPL   .       
-## fuelgasoline  .       
-## usework       .       
-## fleetY        .       
-## sexmale       .       
-## ageph        -0.002917
-## bm            0.046164
-## agec          .       
+##                         1
+## (Intercept)  -2.124039910
+## coverageFO    .          
+## coveragePO    .          
+## coverageTPL   .          
+## fuelgasoline  .          
+## usework       .          
+## fleetY        .          
+## sexmale       .          
+## ageph        -0.002916928
+## bm            0.046163778
+## agec          .          
 ## power         .
 ```
 
@@ -5615,80 +5823,80 @@ The selection obtained via `lambda.min`
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -1.9893 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0401 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -49.5680 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.9892872 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0401325 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -49.5679730 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; coverageFO &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0044 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0244 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1813 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.8561 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0044293 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0244274 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1813238 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8561134 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; coverageTPL &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0744 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0172 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 4.3153 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0743796 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0172363 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.3152799 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000159 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; fuelgasoline &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.1731 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0153 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -11.2945 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.1731052 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0153266 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -11.2944557 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; usework &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0863 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0334 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -2.5797 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0099 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0862841 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0334470 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -2.5797233 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0098880 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; fleetY &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.1226 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0435 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -2.8177 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0048 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.1226498 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0435289 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -2.8176618 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0048375 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; sexmale &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0253 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0162 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -1.5585 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1191 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0253198 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0162468 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.5584505 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1191265 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; ageph &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0074 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0005 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -13.7765 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0074262 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0005391 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -13.7764864 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; bm &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0639 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0017 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 36.8902 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0639249 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0017328 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.8902457 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; agec &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0005 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0019 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.2426 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.8083 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0004698 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0019368 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.2425874 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8083251 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; power &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0039 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0004 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 10.1421 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0038535 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0003799 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.1421096 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -5731,23 +5939,23 @@ The selection obtained via `lambda.1se`
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -1.8251 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0282 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -64.64 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.8251292 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0282345 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -64.64189 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; ageph &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0084 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0005 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -15.90 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0083839 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0005274 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -15.89605 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; bm &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0626 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0017 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 36.51 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0625774 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0017141 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.50764 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;

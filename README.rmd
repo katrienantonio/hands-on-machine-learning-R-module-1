@@ -91,10 +91,10 @@ workshop. Either you join the RStudio cloud workspace dedicated to the
 workshop, and then you'll run R in the cloud, from your browser. Or you
 use your local installation of R and RStudio. The first option is very easy and accessible. Make sure one of these options works smoothly before coming to the workshop. A technical test session will be organized to get you started in case of problems or doubts.
 
-### R Studio Cloud
+### RStudio Cloud
 
 If you prefer not to work with a local installation of R (and the
-necessary packages), you can join our workspace on R Studio Cloud. This
+necessary packages), you can join our workspace on RStudio Cloud. This
 should be a **very accessible set-up** for working with R in the cloud
 for the less experienced user!
 
