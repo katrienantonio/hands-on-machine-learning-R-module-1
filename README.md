@@ -8,7 +8,7 @@ Course materials for the *Hands-on Machine Learning in R* course
 Instituut.
 
 📆 Module 1 on December 10 and 17, 2020, Module 2 on Jan 14 and 21, 2021
-and Module 3 on Jan 28 and Feb 4, 2021 <br> 🕣 From 9.30 am to 12.30 pm
+and Module 3 on Jan 28 and Feb 4, 2021 <br> ⏱ From 9.30 am to 12.30 pm
 or from 1.30 pm to 4.30 pm <br> 📌 online, organized by Actuarieel
 Instituut
 
@@ -62,7 +62,7 @@ own.
 
 ## Schedule and Course Material
 
-The schedule will gradually be completed over the next weeks. The
+The schedule will gradually be completed over the next days. The
 detailed schedule is subject to small changes.
 
 |  Module  |  Session  | Duration                | Description                                              | Lecture material                                                                                                 | R script | R solutions |
@@ -92,31 +92,6 @@ In two sessions we cover:
 
 Download lecture sheets in
 [pdf](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_module1.pdf).
-
-##### Module 2: Tree-based machine learning methods
-
-In two sessions we cover:
-
-  - decision trees
-  - ensembles of trees (bagging, random forests, gradient boosting
-    machine, XGboost)
-  - ML interpretability tools (variable importance, PDP, ICE, and more).
-
-Download lecture sheets in pdf.
-
-##### Module 3: Deep learning methods
-
-In two sessions we cover:
-
-  - neural network infrastructure, calibration steps and tuning of
-    (hyper)parameters
-  - building deep learning models with TensorFlow and Keras via the
-    `keras` library in R
-  - a variety of deep learning algorithms (e.g. CNNs and ANNs)
-  - putting it all together: case studies
-  - wrap up.
-
-Download lecture sheets in pdf.
 
 ## After the workshop: want to more know?
 
@@ -165,9 +140,10 @@ to login and open your copy of the project\!
 ### Local installation
 
 Please bring a laptop with a recent version of R and RStudio installed.
-Make sure you can connect your laptop to the internet (or download the
-course material one day before the start of the workshop). You will
-need:
+You can visit the folder ‘prework’ on the GitHub repo to find
+installation instructions for both. Make sure you can connect your
+laptop to the internet (or download the course material one day before
+the start of the workshop). You will need:
 
   - R (at least 3.5.2 <https://cloud.r-project.org/bin/windows/base/>)
   - RStudio
@@ -176,14 +152,14 @@ need:
 In the `prework` folder you will find a step-by-step guide to installing
 R and RStudio (though a bit outdated).
 
-Please run the below script in your R session to install the required
-packages (for Module 1, more packages will be added later).
+Please **run the below script** in your R session to install the
+required packages (for Module 1, more packages will be added later).
 
-Make sure to download the course material (including scripts and data
-sets) from the GitHub repo one day before the workshop. Use the green
-button Code \> Download ZIP on the GitHub repo website. As a final step,
-after downloading, unpack the ZIP folder and make sure you can easily
-access the material (in particular scripts and data sets).
+Make sure to **download the course material** (including scripts and
+data sets) from the GitHub repo one day before the workshop. Use the
+green button Code \> Download ZIP on the GitHub repo website. As a final
+step, after downloading, unpack the ZIP folder and make sure you can
+easily access the material (in particular scripts and data sets).
 
 ``` r
 packages <- c("tidyverse", "here", "rstudioapi", "MASS", "AmesHousing",  "caret", "rsample", "purrr", "recipes", "broom", "mgcv", "glmnet", "gridExtra")
