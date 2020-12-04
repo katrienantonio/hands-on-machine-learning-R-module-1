@@ -1,0 +1,5897 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Hands-on Machine Learning with R - Module 1</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Katrien Antonio &amp; Roel Henckaerts" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/metropolis.css" type="text/css" />
+    <link rel="stylesheet" href="css/metropolis-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Hands-on Machine Learning with R - Module 1
+## Hands-on webinar
+<html>
+<div style="float:left">
+
+</div>
+<hr align='center' color='#116E8A' size=1px width=97%>
+</html>
+### Katrien Antonio &amp; Roel Henckaerts
+### <a href="https://github.com/katrienantonio/hands-on-machine-learning-R">hands-on-machine-learning-R-module-1</a> | December 10 &amp; 17, 2020
+
+---
+
+
+
+
+
+
+class: inverse, center, middle
+name: prologue
+
+# Prologue
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=796px&gt;&lt;/html&gt;
+
+---
+
+name: introduction
+
+# Introduction
+
+### Course
+
+&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; https://github.com/katrienantonio/hands-on-machine-learning-R
+
+The course repo on GitHub, where you can find the data sets, lecture sheets, R scripts and R markdown files.
+
+--
+
+### Us
+
+&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/&gt;&lt;/svg&gt; [https://katrienantonio.github.io/](https://katrienantonio.github.io/) &amp; [https://henckr.github.io/](https://henckr.github.io/)
+
+&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/&gt;&lt;/svg&gt; [katrien.antonio@kuleuven.be](mailto:katrien.antonio@kuleuven.be) &amp; [roel.henckaerts@kuleuven.be](mailto:roel.henckaerts@kuleuven.be)
+
+&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 640 512"&gt;&lt;path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/&gt;&lt;/svg&gt; (Katrien) Professor in insurance data science
+
+&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 640 512"&gt;&lt;path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/&gt;&lt;/svg&gt; (Roel) PhD student in insurance data science
+
+---
+
+name: checklist
+
+# Checklist
+
+☑ Do you have a fairly recent version of R?
+  
+  ```r
+  version$version.string
+  ## [1] "R version 4.0.3 (2020-10-10)"
+  ```
+
+☑ Do you have a fairly recent version of RStudio? 
+  
+  ```r
+  RStudio.Version()$version
+  ## Requires an interactive session but should return something like "[1] ‘1.3.1093’"
+  ```
+
+☑ Have you installed the R packages listed in the software requirements? 
+
+or
+
+☑ Have you created an account on RStudio Cloud (to avoid any local installation issues)?
+  
+---
+
+name: why-this-course # inspired by Grant McDermott intro lecture
+
+# Why this course?
+
+### The goals of this course .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M505.05 19.1a15.89 15.89 0 0 0-12.2-12.2C460.65 0 435.46 0 410.36 0c-103.2 0-165.1 55.2-211.29 128H94.87A48 48 0 0 0 52 154.49l-49.42 98.8A24 24 0 0 0 24.07 288h103.77l-22.47 22.47a32 32 0 0 0 0 45.25l50.9 50.91a32 32 0 0 0 45.26 0L224 384.16V488a24 24 0 0 0 34.7 21.49l98.7-49.39a47.91 47.91 0 0 0 26.5-42.9V312.79c72.59-46.3 128-108.4 128-211.09.1-25.2.1-50.4-6.85-82.6zM384 168a40 40 0 1 1 40-40 40 40 0 0 1-40 40z"/&gt;&lt;/svg&gt;]
+
+--
+
+* develop practical .KULbginline[machine learning (ML) foundations]
+
+--
+
+* .KULbginline[fill in the gaps] left by traditional training in actuarial science or econometrics
+
+--
+
+* focus on the use of ML methods for the .KULbginline[analysis of frequency + severity data], but also .KULbginline[non-standard data] such as images 
+
+--
+
+* .KULbginline[explore] a substantial range of .KULbginline[methods (and data types)] (from GLMs to deep learning), but - most importantly - .KULbginline[build foundation] so that you can explore other methods (and data types) yourself. 
+
+--
+
+&lt;br&gt;
+
+&gt; *"In short, we will cover things that we wish someone had taught us in our undergraduate programs."* 
+&gt; &lt;br&gt;
+&gt; .font80[This quote is from the [Data science for economists course](http://github.com/uo-ec607/lectures) by Grant McDermott.]
+
+---
+
+# Module 1's Outline
+
+.pull-left[
+
+* [Prologue](#prologue)
+
+* [Knowing me, knowing you: &lt;br&gt; statistical and machine learning](#knowing)
+
+  - Supervised and unsupervised learning
+  - Regression and classification
+  - Statistical modeling: the two cultures
+
+* [Model accuracy and loss functions](#accuracy)
+
+* [Overfitting and bias-variance tradeoff](#overfit)
+
+* [Data splitting, Resampling methods](#resampling)
+
+]
+
+.pull-right[
+
+* [Parameter tuning](#tuning) 
+
+  - with {caret}, {rsample} and {purrr}
+
+* [Target and feature engineering](#engineering)
+
+  - Data leakage
+  - Pre-processing steps
+  - Specifying blue-prints with {recipes}
+  - Putting it all together: {recipes} and {caret}/{rsample}
+
+* [Regression models](#regression)
+
+  - Creating models in R and tidy model output with {broom}
+  - GLMs with {glm}
+  - GAMs with {mgcv}
+  - Regularized (G)LMs with {glmnet}.
+
+]
+
+
+---
+
+name: map-ML-world
+class: right, middle, clear
+background-image: url("img/map_ML_world.jpg")
+background-size: 45% 
+background-position: left
+
+
+.KULbginline[Some roadmaps to explore the ML landscape...] 
+
+&lt;img src = "img/AI_ML_DL.jpg" height = "350px" /&gt;
+
+.font60[Source: [Machine Learning for Everyone In simple words. With real-world examples. Yes, again.](https://vas3k.com/blog/machine_learning/)]
+
+
+---
+
+name: map-ML-world
+class: right, middle, clear
+background-image: url("img/main_types_ML.jpg")
+background-size: 85% 
+background-position: middle
+
+---
+
+class: inverse, center, middle
+name: knowing
+
+# Knowing me, knowing you: 
+&lt;br&gt; &lt;br&gt;
+# statistical and machine learning 
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=796px&gt;&lt;/html&gt;
+
+---
+
+name: supervised-learning
+
+# Supervised learning
+
+.pull-left-alt[
+
+Supervised learning builds ("learns") a .blue[model] `\(\color{#3b3b9a}{f}\)` (*the Signal*) such that the .orange[outcome or target] `\(\color{#fb6107}{Y}\)` can be written as
+
+`$$\color{#FFA500}{Y} = \color{#3b3b9a}{f}(\color{#e64173}{x_1, \ldots, x_p}) + \epsilon$$`
+with .pink[features] `\(\color{#e64173}{x_1, \ldots, x_p}\)` and error term `\(\epsilon\)` (*the Noise*).
+
+Supervised learners construct .KULbginline[predictive models].
+
+&lt;br&gt; &lt;br&gt;
+
+.footnote[Picture taken from [Machine Learning for Everyone. In simple words. With real-world examples. Yes, again](https://vas3k.com/blog/machine_learning/)]
+
+]
+
+.pull-right-alt[
+
+.center[
+&lt;img src="img/supervised_unsupervised_drawing.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+
+]
+---
+
+
+
+name: unsupervised-learning
+
+# Unsupervised learning
+
+.pull-left-alt[
+
+With unsupervised learning there is .KULbginline[NO] .orange[outcome or target] `\(\color{#FFA500}{Y}\)`, only the feature vector `\(\color{#e64173}{x = (x_1, \ldots, x_p)}\)`. 
+
+Let `\(n\)` denote the sample size and `\(p\)` the number of features. 
+
+Then, `\(\color{#e64173}{X}\)` is the `\(n \times p\)` matrix of features, with `\(\color{#e64173}{x}_{i,j}\)` observation `\(i\)` on variable or feature `\(j\)`.
+
+Unsupervised learners construct .KULbginline[descriptive models], without any *supervising* output, letting the data "speak for itself".
+
+
+]
+
+.pull-right-alt[
+
+.center[
+&lt;img src="img/K-means_drawing.jpg" width="80%" height="55%" style="display: block; margin: auto;" /&gt;
+]
+
+.footnote[Picture taken from [Machine Learning for Everyone. In simple words. With real-world examples. Yes, again](https://vas3k.com/blog/machine_learning/)]
+
+
+]
+---
+
+class: clear
+
+&lt;br&gt; &lt;br&gt;
+
+.center[
+&lt;img src="img/supervised_unsupervised_robot.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+]
+
+.footnote[Picture taken from [this source](https://twitter.com/athena_schools/status/1063013435779223553).]
+
+---
+
+name: what's-in-a-name
+
+# What's in a name?
+
+.KULbginline[Machine learning] constructs algorithms that learn from data. 
+
+--
+
+.KULbginline[Statistical learning] emphasizes statistical models and the assessment of uncertainty.
+
+--
+
+.KULbginline[Data science] applies mathematics, statistics, machine learning, engineering, etc. to extract knowledge form data.
+--
+
+&gt; *"Data Science is statistics on a Mac &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 384 512"&gt;&lt;path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/&gt;&lt;/svg&gt;. "*
+
+.center[
+&lt;img src="img/ElementsStatLearning.png" alt="Drawing" style="height: 250px;"/&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;img src="img/ISL.png" alt="Drawing" style="height: 250px;"/&gt; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;img src="img/AppliedPredMod.png" alt="Drawing" style="height: 250px;"/&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;img src="img/boehmke_greenwell.jpg" alt="Drawing" style="height: 250px;"/&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;img src="img/molnar.png" alt="Drawing" style="height: 250px;"/&gt;
+]
+
+Source: Brandon M. Greenwell on [Introduction to Machine Learning in &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#F92672;" viewBox="0 0 581 512"&gt;&lt;path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/&gt;&lt;/svg&gt;](https://github.com/bgreenwell/intro-ml-r).
+
+---
+
+name: two-cultures
+
+# Statistical modeling: the two cultures
+
+Consider a vector of input variables `\(\color{#e64173}{x}\)`, being transformed into some vector of response variables `\(\color{#FFA500}{y}\)` via a black box algorithm. 
+
+.center[
+&lt;img src="img/Breiman_nature.png" alt="Drawing" style="width: 300px;"/&gt;  
+]
+
+--
+
+.pull-left[
+
+.KULbginline[Statistical learning or data modeling culture]
+
+* assume statistical model, estimate parameter values
+* validate with goodness-of-fit tests and residual inspection
+
+.center[
+&lt;img src="img/Breiman_data_modeling.png" alt="Drawing" style="width: 300px;"/&gt;  
+]
+]
+--
+
+.pull-right[
+
+.KULbginline[Machine learning or algo modeling culture]
+
+* inside of the box is complex and unknown
+* find algorithm `\(\color{#3b3b9a}{f}(\color{#e64173}{x})\)` to predict `\(\color{#FFA500}{y}\)`
+* measure performance by predictive accuracy
+
+.center[
+&lt;img src="img/Breiman_algo_modeling.png" alt="Drawing" style="width: 300px;"/&gt;  
+]
+
+]
+
+Source: Breiman (2001, Statistical Science) on *Statistical modeling: the two cultures.*
+---
+
+name: statistical-machine-learning
+
+# Newspeak from the two cultures
+
+&lt;br&gt; 
+&lt;br&gt;
+
+| Statistical learning           |  Machine learning
+:------:|:-------------------------:|:-------------------------:
+.KULbginline[origin] | statistics | computer science 
+.KULbginline[*f(x)*] | model | algorithm
+.KULbginline[emphasis] | interpretability, precision and uncertainty | large scale applicability, prediction accuracy
+.KULbginline[jargon] | parameters, estimation | weights, learning
+.KULbginline[CI] | uncertainty of parameters | no notion of uncertainty 
+.KULbginline[assumptions] | explicit a priori assumption | no prior assumption, learn from the data
+
+&lt;br&gt;
+
+Source: read the blog [Why a mathematician, statistician and machine learner solve the same problem differently](https://blog.galvanize.com/why-a-mathematician-statistician-machine-learner-solve-the-same-problem-differently-2/)
+
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+As discussed in the lecture, many problems in ML can be approached as a .KULbginline[regression], .KULbginline[classification] or .KULbginline[clustering] problem. 
+
+&lt;br&gt;
+
+.hi-pink[Q]: consider the following .hi-pink[three problem settings] and .hi-pink[label them] as regression, classification or clustering.
+
+&lt;br&gt;
+
+1. In disability insurance: how do disability rates depend on the state of the economy (e.g. GDP)?
+
+2. In MTPL insurance: predict whether a claim is attritional or large, *in casu* a claim that exceeds the threshold of 100 000 EUR?
+
+3. How can we group customers based on the insurance products they bought from the company? 
+
+]
+
+
+---
+
+class: inverse, center, middle
+name: accuracy
+
+# Model accuracy and loss functions
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=796px&gt;&lt;/html&gt;
+
+---
+
+# Predictive modeling
+
+How to use the observed data to learn or to estimate the unknown `\(\color{#3b3b9a}{f}(.)\)`?
+
+`$$\begin{eqnarray*}
+\color{#FFA500}{y} &amp;=&amp; \color{#3b3b9a}{f}(\color{#e64173}{x_1,x_2,\ldots,x_p})+\epsilon.
+\end{eqnarray*}$$`
+
+--
+
+How do I .KULbginline[estimate] `\(\color{#3b3b9a}{f}(.)\)` - one way to phrase *all questions* that underly statistical &amp; machine learning.
+
+--
+
+.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] &amp;nbsp; - &amp;nbsp; main reasons we want to .KULbginline[learn about] `\(\color{#3b3b9a}{f}(.)\)` 
+
+--
+
+.pull-left[
+.font120[.KULbginline[prediction]] 
+&lt;br&gt;
+predict the target `\(\color{#FFA500}{y}\)` as `\(\hat{\color{#3b3b9a}{f}}(\color{#e64173}{x})\)`
+&lt;br&gt;
+.font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M509.5 184.6L458.9 32.8C452.4 13.2 434.1 0 413.4 0H272v192h238.7c-.4-2.5-.4-5-1.2-7.4zM240 0H98.6c-20.7 0-39 13.2-45.5 32.8L2.5 184.6c-.8 2.4-.8 4.9-1.2 7.4H240V0zM0 224v240c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224H0z"/&gt;&lt;/svg&gt;] - as black box setting? 
+&lt;br&gt; &lt;br&gt;
+.font120[.KULbginline[inference]]
+&lt;br&gt;
+how does target `\(\color{#FFA500}{y}\)` depend on features `\(\color{#e64173}{x}\)`? 
+&lt;br&gt;
+.font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 640 512"&gt;&lt;path d="M425.7 256c-16.9 0-32.8-9-41.4-23.4L320 126l-64.2 106.6c-8.7 14.5-24.6 23.5-41.5 23.5-4.5 0-9-.6-13.3-1.9L64 215v178c0 14.7 10 27.5 24.2 31l216.2 54.1c10.2 2.5 20.9 2.5 31 0L551.8 424c14.2-3.6 24.2-16.4 24.2-31V215l-137 39.1c-4.3 1.3-8.8 1.9-13.3 1.9zm212.6-112.2L586.8 41c-3.1-6.2-9.8-9.8-16.7-8.9L320 64l91.7 152.1c3.8 6.3 11.4 9.3 18.5 7.3l197.9-56.5c9.9-2.9 14.7-13.9 10.2-23.1zM53.2 41L1.7 143.8c-4.6 9.2.3 20.2 10.1 23l197.9 56.5c7.1 2 14.7-1 18.5-7.3L320 64 69.8 32.1c-6.9-.8-13.5 2.7-16.6 8.9z"/&gt;&lt;/svg&gt;] - as white box setting? 
+]
+--
+.pull-right[
+
+&lt;img src="img/prediction_inference.png" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+
+name: prediction-error
+
+# Prediction errors
+
+Why we're stuck with .KULbginline[irreducible error]
+
+assume `\(\hat{\color{#3b3b9a}{f}}\)` and `\(\color{#e64173}{x}\)` given, then
+
+$$
+`\begin{aligned}
+  \mathop{E}\left[ \left\{ \color{#FFA500}{y} - \hat{\color{#FFA500}{y}} \right\}^2 \right]
+  &amp;=
+  \mathop{E}\left[ \left\{ \color{#3b3b9a}{f}(\color{#e64173}{x}) + \epsilon + \hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}) \right\}^2 \right] \\
+  &amp;= \underbrace{\left[ \color{#3b3b9a}{f}(\color{#e64173}{x}) - \hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}) \right]^2}_{\text{Reducible}} + \underbrace{\mathop{\text{Var}} \left( \color{#e64173}{\epsilon} \right)}_{\text{Irreducible}}
+\end{aligned}`
+$$
+In .KULbginline[less math]:
+
+- if `\(\epsilon\)` exists, then `\(\color{#e64173}{x}\)` cannot perfectly explain `\(\color{#FFA500}{y}\)`
+
+- so even if `\(\hat{\color{#3b3b9a}{f}} = \color{#3b3b9a}{f}\)`, we still have irreducible error.
+
+--
+
+Thus, to form our .KULbginline[best predictors], we will .KULbginline[minimize reducible error].
+
+---
+
+name: model-accuracy
+
+# Model accuracy
+
+We assess .KULbginline[model] or .KULbginline[predictive accuracy] by 
+evaluating how well predictions actually match observed data.
+
+--
+
+Use .KULbginline[loss functions], i.e. metrics that compare predicted values to actual values.
+
+--
+
+.pull-left[.KULbginline[Regression], use e.g. the .hi-pink[Mean Squared Error (MSE)]
+
+`$$\begin{eqnarray*}
+\frac{1}{n} \sum_{i=1}^n (\color{#FFA500}{y}_i - \hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}_i))^2,
+\end{eqnarray*}$$`
+
+Recall: `\(\color{#FFA500}{y}_i - \hat{\color{#FFA500}{y}}_i = \color{#FFA500}{y}_i - \hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}_i)\)` is the prediction error.
+
+Objective &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 496 512"&gt;&lt;path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"/&gt;&lt;/svg&gt; : minimize!]
+
+--
+
+.pull-right[.KULbginline[Classification], use e.g. the .hi-pink[cross-entropy] or .hi-pink[log loss]
+`$$\begin{eqnarray*}
+-\frac{1}{n} \sum_{i=1}^n \left(\color{#FFA500}{y}_i \cdot \log{(p_i)} + (1-\color{#FFA500}{y}_i) \cdot \log{(1-p_i)}\right).
+\end{eqnarray*}$$`
+ 
+Objective &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 496 512"&gt;&lt;path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"/&gt;&lt;/svg&gt; : minimize!
+
+]
+
+--
+
+&lt;br&gt;
+
+.KULbginline[Many other useful loss functions] (e.g. deviance in regression, Gini index in classification).
+
+.font140[.KULbginline[Take-away]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] &amp;nbsp; - &amp;nbsp; a loss function emphasizes certain types of errors over others &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 448 512"&gt;&lt;path d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"/&gt;&lt;/svg&gt; pick a meaningful one!
+
+
+---
+
+class: inverse, center, middle
+name: overfit
+
+# Overfitting and bias-variance trade off
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=796px&gt;&lt;/html&gt;
+
+
+---
+
+# Overfitting
+
+The .KULbginline[Signal and the Noise] discussion!
+
+--
+
+Which of the following three models (in green-blue-ish) will best generalize to new data? 
+
+&lt;img src="ML_part1_files/figure-html/overfitting-linear-regression-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Inspired by Brandon Greenwell's [Introduction to Machine Learning in &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#F92672;" viewBox="0 0 581 512"&gt;&lt;path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/&gt;&lt;/svg&gt;](https://github.com/bgreenwell/intro-ml-r).]
+
+---
+
+# Overfitting (cont.)
+
+With a small training error, but large test error, the model is .KULbginline[overfitting] or working too hard!
+
+--
+
+The expected value of the .hi-pink[test MSE]:
+
+`$$\begin{eqnarray*}
+    E\left(\color{#FFA500}{y}_0-\hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}_0)\right)^2 &amp;=&amp; \text{Var}(\hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}_0))+[\text{Bias}(\hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}_0))]^2+\text{Var}(\epsilon).
+    \end{eqnarray*}$$`
+
+--
+
+.font140[.KULbginline[In general]] - with more flexible methods
+
+* variance .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"/&gt;&lt;/svg&gt;] and bias .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"/&gt;&lt;/svg&gt;]
+
+* their relative rate of change determines whether the test error increases or decreases
+
+--
+
+.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;]
+
+* U-shape curves of .hi-pink[test MSE] w.r.t model flexibility
+
+* the .hi-pink[bias-variance tradeoff] is central to quality prediction.
+
+---
+
+# Bias-variance trade off
+
+&lt;br&gt; 
+
+.center[
+&lt;img src="img/bias_variance_trade_off.png" alt="Drawing" style="width: 600px;"/&gt;  
+]
+
+Source: James et al. (2013) on [http://faculty.marshall.usc.edu/gareth-james/ISL/](An introduction to statistical learning).
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+Data are generated from: `\(\color{#FFA500}{y} = \color{#3b3b9a}{f}(\color{#e64173}{x})+\epsilon\)`, with the black curve as the true `\(\color{#3b3b9a}{f}\)`. The orange (linear regression), blue (smoothing splines) and green (smoothing splines) curves are three estimates for `\(\color{#3b3b9a}{f}\)`, with increasing level of complexity.
+
+.hi-pink[Q]: which model do you prefer (orange, blue, green) for each of the following examples? Why? Discuss with your neighbour.
+
+.center[
+&lt;img src="img/2.9 ISL.png" alt="Drawing" style="width: 500px;"/&gt; 
+]
+
+.footnote[Example from James et al. (2013) on [http://faculty.marshall.usc.edu/gareth-james/ISL/](An introduction to statistical learning).]
+
+]
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+Data are generated from: `\(\color{#FFA500}{y} = \color{#3b3b9a}{f}(\color{#e64173}{x})+\epsilon\)`, with the black curve as the true `\(\color{#3b3b9a}{f}\)`. The orange (linear regression), blue (smoothing splines) and green (smoothing splines) curves are three estimates for `\(\color{#3b3b9a}{f}\)`, with increasing level of complexity.
+
+.hi-pink[Q]: which model do you prefer (orange, blue, green) for each of the following examples? Why? Discuss with your neighbour.
+
+.center[
+&lt;img src="img/2.10 ISL.png" alt="Drawing" style="width: 500px;"/&gt; 
+]
+
+.footnote[Example from James et al. (2013) on [http://faculty.marshall.usc.edu/gareth-james/ISL/](An introduction to statistical learning).]
+
+]
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+Data are generated from: `\(\color{#FFA500}{y} = \color{#3b3b9a}{f}(\color{#e64173}{x})+\epsilon\)`, with the black curve as the true `\(\color{#3b3b9a}{f}\)`. The orange (linear regression), blue (smoothing splines) and green (smoothing splines) curves are three estimates for `\(\color{#3b3b9a}{f}\)`, with increasing level of complexity.
+
+.hi-pink[Q]: which model do you prefer (orange, blue, green) for each of the following examples? Why? Discuss with your neighbour.
+
+.center[
+&lt;img src="img/2.11 ISL.png" alt="Drawing" style="width: 500px;"/&gt; 
+]
+
+.footnote[Example from James et al. (2013) on [http://faculty.marshall.usc.edu/gareth-james/ISL/](An introduction to statistical learning).]
+
+]
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+.font120[The *K*-nearest neighbors (KNN) classifier]
+
+- take the *K* observations in the training data set that are 'closest' to test observation `\(\color{#e64173}{x}_0\)`, calculate 
+
+
+`$$\begin{eqnarray*}
+\text{Pr}(\color{#FFA500}{Y}=j|\color{#e64173}{X} = \color{#e64173}{x}_0) &amp;=&amp; \frac{1}{K} \sum_{i \in \mathcal{N}_0} \mathbb{I}(\color{#FFA500}{y}_i=j).
+\end{eqnarray*}$$`
+
+- KNN then assigns the test observation `\(\color{#e64173}{x}_0\)` to the class `\(j\)` with the highest probability, e.g. with *K=3* (from James et al., 2013)
+
+.center[
+&lt;img src="img/2.14 ISL.png" alt="Drawing" style="width: 300px;"/&gt; 
+]
+
+.hi-pink[Q]: is KNN a supervised learning or unsupervised learning method? Discuss with your neighbour.
+
+]
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+.font120[The *K*-nearest neighbors (KNN) classifier (cont.)]
+
+Now compare KNN with *K* equals 1, 10 and 100.
+
+.center[
+&lt;img src="img/KNN_K_1.png" alt="Drawing" style="height: 250px;"/&gt; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;img src="img/KNN_K_10.png" alt="Drawing" style="height: 250px;"/&gt; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;img src="img/KNN_K_100.png" alt="Drawing" style="height: 250px;"/&gt; 
+]
+
+.hi-pink[Q]: which classifier do you prefer? Which of these classifiers is under-fitting, which one is over-fitting?
+
+]
+
+---
+
+class: inverse, center, middle
+name: resampling
+
+# Data splitting and resampling methods &lt;br&gt; with {caret} and {rsample}
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=796px&gt;&lt;/html&gt;
+
+
+---
+
+name: ames
+
+# Ames Iowa housing data
+
+We will use the Ames Iowa housing data. There are 2,930 properties in the data set. 
+
+The `Sale_Price` (target or response) was recorded along with 80 predictors, including:
+
+* location (e.g. neighborhood) and lot information
+* house components (garage, fireplace, pool, porch, etc.)
+* general assessments such as overall quality and condition
+* number of bedrooms, baths, and so on. 
+
+More details in [De Cock (2011, Journal of Statistics Education)](http://ww2.amstat.org/publications/jse/v19n3/decock.pdf).
+
+The raw data are at [`http://bit.ly/2whgsQM`](http://bit.ly/2whgsQM) but we will use a processed version found in the [`AmesHousing`](https://github.com/topepo/AmesHousing) package. 
+
+You will load the data with the `make_ames()` function from the `AmesHousing` library, and store the data in the object `ames`:
+
+
+```r
+ames &lt;- AmesHousing::make_ames()
+```
+
+---
+
+name: data-splitting
+
+# Data splitting
+
+We fit our model on past data `\(\{(\color{#e64173}{x}_1,\color{#FFA500}{y}_1),(\color{#e64173}{x}_2,\color{#FFA500}{y}_2),\ldots, (\color{#e64173}{x}_n,\color{#FFA500}{y}_n)\}\)`
+and get `\(\hat{\color{#3b3b9a}{f}}\)`. 
+
+*What we want*: how does our model .KULbginline[generalize] to new, unseen data `\((\color{#e64173}{x}_0,\color{#FFA500}{y}_0)\)`, or: &amp;nbsp; is `\(\hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}_0)\)` close to `\(\color{#FFA500}{y}_0\)`?
+
+.left-column[
+
+.KULbginline[Training set]
+
+* to develop, to train, to tune, to compare different settings, ...
+
+.KULbginline[Test set]
+
+* to obtain unbiased estimate of final model's performance.
+]
+
+.right-column[
+
+&lt;img src="img/data_splitting.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; .footnote[Picture taken from [Introduction to Machine Learning in &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#F92672;" viewBox="0 0 581 512"&gt;&lt;path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/&gt;&lt;/svg&gt;](https://github.com/bgreenwell/intro-ml-r).]
+
+
+]
+---
+
+# Data splitting in base
+
+We first demonstrate the splitting of the `ames` housing data into a training and test set, using `base` R instructions. 
+
+.pull-left[
+
+
+```r
+*set.seed(123)
+index_1 &lt;- sample(1 : nrow(ames), 
+                  size = round(nrow(ames) * 0.7))  
+train_1 &lt;- ames[index_1, ]   
+test_1  &lt;- ames[-index_1, ]  
+
+nrow(train_1)/nrow(ames)
+```
+
+]
+
+.pull-right[
+
+Use `set.seed()` for reproducibility.
+
+]
+
+---
+
+# Data splitting in base
+
+We first demonstrate the splitting of the `ames` housing data into a training and test set, using `base` R instructions. 
+
+.pull-left[
+
+
+```r
+set.seed(123) 
+*index_1 &lt;- sample(1 : nrow(ames),
+*                 size = round(nrow(ames) * 0.7))
+train_1 &lt;- ames[index_1, ]   
+test_1  &lt;- ames[-index_1, ]  
+
+nrow(train_1)/nrow(ames)
+```
+
+]
+
+.pull-right[
+
+Sample indices from `1 : nrow(ames)` such that in total 70% of the records is selected.
+
+Vector `index_1` now stores the row numbers of the selected records.
+
+]
+
+---
+
+# Data splitting in base
+
+We first demonstrate the splitting of the `ames` housing data into a training and test set, using `base` R instructions. 
+
+.pull-left[
+
+
+```r
+set.seed(123) 
+index_1 &lt;- sample(1 : nrow(ames), 
+                  size = round(nrow(ames) * 0.7))   
+*train_1 &lt;- ames[index_1, ]
+test_1  &lt;- ames[-index_1, ]  
+
+nrow(train_1)/nrow(ames)
+```
+
+]
+
+.pull-right[
+
+Put the selected records in training set `train_1` by subsetting the original data frame `ames` with the row numbers stored in `index_1`.
+
+]
+
+---
+
+# Data splitting in base
+
+We first demonstrate the splitting of the `ames` housing data into a training and test set, using `base` R instructions. 
+
+.pull-left[
+
+
+```r
+set.seed(123) 
+index_1 &lt;- sample(1 : nrow(ames), 
+                  size = round(nrow(ames) * 0.7))   
+train_1 &lt;- ames[index_1, ]   
+*test_1  &lt;- ames[-index_1, ]
+
+nrow(train_1)/nrow(ames)
+```
+
+]
+
+.pull-right[
+
+Put the not selected records in test set `test_1`.
+
+]
+
+---
+
+# Data splitting in base
+
+We first demonstrate the splitting of the `ames` housing data into a training and test set, using `base` R instructions. 
+
+.pull-left[
+
+
+```r
+set.seed(123) 
+index_1 &lt;- sample(1 : nrow(ames), 
+                  size = round(nrow(ames) * 0.7))   
+train_1 &lt;- ames[index_1, ]   
+test_1  &lt;- ames[-index_1, ]  
+
+*nrow(train_1)/nrow(ames)
+## [1] 0.7
+```
+
+]
+
+.pull-right[
+
+What is the ratio of the number of records in `train_1` versus original data set `ames`?
+
+]
+
+---
+
+# Data splitting in {caret}
+
+The {caret} package - short for Classification And REgression Training - contains functions to streamline the model training process for complex regression and classification problems.
+
+With the {caret} package, the function `createDataPartition` will do the job. 
+
+.pull-left[
+
+
+```r
+*library(caret)
+*set.seed(123)
+index_2 &lt;- caret::createDataPartition(
+                    y = ames$Sale_Price, 
+                    p = 0.7, 
+                    list = FALSE)
+train_2 &lt;- ames[index_2, ]
+test_2  &lt;- ames[-index_2, ]
+
+nrow(train_2)/nrow(ames) 
+```
+
+]
+
+.pull-right[
+
+Load the library {caret}.
+
+Use `set.seed()` for reproducibility.
+
+]
+
+---
+
+# Data splitting in {caret}
+
+The {caret} package - short for Classification And REgression Training - contains functions to streamline the model training process for complex regression and classification problems.
+
+With the {caret} package, the function `createDataPartition` will do the job. 
+
+.pull-left[
+
+
+```r
+library(caret) 
+set.seed(123)  
+*index_2 &lt;- caret::createDataPartition(
+*                   y = ames$Sale_Price,
+*                   p = 0.7,
+*                   list = FALSE)
+train_2 &lt;- ames[index_2, ]
+test_2  &lt;- ames[-index_2, ]
+
+nrow(train_2)/nrow(ames) 
+```
+
+]
+
+.pull-right[
+
+`createDataPartition` takes in `y` the vector of outcomes of the data set we wish to split. `createDataPartition` will do stratified sampling based on levels of `y` (for factor) or groups determined by the percentiles of `y` (for numeric).
+
+The percentage of data that goes to training is `p`.
+
+`list = FALSE` tells the function not to store the results in a list, but in a matrix (here: with 1 column)
+
+]
+
+
+
+---
+
+# Data splitting in {rsample}  &lt;img src="img/rsample.png" class="title-hex"&gt;
+
+The {rsample} package, part of the {tidymodels} initiative of RStudio, is home to a wide very variety of resampling functions. 
+
+The documentation is at [rsample: the basics](https://tidymodels.github.io/rsample/articles/Basics.html).
+
+.pull-left[
+
+```r
+*library(rsample)
+*set.seed(123)
+split_1  &lt;- rsample::initial_split(ames, prop = 0.7)
+train_3  &lt;- training(split_1)
+test_3   &lt;- testing(split_1)
+
+nrow(train_3)/nrow(ames)
+```
+]
+
+.pull-right[
+
+Load the `rsample` package.
+
+Use `set.seed()` for reproducibility.
+
+]
+
+---
+
+# Data splitting in {rsample}  &lt;img src="img/rsample.png" class="title-hex"&gt;
+
+The {rsample} package, part of the {tidymodels} initiative of RStudio, is home to a wide very variety of resampling functions. 
+
+The documentation is at [rsample: the basics](https://tidymodels.github.io/rsample/articles/Basics.html).
+
+.pull-left[
+
+```r
+library(rsample)
+set.seed(123) 
+*split_1  &lt;- rsample::initial_split(ames, prop = 0.7)
+train_3  &lt;- training(split_1)
+test_3   &lt;- testing(split_1)
+
+nrow(train_3)/nrow(ames)
+```
+]
+
+.pull-right[
+
+`initial_split` from the {rsample} package. 
+
+Split the data `ames` into a training set and testing set.
+
+`prop` is the proportion of data to be retained as training
+
+]
+
+---
+
+# Data splitting in {rsample} &lt;img src="img/rsample.png" class="title-hex"&gt;
+
+The {rsample} package, part of the {tidymodels} initiative of RStudio, is home to a wide very variety of resampling functions. 
+
+The documentation is at [rsample: the basics](https://tidymodels.github.io/rsample/articles/Basics.html).
+
+.pull-left[
+
+```r
+library(rsample)
+set.seed(123) 
+split_1  &lt;- rsample::initial_split(ames, prop = 0.7)  
+*train_3  &lt;- training(split_1)
+*test_3   &lt;- testing(split_1)
+
+nrow(train_3)/nrow(ames)
+```
+]
+
+.pull-right[
+
+The result of `rsample::initial_split` is an `rset` object.
+
+It is stored in `split_1` and ready for inspection.
+
+Apply the functions `training` and `test` to this object to extract the data in each split.
+
+]
+
+---
+
+# Data splitting comparison
+
+As a check, we plot the `Sale_Price` as available in the train (in black) vs test (in red) data sets, created by each of the three demonstrated methods.
+
+
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-19-1.svg" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+# Resampling methods
+
+In [Data splitting](#data-splitting), we discussed *training* and *test* set. Let's now dive deeper into *resampling* methods.
+
+.hi-KUL[Validation set] (visual inspired by [Ed Rubin's course](https://github.com/edrubin/EC524W20))
+
+- we hold out a subset of the training data (e.g. 30%) and then evaluate the model on this held out validation set
+
+- calculate the loss function on this validation set, as approximation of the true test error
+
+- .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M466.27 225.31c4.674-22.647.864-44.538-8.99-62.99 2.958-23.868-4.021-48.565-17.34-66.99C438.986 39.423 404.117 0 327 0c-7 0-15 .01-22.22.01C201.195.01 168.997 40 128 40h-10.845c-5.64-4.975-13.042-8-21.155-8H32C14.327 32 0 46.327 0 64v240c0 17.673 14.327 32 32 32h64c11.842 0 22.175-6.438 27.708-16h7.052c19.146 16.953 46.013 60.653 68.76 83.4 13.667 13.667 10.153 108.6 71.76 108.6 57.58 0 95.27-31.936 95.27-104.73 0-18.41-3.93-33.73-8.85-46.54h36.48c48.602 0 85.82-41.565 85.82-85.58 0-19.15-4.96-34.99-13.73-49.84zM64 296c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm330.18 16.73H290.19c0 37.82 28.36 55.37 28.36 94.54 0 23.75 0 56.73-47.27 56.73-18.91-18.91-9.46-66.18-37.82-94.54C206.9 342.89 167.28 272 138.92 272H128V85.83c53.611 0 100.001-37.82 171.64-37.82h37.82c35.512 0 60.82 17.12 53.12 65.9 15.2 8.16 26.5 36.44 13.94 57.57 21.581 20.384 18.699 51.065 5.21 65.62 9.45 0 22.36 18.91 22.27 37.81-.09 18.91-16.71 37.82-37.82 37.82z"/&gt;&lt;/svg&gt;] high variability + inefficient use of data
+
+- picture .hi-KUL[validation set (30%)] and .hi-pink[training set (70%)]
+
+
+
+&lt;img src="ML_part1_files/figure-html/plot-validation-set-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Resampling methods (cont.)
+
+In [Data splitting](#data-splitting), we discussed *training* and *test* set. Let's now dive deeper into *resampling* methods.
+
+.hi-KUL[*k* fold cross validation] (visual inspired by [Ed Rubin's course](https://github.com/edrubin/EC524W20))
+
+- divide training data into *k* equally sized groups (e.g. .hi-KUL[group 1] on the picture)
+
+- iterate over the *k* groups, treating each as validation set once (and train model on the other *k-1* groups) (e.g. get .hi-KUL[MSE&lt;sub&gt;1&lt;sub/&gt;] corresponding to fold 1)
+
+- average the folds' loss to estimate the true test error
+
+- .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z"/&gt;&lt;/svg&gt;] greater accuracy (compared to validation set).
+
+
+
+&lt;img src="ML_part1_files/figure-html/plot-CV-set-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Resampling methods (cont.)
+
+In [Data splitting](#data-splitting), we discussed *training* and *test* set. Let's now dive deeper into *resampling* methods.
+
+.hi-KUL[*k* fold cross validation] (visual inspired by [Ed Rubin's course](https://github.com/edrubin/EC524W20))
+
+- divide training data into *k* equally sized groups (e.g. .hi-KUL[group 1] on the picture)
+
+- iterate over the *k* groups, treating each as validation set once (and train model on the other *k-1* groups) (e.g. get .hi-KUL[MSE&lt;sub&gt;1&lt;sub/&gt;] corresponding to fold 1)
+
+- average the folds' loss to estimate the true test error
+
+- .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z"/&gt;&lt;/svg&gt;] greater accuracy (compared to validation set).
+
+&lt;img src="ML_part1_files/figure-html/plot-CV3-set-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Resampling methods (cont.)
+
+In [Data splitting](#data-splitting), we discussed *training* and *test* set. Let's now dive deeper into *resampling* methods.
+
+.hi-KUL[*k* fold cross validation] (picture from [Boehmke &amp; Greenwell](https://koalaverse.github.io/homlr/))
+
+.center[
+&lt;img src="img/k_fold_CV.png" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Resampling methods (cont.)
+
+In [Data splitting](#data-splitting), we discussed *training* and *test* set. Let's now dive deeper into *resampling* methods.
+
+.hi-KUL[Leave-one-out cross validation] (visual inspired by [Ed Rubin's course](https://github.com/edrubin/EC524W20))
+
+- each observation takes a turn as the validation set (e.g. get .hi-KUL[MSE&lt;sub&gt;3&lt;sub/&gt;])
+
+- other *n-1* observations are the training set
+
+- average the folds' loss to estimate the true test error
+
+- .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M466.27 225.31c4.674-22.647.864-44.538-8.99-62.99 2.958-23.868-4.021-48.565-17.34-66.99C438.986 39.423 404.117 0 327 0c-7 0-15 .01-22.22.01C201.195.01 168.997 40 128 40h-10.845c-5.64-4.975-13.042-8-21.155-8H32C14.327 32 0 46.327 0 64v240c0 17.673 14.327 32 32 32h64c11.842 0 22.175-6.438 27.708-16h7.052c19.146 16.953 46.013 60.653 68.76 83.4 13.667 13.667 10.153 108.6 71.76 108.6 57.58 0 95.27-31.936 95.27-104.73 0-18.41-3.93-33.73-8.85-46.54h36.48c48.602 0 85.82-41.565 85.82-85.58 0-19.15-4.96-34.99-13.73-49.84zM64 296c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm330.18 16.73H290.19c0 37.82 28.36 55.37 28.36 94.54 0 23.75 0 56.73-47.27 56.73-18.91-18.91-9.46-66.18-37.82-94.54C206.9 342.89 167.28 272 138.92 272H128V85.83c53.611 0 100.001-37.82 171.64-37.82h37.82c35.512 0 60.82 17.12 53.12 65.9 15.2 8.16 26.5 36.44 13.94 57.57 21.581 20.384 18.699 51.065 5.21 65.62 9.45 0 22.36 18.91 22.27 37.81-.09 18.91-16.71 37.82-37.82 37.82z"/&gt;&lt;/svg&gt;] very computationally demanding. 
+
+
+
+
+&lt;img src="ML_part1_files/figure-html/plot-LOOCV-set-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Resampling methods in {caret}
+
+We set up 5-fold cross validation using the {caret} package.
+
+.pull-left[
+
+
+```r
+set.seed(123)  
+*cv_folds &lt;- caret::createFolds(y = ames$Sale_Price,
+*                              k = 5, list = TRUE,
+*                              returnTrain = TRUE)
+```
+
+
+```r
+str(cv_folds)
+```
+
+
+```
+## List of 5
+##  $ Fold1: int [1:2344] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ Fold2: int [1:2343] 2 3 4 6 7 8 9 11 13 14 ...
+##  $ Fold3: int [1:2344] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ Fold4: int [1:2344] 1 3 5 6 10 11 12 13 14 15 ...
+##  $ Fold5: int [1:2345] 1 2 4 5 7 8 9 10 11 12 ...
+```
+]
+
+.pull-right[
+
+The `createFolds` function from {caret} splits the data into `k` groups.
+
+`list = TRUE` indicates that the results should be stored in a list
+
+`returnTrain = TRUE` indicates that the values returned (and stored) in the elements of the list are - per fold - the row numbers of the observations selected for training.
+
+]
+
+---
+
+# Resampling methods in {caret}
+
+We set up 5-fold cross validation using the {caret} package.
+
+.pull-left[
+
+
+```r
+set.seed(123)  
+cv_folds &lt;- caret::createFolds(y = ames$Sale_Price,        
+                               k = 5, list = TRUE,     
+                               returnTrain = TRUE)    
+```
+
+
+```r
+*str(cv_folds)
+```
+
+
+```
+## List of 5
+##  $ Fold1: int [1:2344] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ Fold2: int [1:2343] 2 3 4 6 7 8 9 11 13 14 ...
+##  $ Fold3: int [1:2344] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ Fold4: int [1:2344] 1 3 5 6 10 11 12 13 14 15 ...
+##  $ Fold5: int [1:2345] 1 2 4 5 7 8 9 10 11 12 ...
+```
+]
+
+.pull-right[
+
+Inspect the list `cv_folds` that was returned by `createFolds(.)`. 
+
+This list has `k` elements, each storing the row numbers of the observations in the training set of the fold under consideration.
+
+]
+
+---
+
+# Resampling methods in {caret} &lt;img src="img/purrr.png" class="title-hex"&gt;
+
+.pull-left[
+
+
+```r
+*mean(ames[cv_folds$Fold1, ]$Sale_Price)
+```
+
+
+```
+## [1] 180954
+```
+
+
+```r
+map_dbl(cv_folds,                     
+        function(x) {                   
+          mean(ames[x, ]$Sale_Price)    
+        })                              
+```
+
+
+```
+##  Fold1  Fold2  Fold3  Fold4  Fold5 
+## 180954 180782 180646 180563 181035
+```
+
+]
+
+.pull-right[
+
+We calculate the average `Sale_Price` per fold, that is: we average the `Sale_Price` over all observations selected in the training set of a particular fold. 
+
+That would go as follows, for `Fold1` in the list `cv_folds`
+
+
+```r
+mean(ames[cv_folds$Fold1, ]$Sale_Price)
+```
+
+and similarly for `Fold2`, ..., `Fold5`. 
+
+]
+
+---
+
+# Resampling methods in {caret} &lt;img src="img/purrr.png" class="title-hex"&gt;
+
+.pull-left[
+
+
+```r
+mean(ames[cv_folds$Fold1, ]$Sale_Price) 
+```
+
+
+```
+## [1] 180954
+```
+
+
+```r
+*map_dbl(cv_folds,
+*       function(x) {
+*         mean(ames[x, ]$Sale_Price)
+*       })
+```
+
+
+```
+##  Fold1  Fold2  Fold3  Fold4  Fold5 
+## 180954 180782 180646 180563 181035
+```
+
+
+
+]
+
+.pull-right[
+
+We apply the function `mean(ames[___, ]$Sale_Price)` over all `k` elements of the list `cv_folds`.
+
+`map_dbl(.x, .f)` is one of the `map` functions from the `purrr` package (part of `tidyverse`), used for functional programming in R.
+
+`map_dbl(.x, .f)` applies function `.f` to each element of list `.x`.
+
+The result is a double-precision vector, hence `map_dbl` and not just `map`.
+
+Btw, it is a historical anomaly that R has two names for its floating-point vectors, `double` and `numeric`.
+
+]
+
+---
+
+# Resampling methods in {rsample} &lt;img src="img/rsample.png" class="title-hex"&gt;
+
+.pull-left[
+
+
+```r
+set.seed(123)  
+*cv_rsample &lt;- rsample::vfold_cv(ames, v = 5)
+cv_rsample$splits
+```
+
+
+```
+## [[1]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+## 
+## [[2]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+## 
+## [[3]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+## 
+## [[4]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+## 
+## [[5]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+```
+
+]
+
+.pull-right[
+
+The function `vfold_cv` splits the data into `v` groups (called folds) of equal size. 
+
+]
+
+---
+
+# Resampling methods in {rsample} &lt;img src="img/rsample.png" class="title-hex"&gt;
+
+.pull-left[
+
+
+```r
+set.seed(123)  
+cv_rsample &lt;- rsample::vfold_cv(ames, v = 5) 
+*cv_rsample$splits
+```
+
+
+```
+## [[1]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+## 
+## [[2]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+## 
+## [[3]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+## 
+## [[4]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+## 
+## [[5]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+```
+
+]
+
+.pull-right[
+
+The function `vfold_cv` splits the data into `v` groups (called folds) of equal size. 
+
+We store the result of `vfold_cv` in the object `cv_rsample`.
+
+The resulting object stores `v` resamples of the original data set.
+
+]
+
+---
+
+# Resampling methods in {rsample} &lt;img src="img/rsample.png" class="title-hex"&gt;
+
+.pull-left[
+
+
+```r
+set.seed(123)  
+cv_rsample &lt;- rsample::vfold_cv(ames, v = 5) 
+```
+
+
+
+
+```r
+*cv_rsample$splits[[1]]
+```
+
+
+```
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+```
+
+
+```r
+cv_rsample$splits[[1]] %&gt;% analysis() %&gt;% dim()
+```
+
+
+```
+## [1] 2344   81
+```
+
+
+```r
+cv_rsample$splits[[1]] %&gt;% assessment() %&gt;% dim()
+```
+
+
+```
+## [1] 586  81
+```
+
+]
+
+.pull-right[
+
+Inspect the composition of the first resample: 
+
+2,344 (out of 2,930) observations go to the analysis data (for training, i.e. `v-1` folds), 
+
+586 (out of 2,930) observations go to the assessment data (for testing, the final fold).   
+
+]
+
+---
+
+# Resampling methods in {rsample} &lt;img src="img/rsample.png" class="title-hex"&gt;
+
+.pull-left[
+
+
+```r
+set.seed(123)  
+cv_rsample &lt;- rsample::vfold_cv(ames, v = 5) 
+```
+
+
+
+
+```r
+cv_rsample$splits[[1]] 
+```
+
+
+```
+## &lt;Analysis/Assess/Total&gt;
+## &lt;2344/586/2930&gt;
+```
+
+
+```r
+*cv_rsample$splits[[1]] %&gt;% analysis() %&gt;% dim()
+```
+
+
+```
+## [1] 2344   81
+```
+
+
+```r
+*cv_rsample$splits[[1]] %&gt;% assessment() %&gt;% dim()
+```
+
+
+```
+## [1] 586  81
+```
+
+]
+
+.pull-right[
+
+Inspect the composition of the first resample: 
+
+get the dimensions (`dim()`) of the analysis data (`analysis()`) of the first resample 
+
+get the dimensions (`dim()`) of the assessment data (`assessment()`) of the first resample. 
+
+]
+
+---
+
+# Resampling methods in {rsample} &lt;img src="img/purrr.png" class="title-hex"&gt; &lt;img src="img/rsample.png" class="title-hex"&gt;
+
+.pull-left[
+
+
+```r
+map_dbl(cv_rsample$splits,
+        function(x) {
+          mean(rsample::analysis(x)$Sale_Price)
+        })
+```
+
+
+```
+## [1] 181311 180991 180840 181269 179570
+```
+
+
+```r
+map_dbl(cv_rsample$splits,
+        function(x) {
+          nrow(rsample::analysis(x))
+        })
+```
+
+
+```
+## [1] 2344 2344 2344 2344 2344
+```
+
+]
+
+.pull-right[
+
+As before, use `map_dbl(.x, .f)` to apply a function `.f` over all elements of a list `.x`. 
+
+Here the list is stored in `cv_rsample$splits`, with `v = 5` elements. 
+
+]
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+.hi-pink[Q]: Now you're going to combine data splitting and resampling to create training, validation and test folds in the Ames data.
+
+Use `caret` or `rsample` and make the validation folds of the same size as the test fold.
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+with `caret`
+
+
+```r
+set.seed(5678)
+ind_caret &lt;- caret::createDataPartition(
+                      y = ames$Sale_Price,
+                      p = 5/6, list = FALSE)
+train_caret &lt;- ames[ind_caret, ]
+test_caret  &lt;- ames[-ind_caret, ]
+
+cv_caret &lt;- caret::createFolds(
+            y = train_caret$Sale_Price, k = 5, 
+            list = TRUE, returnTrain = FALSE)
+
+purrr::map_dbl(cv_caret,
+               ~ nrow(ames[., ]))
+## Fold1 Fold2 Fold3 Fold4 Fold5 
+##   488   488   489   489   489
+nrow(test_caret)
+## [1] 487
+```
+
+
+]
+
+.pull-right[
+
+with `rsample`
+
+
+```r
+set.seed(5678)
+ind_rsample  &lt;- rsample::initial_split(ames,
+                                       prop = 5/6)
+train_rsample  &lt;- rsample::training(ind_rsample)
+test_rsample   &lt;- rsample::testing(ind_rsample)
+
+cv_rsample &lt;- rsample::vfold_cv(train_rsample, v = 5)
+
+map_dbl(cv_rsample$splits,
+        ~ nrow(rsample::assessment(.)))
+## [1] 489 489 488 488 488
+nrow(test_rsample)
+## [1] 488
+```
+
+]
+
+---
+
+class: inverse, center, middle
+name: tuning
+
+# Parameter tuning with {caret}, {rsample} and {purrr}
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=796px&gt;&lt;/html&gt;
+
+
+---
+
+# Tuning parameters 
+
+.pull-left[Finding the optimal level of flexibility highlights the bias-variance tradeoff.
+
+.hi-pink[Bias] : the error that comes from inaccurately estimating `\(\color{#3b3b9a}{f}\)`.
+
+.hi-pink[Variance] : the amount `\(\hat{\color{#3b3b9a}{f}}\)` would change with a different training sample.
+
+.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] : high variance models more prone to overfitting
+
+* use .hi-pink[resampling methods] to reduce this risk
+
+* hyperparameters (or *tuning parameters*) control complexity, 
+and thus the bias-variance trade-off
+
+* identify their optimal setting, e.g. with a *grid search*
+
+* no analytic expression for these hyperparameters.
+]
+
+.pull-right[
+
+&lt;img src="ML_part1_files/figure-html/bias-variance-knn-1.svg" width="100%" style="display: block; margin: auto;" /&gt;&lt;img src="ML_part1_files/figure-html/bias-variance-knn-2.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Code from Boehmke &amp; Greenwell (2019, Chapter 2) on [Hands-on machine learning with R](https://koalaverse.github.io/homlr/).]
+
+]
+
+
+
+---
+
+# Tuning parameters via grid search
+
+.pull-left-alt[
+
+.center[
+&lt;img src="img/flow_chart_applied_predictive_modeling.jpg" width="85%" style="display: block; margin: auto;" /&gt;
+]
+]
+
+.pull-right-alt[
+
+.hi-pink[Model training &amp; validation phase]
+
+- define a set of candidate values (a *grid*)
+
+- assess model utility across the candidates (use clever *resampling*)
+
+- choose the optimal settings (optimize *loss*)
+
+- refit the model on entire training data with final tuning parameters
+
+- evaluate performance of the model on the test data (under &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 448 512"&gt;&lt;path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/&gt;&lt;/svg&gt;). 
+
+.hi-pink[Model selection] 
+
+- repeat the above steps for different models 
+
+- compare performance of these models that will generalize to new data (via test data, under &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 448 512"&gt;&lt;path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/&gt;&lt;/svg&gt;).
+
+.footnote[Flow chart from Kuhn &amp; Johnson (2013) on [Applied predictive modeling](http://appliedpredictivemodeling.com/).]
+]
+
+---
+
+# Training a model with {caret}
+
+.pull-left[
+
+
+```r
+set.seed(123)
+*cv &lt;- trainControl(method = "cv", number = 5,
+                   returnResamp = "all",  
+                   selectionFunction = "best")
+hyper_grid &lt;- expand.grid(k = seq(2, 150, by = 2)) 
+knn_fit &lt;- train(y ~ x, data = df, method = "knn", 
+                        trControl = cv, 
+                        tuneGrid = hyper_grid)
+knn_fit$bestTune
+```
+
+]
+
+.pull-right[
+
+Use `trainControl` from {caret} to set some control parameters that will be used in the actual `train` function. 
+
+Here, we use `method = cv` and `number = 5` for 5-fold cross validation. 
+
+]
+
+---
+
+# Training a model with {caret}
+
+.pull-left[
+
+
+```r
+set.seed(123)
+cv &lt;- trainControl(method = "cv", number = 5, 
+*                  returnResamp = "all",
+*                  selectionFunction = "best")
+hyper_grid &lt;- expand.grid(k = seq(2, 150, by = 2)) 
+knn_fit &lt;- train(y ~ x, data = df, method = "knn", 
+                        trControl = cv, 
+                        tuneGrid = hyper_grid)
+knn_fit$bestTune
+```
+
+]
+
+.pull-right[
+
+In `trainControl` we put `returnResamp = "all"` to store all resampled summary metrics.
+
+`selectionFunction = "best"` specifies how we select the optimal tuning parameter. With `"best"` the value that minimizes the performance (here: RMSE) is selected. 
+
+Alternative: `selectionFunction = "oneSE"` applies the one standard error rule. 
+
+]
+
+---
+
+# Training a model with {caret}
+
+.pull-left[
+
+
+```r
+set.seed(123)
+cv &lt;- trainControl(method = "cv", number = 5, 
+                   returnResamp = "all",  
+                   selectionFunction = "best") 
+*hyper_grid &lt;- expand.grid(k = seq(2, 150, by = 2))
+knn_fit &lt;- train(y ~ x, data = df, method = "knn", 
+                        trControl = cv, 
+                        tuneGrid = hyper_grid)
+knn_fit$bestTune
+```
+
+]
+
+.pull-right[
+
+Set the grid of *K*-values that will be searched. 
+
+`expand.grid` creates a data frame with one row for each value of *K* to consider. 
+
+]
+
+---
+
+# Training a model with {caret}
+
+.pull-left[
+
+
+```r
+set.seed(123)
+cv &lt;- trainControl(method = "cv", number = 5, 
+                   returnResamp = "all",  
+                   selectionFunction = "best") 
+hyper_grid &lt;- expand.grid(k = seq(2, 150, by = 2))  
+*knn_fit &lt;- train(y ~ x, data = df, method = "knn",
+*                       trControl = cv,
+*                       tuneGrid = hyper_grid)
+knn_fit$bestTune
+```
+
+]
+
+.pull-right[
+
+{caret} will `train` the method `knn` using the settings in `trControl = cv`, across the values of *K* stored in `tuneGrid = hyper_grid`.
+
+The data `df` and formula `y ~ x` are used.
+
+]
+
+---
+
+# Training a model with {caret}
+
+.pull-left[
+
+
+```r
+set.seed(123)
+cv &lt;- trainControl(method = "cv", number = 5, 
+                   returnResamp = "all",  
+                   selectionFunction = "best") 
+hyper_grid &lt;- expand.grid(k = seq(2, 150, by = 2))  
+knn_fit &lt;- train(y ~ x, data = df, method = "knn", 
+                        trControl = cv, 
+                        tuneGrid = hyper_grid) 
+*knn_fit$bestTune
+```
+
+
+```
+##     k
+## 18 36
+```
+
+]
+
+.pull-right[
+
+We retrieve the optimal value of the tuning parameter, according to the `selectionFunction`. 
+
+For the folds created here and with `selectionFunction = "best"` the optimal *K* value is 36. 
+
+What happens when you change to `selectionFunction = "oneSE"`?
+
+]
+
+---
+
+# Training a model with {caret}
+
+.pull-left[
+
+
+```
+##     k
+## 18 36
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-69-1.svg" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+
+```
+##     k
+## 27 54
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-70-1.svg" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Training a model with {rsample} &lt;img src="img/rsample.png" class="title-hex"&gt; &lt;img src="img/purrr.png" class="title-hex"&gt;
+
+.pull-left[
+
+Our starting point is the simulated data stored in `df`, resampled with 5-fold cross-validation.
+
+
+```r
+set.seed(123)  # for reproducibility
+cv_rsample &lt;- vfold_cv(df, 5)
+cv_rsample$splits[1:3] 
+```
+
+
+```
+## [[1]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;286/72/358&gt;
+## 
+## [[2]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;286/72/358&gt;
+## 
+## [[3]]
+## &lt;Analysis/Assess/Total&gt;
+## &lt;286/72/358&gt;
+```
+]
+
+.pull-right[
+
+We fit the *KNN* on the holdout data in split *s*, using a given *K* value. 
+
+
+```r
+holdout_results &lt;- function(s, k_val) {
+  # Fit the model to the analysis data in split s
+  df_train &lt;- analysis(s)
+  mod &lt;- knnreg(y ~ x, k = k_val, data = df_train)
+  # Get the remaining group
+  holdout &lt;- assessment(s)
+  # Get predictions with the holdout data set
+  res &lt;- predict(mod, newdata = holdout)
+  # Return observed and predicted values 
+  #                            on holdout set
+  res &lt;- tibble(obs = holdout$y, pred = res)
+  res
+}
+```
+
+]
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+Now you're going to combine the .hi-pink[resampling and model fitting instructions] and set up a first example of .hi-pink[tuning a parameter] over a grid of possible values: the *K* in a .hi-pink[KNN regression model]. 
+
+.hi-pink[Q]: use the function `holdout_results(.s, .k)` as defined on the previous sheet. You will use this function to calculate the RMSE&lt;sub&gt;k&lt;/sub&gt; of fold *k*. 
+
+1. Specify a grid of values of *K*, store it in `hyper_grid`. Use `expand.grid(.)`
+
+2. Pick one of the resamples stored in `cv_rsample$splits` and pick a value from the grid. Calculate the RMSE on the holdout data of this split. 
+
+3. For all values in the tuning grid, calculate the RMSE averaged over all folds, and the corresponding standard error. 
+
+4. Use the results from .hi-pink[Q.3] to pick the value of *K* via minimal RMSE.
+
+5. Pick the largest value of *K* such that the corresponding RMSE is below the minimal RMSE from .hi-pink[Q.4] plus its corresponding SE. 
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Q.1] We set up the grid
+
+
+```r
+hyper_grid &lt;- expand.grid(k = seq(2, 150, by = 2))  
+hyper_grid %&gt;% slice(1:3) 
+```
+
+
+|  k|
+|--:|
+|  2|
+|  4|
+|  6|
+
+.hi-pink[Q.2] We apply the function `holdout_results(.s, .k)` on the 
+third resample, with the first value for *K* in the grid.
+
+
+```r
+res &lt;- holdout_results(cv_rsample$splits[[3]], 
+                       hyper_grid[1, ])
+sqrt(sum((res$obs - res$pred)^2)/nrow(res))
+```
+
+
+```
+## [1] 0.3609
+```
+]
+
+.pull-right[
+
+.hi-pink[Q.3] Mean RMSE over the 5 folds and corresponding SE.
+
+
+```r
+RMSE &lt;- numeric(nrow(hyper_grid))
+SE &lt;- numeric(nrow(hyper_grid))
+for(i in 1:nrow(hyper_grid)){
+  cv_rsample$results &lt;- map(cv_rsample$splits,
+                            holdout_results,
+                            hyper_grid[i, ])
+  res &lt;- map_dbl(cv_rsample$results, 
+                 function(x) mean((x$obs - x$pred)^2))
+  RMSE[i] &lt;- mean(sqrt(res)) ; SE[i] &lt;- sd(sqrt(res))
+}
+
+```
+
+.hi-pink[Q.4] Choose *K* via minimal RMSE 
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; RMSE &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SE &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; k &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; lower &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; upper &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 0.2917 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0247 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.267 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3164 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+.hi-pink[Q.5] Choose *K* via the one-standard-error rule
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; RMSE &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SE &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; k &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; lower &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; upper &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 0.3158 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0285 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2873 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3442 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+class: clear
+
+
+&lt;img src="ML_part1_files/figure-html/one-SE-rule-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Putting it all together
+
+.pull-left[
+
+During the tuning process we inspect plots like the one on the right. 
+
+.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] &amp;nbsp; &amp;nbsp; *Less is more*: 
+
+- we prefer simple over more complex 
+
+- choose tuning parameters based on the numerically optimal value .KULbginline[OR]
+
+- choose a simpler model that is within a certain tolerance of the
+numerically best value 
+
+- use the .hi-pink['one-standard-error' rule].
+
+With the selected tuning parameters, we refit the model on the complete training set and use it to predict the test set (under &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 448 512"&gt;&lt;path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/&gt;&lt;/svg&gt;). 
+
+]
+
+.pull-right[
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-81-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+class: inverse, center, middle
+name: engineering
+
+# Target and feature engineering: &lt;br&gt; data pre-processing steps
+
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=796px&gt;&lt;/html&gt;
+
+---
+
+# What is feature engineering?
+
+.pull-left-alt[
+
+.center[
+&lt;img src="img/feature_engineering_Kuhn.jpg" alt="Drawing" style="width: 165px;"/&gt;
+&lt;br&gt; &lt;br&gt; &lt;img src="img/boehmke_greenwell.jpg" alt="Drawing" style="width: 165px;"/&gt;  
+]
+
+]
+
+.pull-right-alt[
+Feature engineering:
+
+- applies .hi-pink[pre-processing steps] to predictor (features) variables
+
+- .hi-pink[creates new input features] from your existing ones (e.g. network features derived from a social network in a fraud detection model).
+
+Target engineering: 
+
+* transforms the response variable (or target) to improve the performance of a predictive model.
+
+The goal is to .KULbginline[make models more effective].
+
+See Kuhn &amp; Johnson (2019) on [Feature Engineering and Selection: A Practical Approach for Predictive Models](http://www.feat.engineering/) for a detailed discussion. 
+
+]
+
+---
+
+name: black-white-box
+class: clear
+
+.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] : *different models* have *different sensitivities* to the type of target and feature values in the model.
+
+.center[
+&lt;img src="img/Applied_Pred_overview_models.jpg" width="65%" style="display: block; margin: auto;" /&gt;
+]
+
+Source: Kuhn &amp; Johnson (2013) on [Applied predictive modeling](http://appliedpredictivemodeling.com/).
+
+---
+
+# Target engineering &lt;img src="img/rsample.png" class="title-hex"&gt; 
+
+We load the `ames` data set from the {AmesHousing} package and apply a .hi-pink[stratified split] of the data into a training (70%) and test (30%) set.
+
+We stratify on the distribution of the target variable `Sale_Price` using the `strata` argument in `rsample::initial_split`.
+
+
+```r
+ames &lt;- AmesHousing::make_ames()
+set.seed(123)  
+split  &lt;- rsample::initial_split(ames, prop = 0.7, 
+                                       `strata = "Sale_Price"`) 
+ames_train  &lt;- rsample::training(split)
+ames_test   &lt;- rsample::testing(split)
+```
+
+
+
+We check the distribution of `Sale_Price` in both `ames_train` and `ames_test`.
+
+
+```r
+summary(ames_train$Sale_Price)
+summary(ames_test$Sale_Price)
+```
+
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   13100  129500  160000  180996  213500  755000
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   12789  129500  160000  180327  213500  625000
+```
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+Inference with linear models often assumes that the target is generated from a normal distribution.
+
+.hi-pink[Q]: let's examine whether the `Sale_Price` target satisfies this assumption.
+
+1. Plot a histogram of `Sale_Price`. Is normality a meaningful assumption?
+
+2. Try some transformation functions such that the transformed target approaches a normal distribution.  
+]
+
+---
+
+class: clear
+
+.pull-left[
+.hi-pink[Q.1] original target
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-87-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+```r
+summary(ames_train$Sale_Price)
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   13100  129500  160000  180996  213500  755000
+```
+
+]
+
+.pull-right[
+
+.hi-pink[Q.2] log-transformed target
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-89-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+```r
+summary(log(ames_train$Sale_Price))
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    9.48   11.77   11.98   12.02   12.27   13.53
+```
+]
+
+---
+
+# Feature engineering steps
+
+Examples of common pre-processing steps:
+
+* Some models (e.g. KNN, Lasso, neural networks) require that the predictor variables are on the same scale. 
+&lt;br&gt;
+.hi-pink[Centering (C)] and .hi-pink[scaling (S)] the predictors can be used for this purpose.
+
+* Other models are very sensitive to correlations between the predictors and filters or PCA signal extraction can improve the model.
+
+* Some models find .hi-pink[(near) zero-variance (NZV)] predictors problematic, and these should be removed before fitting the model. 
+
+* In other cases, the data should be .hi-pink[encoded] in a specific way to make sure all predictors are numeric (e.g. one-hot encoding of factor variables in neural networks). 
+
+* Many models cannot cope with .hi-pink[missing data] so .hi-pink[imputation strategies] might be necessary.
+
+* Development of new features that represent something important to the outcome. 
+
+* (add your own example here!)
+
+This list is inspired by Max Kuhn (2019) on [Applied Machine Learning](https://github.com/topepo/aml-london-2019). 
+
+---
+
+# A blueprint for feature engineering
+
+.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] : *a proper implementation*
+
+.pull-left[
+
+* draft a .hi-pink[blueprint] of the necessary pre-processing steps, and their order 
+
+* [Boehme &amp; Greenwell (2019)](https://bradleyboehmke.github.io/HOML/engineering.html#proper-implementation) suggest
+
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 1. Filter out zero or near-zero variance features. &lt;br&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 2. Perform imputation if required. &lt;br&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 3. Normalize to resolve numeric feature skewness. &lt;br&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 4. Standardize (center and scale) numeric features. &lt;br&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 5. Perform dimension reduction (e.g., PCA) on &lt;br&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; numeric features. &lt;br&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 6. One-hot or dummy encode categorical features.
+
+]
+
+.pull-right[
+
+* avoid .hi-pink[data leakage] in the pre-processing steps when applied to resampled data sets! 
+
+.center[
+&lt;img src="img/data_leakage.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+]
+
+---
+
+# Feature engineering with {recipes} &lt;img src="img/recipes.png" class="title-hex"&gt; 
+
+.pull-left[
+
+We already detected the necessity of log-transforming `Sale_Price` when building linear models. 
+
+We add another pre-processing step, inspired by the .hi-pink[high cardinality] feature `Neighborhood`. 
+
+
+```r
+ames_train %&gt;% group_by(Neighborhood) %&gt;% 
+  summarize(n_obs = n()) %&gt;% 
+  arrange(n_obs) %&gt;% slice(1:4)
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Neighborhood &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n_obs &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Green_Hills &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Greens &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Blueste &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Northpark_Villa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-94-1.svg" width="95%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Feature engineering with {recipes} &lt;img src="img/recipes.png" class="title-hex"&gt; 
+
+.pull-left[
+We'll use `recipe()` from the {recipes} package. 
+
+The main idea is to .hi-pink[preprocess multiple datasets] using a single `recipe()`.
+
+Before we start, keep the following .KULbginline[fundamentals] of {recipes} in mind!
+]
+
+--
+
+.pull-right[
+
+Creating a `recipe` takes the following steps:
+
+* get the *ingredients* (`recipe()`): specify the response and predictor variables
+
+* write the recipe (`step_zzz()`): define the *pre-processing steps*, such as imputation, creating dummy variables, scaling, and more
+
+* *prepare* the recipe (`prep()`): provide a dataset to base each step on (e.g. *calculate* constants to do centering and scaling)
+
+* *bake* the recipe (`bake()`): *apply* the pre-processing steps to your datasets.
+
+.footnote[Source: [Rebecca Barter's blog](http://www.rebeccabarter.com/blog/2019-06-06_pre_processing/)]
+
+]
+---
+
+# Feature engineering with {recipes} &lt;img src="img/recipes.png" class="title-hex"&gt; 
+
+.pull-left[
+
+Use `recipe()` to create the preprocessing blueprint (to be applied later)
+
+
+```r
+library(recipes)
+mod_rec &lt;- recipe(Sale_Price ~ ., data = ames_train)
+mod_rec
+```
+
+
+```
+## Data Recipe
+## 
+## Inputs:
+## 
+##       role #variables
+##    outcome          1
+##  predictor         80
+```
+
+Now, `mod_rec` knows the role of each variable (`predictor` or `outcome`). 
+
+We can use selectors such as `all_predictors()`, `all_outcomes()` or `all_nominal()`.
+
+]
+
+.pull-right[
+
+Extend `mod_rec` with two pre-processing steps: 
+
+`step_log(all_outcomes())`
+
+`step_other(Neighborhood, threshold = 0.05)` to lump the levels that occur in less than 5% of data as "other".
+
+
+```r
+mod_rec &lt;- mod_rec %&gt;% step_log(all_outcomes()) %&gt;%
+           step_other(Neighborhood, threshold = 0.05)
+mod_rec
+## Data Recipe
+## 
+## Inputs:
+## 
+##       role #variables
+##    outcome          1
+##  predictor         80
+## 
+## Operations:
+## 
+## Log transformation on all_outcomes()
+## Collapsing factor levels for Neighborhood
+```
+
+]
+
+---
+
+# Feature engineering with {recipes} &lt;img src="img/recipes.png" class="title-hex"&gt; 
+
+.center[
+&lt;img src="img/recipes_verbs.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.footnote[Source Max Kuhn (2019) on [Applied Machine Learning](https://github.com/topepo/aml-london-2019).]
+
+Now that we have a preprocessing *specification*, we run on it on the `ames_train` to *prepare* (or `prep()`) the recipe.
+
+
+```r
+mod_rec_trained &lt;- prep(mod_rec, training = ames_train, verbose = TRUE, retain = TRUE)
+```
+
+
+```r
+mod_rec_trained &lt;- prep(mod_rec, training = ames_train, verbose = TRUE, retain = TRUE)
+## oper 1 step log [training] 
+## oper 2 step other [training] 
+## The retained training set is ~ 0.82 Mb  in memory.
+```
+
+The `retain = TRUE` indicates that the preprocessed training set should be saved.
+---
+
+# Feature engineering with {recipes} &lt;img src="img/recipes.png" class="title-hex"&gt; 
+
+
+```r
+mod_rec_trained
+```
+
+
+```
+## Data Recipe
+## 
+## Inputs:
+## 
+##       role #variables
+##    outcome          1
+##  predictor         80
+## 
+## Training data contained 2053 data points and no missing data.
+## 
+## Operations:
+## 
+## Log transformation on Sale_Price [trained]
+## Collapsing factor levels for Neighborhood [trained]
+```
+
+Once the recipe is prepared, it can be applied to any data set using `bake()`. There is no need to `bake()` the data used in the `prep()` step; you get the processed training set with `juice()`.
+
+
+```r
+ames_test_prep &lt;- bake(mod_rec_trained, new_data = ames_test)
+```
+
+---
+
+# Feature engineering with {recipes} &lt;img src="img/recipes.png" class="title-hex"&gt; 
+
+.pull-left[
+
+
+```r
+ames_test_prep %&gt;% group_by(Neighborhood) %&gt;% 
+  summarize(n_obs = n()) %&gt;% 
+  arrange(n_obs) 
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Neighborhood &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n_obs &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Edwards &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gilbert &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Northridge_Heights &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 51 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Somerset &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Old_Town &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 68 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; College_Creek &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; North_Ames &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 145 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; other &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 382 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+
+```r
+juice(mod_rec_trained) %&gt;% group_by(Neighborhood) %&gt;% 
+  summarize(n_obs = n()) %&gt;% 
+  arrange(n_obs) 
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Neighborhood &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n_obs &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Northridge_Heights &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 115 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gilbert &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 116 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Somerset &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 128 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Edwards &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 146 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Old_Town &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 171 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; College_Creek &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 187 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; North_Ames &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 298 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; other &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 892 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+Now you will extend the existing recipe in `mod_rec`, prepare and bake it again!
+
+.hi-pink[Q]: consult the [`recipes` manual](https://tidymodels.github.io/recipes/reference/index.html) and specify a recipe for the housing data that includes the following pre-processing steps (in this order)
+
+* log-transform the outcome variable
+* remove any zero-variance predictors
+* lump factor levels that occur in &lt;= 5% of data as "other" for both `Neighborhood` as well as `House_Style`
+* center and scale all numeric features.
+
+1. Specify the above recipe on the training set and store it in the object `mod_rec`. 
+2. Inspect the object `mod_rec` using `summary(mod_rec)`. What can you learn from this summary?
+3. Prepare the recipe on the training data and then apply it to the test set. 
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+First, let's try to get a grasp of the `House_Style` feature as well as the presence of zero-variance predictors. 
+
+
+```r
+ames_train %&gt;% group_by(House_Style) %&gt;% 
+              summarize(n_obs = n()) %&gt;% 
+               arrange(n_obs)
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; House_Style &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n_obs &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Two_and_Half_Fin &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; One_and_Half_Unf &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Two_and_Half_Unf &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SFoyer &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SLvl &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 84 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; One_and_Half_Fin &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 233 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Two_Story &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 614 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; One_Story &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1030 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+]
+
+.pull-right[
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-109-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+class: clear
+
+To detect the presence of zero-variance and near-zero-variance features the `caret` library has the function `nearZeroVar`
+
+
+```r
+library(caret)
+nzv &lt;- caret::nearZeroVar(ames_train, saveMetrics = TRUE)
+```
+
+
+```r
+names(ames_train)[nzv$zeroVar]
+```
+
+
+```
+## character(0)
+```
+
+
+```r
+names(ames_train)[nzv$nzv]
+```
+
+
+```
+##  [1] "Street"             "Alley"              "Land_Contour"       "Utilities"          "Land_Slope"         "Condition_2"       
+##  [7] "Roof_Matl"          "Bsmt_Cond"          "BsmtFin_Type_2"     "Heating"            "Low_Qual_Fin_SF"    "Kitchen_AbvGr"     
+## [13] "Functional"         "Enclosed_Porch"     "Three_season_porch" "Screen_Porch"       "Pool_Area"          "Pool_QC"           
+## [19] "Misc_Feature"       "Misc_Val"
+```
+
+So, no features have zero- variance, but 21 features have near-zero-variance.
+
+---
+
+class: clear 
+
+.pull-left[
+
+We put the recipe together with the following steps
+
+
+```r
+mod_rec &lt;- recipe(Sale_Price ~ ., data = ames_train) %&gt;%
+        step_log(all_outcomes()) %&gt;%
+        step_other(Neighborhood, threshold = 0.05) %&gt;%
+        step_other(House_Style, threshold = 0.05) %&gt;%
+        step_zv(all_predictors()) %&gt;% 
+        step_nzv(all_predictors()) %&gt;%
+        step_center(all_numeric(), -all_outcomes()) %&gt;%
+        step_scale(all_numeric(), -all_outcomes())
+summary(mod_rec) %&gt;% slice(1:6)
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; variable &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; type &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; role &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; source &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MS_SubClass &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; nominal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MS_Zoning &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; nominal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Lot_Frontage &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Lot_Area &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Street &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; nominal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Alley &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; nominal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right[
+
+
+```r
+mod_rec
+```
+
+
+
+```
+## Data Recipe
+## 
+## Inputs:
+## 
+##       role #variables
+##    outcome          1
+##  predictor         80
+## 
+## Operations:
+## 
+## Log transformation on all_outcomes()
+## Collapsing factor levels for Neighborhood
+## Collapsing factor levels for House_Style
+## Zero variance filter on all_predictors()
+## Sparse, unbalanced variable filter on all_predictors()
+## Centering for all_numeric(), -all_outcomes()
+## Scaling for all_numeric(), -all_outcomes()
+```
+
+]
+
+
+---
+
+class: clear
+
+.pull-left[
+
+We prep the recipe on `ames_train`
+
+
+```r
+mod_rec_trained &lt;- prep(mod_rec, 
+                        training = ames_train, 
+                        verbose = TRUE, retain = TRUE)
+## oper 1 step log [training] 
+## oper 2 step other [training] 
+## oper 3 step other [training] 
+## oper 4 step zv [training] 
+## oper 5 step nzv [training] 
+## oper 6 step center [training] 
+## oper 7 step scale [training] 
+## The retained training set is ~ 0.77 Mb  in memory.
+```
+
+and bake it on the `ames_test` data
+
+
+```r
+ames_test_prep &lt;- bake(mod_rec_trained, 
+                                new_data = ames_test)
+```
+
+We inspect the processed training and test set
+
+
+```r
+dim(juice(mod_rec_trained)) 
+```
+
+
+```
+## [1] 2053   61
+```
+
+]
+
+.pull-right[
+
+Verify that `Sale_Price` is log-transformed (but not centred and scaled)
+
+
+```r
+head(juice(mod_rec_trained)$Sale_Price) 
+head(ames_train$Sale_Price)
+head(ames_test_prep$Sale_Price)
+head(ames_test$Sale_Price)
+```
+
+
+```
+## [1] 12.28 11.56 12.06 12.18 12.27 12.37
+```
+
+
+```
+## [1] 215000 105000 172000 195500 213500 236500
+```
+
+
+```
+## [1] 12.40 12.15 12.16 12.13 12.26 11.57
+```
+
+
+```
+## [1] 244000 189900 191500 185000 212000 105500
+```
+
+
+```r
+levels(juice(mod_rec_trained)$House_Style)
+```
+
+
+```r
+levels(ames_test_prep$House_Style)
+```
+
+
+```
+## [1] "One_and_Half_Fin" "One_Story"
+## [1] "Two_Story" "other"
+```
+
+
+```
+## [1] "One_and_Half_Fin" "One_Story"
+## [1] "Two_Story" "other"
+```
+
+]
+
+---
+
+# Putting it all together {rsample} and {recipes} &lt;img src="img/recipes.png" class="title-hex"&gt; &lt;img src="img/rsample.png" class="title-hex"&gt; 
+
+Let's redo the KNN example, with centering and scaling of the x-feature, by combining {rsample}/{caret} with a recipe. 
+
+.pull-left[
+
+
+```r
+# get the simulated data
+set.seed(123)  # for reproducibility
+x &lt;- seq(from = 0, to = 2 * pi, length = 500)
+y &lt;- sin(x) + rnorm(length(x), sd = 0.3)
+df &lt;- data.frame(x, y) %&gt;% filter(x &lt; 4.5)
+```
+
+
+```r
+# specify the recipe
+library(recipes)
+rec &lt;- recipe(y ~ x, data = df)
+rec &lt;- rec %&gt;% step_center(all_predictors()) %&gt;%
+               step_scale(all_predictors())
+```
+
+]
+
+.pull-right[
+
+
+```r
+# doing this on complete data set df
+rec_df &lt;- prep(rec, training = df)
+mean(juice(rec_df)$x) # centered!
+## [1] 1.473e-16
+sd(juice(rec_df)$x)   # scaled!
+## [1] 1
+```
+
+
+```r
+# now we combine the recipe with rsample steps
+library(rsample)
+set.seed(123)  # for reproducibility
+cv_rsample &lt;- vfold_cv(df, 5)
+```
+
+
+```r
+# we apply the steps in the recipe to each fold
+library(purrr)
+cv_rsample$recipes &lt;- map(cv_rsample$splits, prepper, 
+                          recipe = rec)
+# check `?prepper`
+```
+
+]
+
+---
+
+# Putting it all together {rsample} and {recipes} &lt;img src="img/recipes.png" class="title-hex"&gt; &lt;img src="img/rsample.png" class="title-hex"&gt; 
+
+Let's redo the KNN example, with centering and scaling of the x-feature, by combining {rsample}/{caret} with a recipe. 
+
+.pull-left[
+
+Now you can inspect `cv_rsample` as follows
+
+
+```r
+cv_rsample$recipes[[1]]
+juice(cv_rsample$recipes[[1]])
+bake(cv_rsample$recipes[[1]], 
+     new_data = assessment(cv_rsample$splits[[1]]))
+```
+
+
+]
+
+.pull-right[
+
+
+```r
+holdout_results &lt;- function(s, rec, k_val) {
+  # Fit the model to the analysis data in split s
+  df_train &lt;- juice(rec)
+  mod &lt;- knnreg(y ~ x, k = k_val, data = df_train)
+  # Get the remaining group
+  holdout &lt;- bake(rec, new_data = assessment(s))
+  # Get predictions with the holdout data set
+  res &lt;- predict(mod, newdata = holdout)
+  # Return observed and predicted values 
+  #                            on holdout set
+  res &lt;- tibble(obs = holdout$y, pred = res)
+  res
+}
+```
+
+
+```r
+res &lt;- holdout_results(cv_rsample$splits[[2]], 
+                       cv_rsample$recipes[[2]], 
+                       k_val = 58)
+sqrt(sum((res$obs - res$pred)^2)/nrow(res))
+## [1] 0.3505
+```
+
+]
+
+---
+
+# Putting it all together {rsample} and {recipes} &lt;img src="img/recipes.png" class="title-hex"&gt; &lt;img src="img/rsample.png" class="title-hex"&gt; 
+
+Let's redo the KNN example, with centering and scaling of the x-feature, by combining {rsample}/{caret} with a recipe. 
+
+
+```r
+RMSE &lt;- numeric(nrow(hyper_grid))
+SE &lt;- numeric(nrow(hyper_grid))
+for(i in 1:nrow(hyper_grid)){
+  cv_rsample$results &lt;- map2(cv_rsample$splits, cv_rsample$recipes,
+                            holdout_results,
+                            hyper_grid[i, ])
+  res &lt;- map_dbl(cv_rsample$results, 
+                 function(x) mean((x$obs - x$pred)^2))
+  RMSE[i] &lt;- mean(sqrt(res)) ; SE[i] &lt;- sd(sqrt(res))
+}
+```
+
+
+---
+
+class: inverse, center, middle
+name: regression
+
+# Regression models in R and &lt;br&gt; tidy model output with {broom}
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=796px&gt;&lt;/html&gt;
+
+---
+
+name: models-in-R
+
+# Creating models in R
+
+The **formula** interface using R's [formula rules](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Formulae-for-statistical-models) to specify a *symbolic* representation of the terms:
+
+* response ~ variable, with `model_fn` referring to the specific model function you want to use, e.g. `lm` for linear regression
+
+
+```r
+model_fn(Sale_Price ~ Gr_Liv_Area, data = ames)
+```
+
+* response ~ variable_1 + variable_2
+
+
+```r
+model_fn(Sale_Price ~ Gr_Liv_Area + Neighborhood, data = ames)
+```
+
+* response ~ variable_1 + variable_2 + their interaction
+
+
+```r
+model_fn(Sale_Price ~ Gr_Liv_Area + Neighborhood + Neighborhood:Gr_Liv_Area, data = ames)
+```
+
+* shorthand for all predictors
+
+
+```r
+model_fn(Sale_Price ~ ., data = ames)
+```
+
+
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+You will now fit some linear regression models on the `ames` housing data. 
+&lt;br&gt; &lt;br&gt; 
+You will explore the model fits with `base` R instructions as well as the functionalities offered by the `broom` package.
+&lt;br&gt; &lt;br&gt;
+.hi-pink[Q]: load the `ames` housing data set via `ames &lt;- AmesHousing::make_ames()`
+
+1. Fit a linear regression model with `Sale_Price` as response and `Gr_Liv_Area` as covariate. Store the resulting object as `model_1`.
+
+2. Repeat your instruction, but now put it between brackets. What happens?
+
+3. Inspect `model_1` with the following set of instructions
+
+- `summary(___)`
+- extract the fitted coefficients, using `___$coefficients`
+- what happens with `summary(___)$coefficients`?
+- extract fitted values, using `___$fitted.values`
+- now try to extract the R&lt;sup&gt;2&lt;/sup&gt; of this model. 
+
+]
+
+---
+
+class: clear
+
+
+
+.hi-pink[Q.1] Linear model with `Sale_Price` as a function of `Gr_Live_Area`
+
+
+```r
+model_1 &lt;- lm(Sale_Price ~ Gr_Liv_Area, data = ames)
+```
+
+
+
+
+.hi-pink[Q.3] Check `model_1` - What happens - do you *like* this display?
+
+
+```r
+summary(model_1)
+```
+
+Now let's extract some meaningful information from `model_1` (using `base` R instructions)
+
+.pull-left[
+
+
+```r
+model_1$coefficients
+```
+
+
+```
+## (Intercept) Gr_Liv_Area 
+##     13289.6       111.7
+```
+
+
+```r
+summary(model_1)$coefficients
+```
+
+
+```
+##             Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)  13289.6   3269.703   4.064 4.941e-05
+## Gr_Liv_Area    111.7      2.066  54.061 0.000e+00
+```
+
+]
+
+.pull-right[
+
+
+```r
+head(model_1$fitted.values)
+```
+
+
+```
+##      1      2      3      4      5      6 
+## 198255 113367 161731 248964 195239 192447
+```
+
+
+```r
+summary(model_1)$r.squared
+```
+
+
+```
+## [1] 0.4995
+```
+
+
+]
+
+---
+
+# Tidy model output &lt;img src="img/broom.png" class="title-hex"&gt;
+
+The package {broom} allows to summarize key information about statistical objects (e.g. a linear regression model) in so-called tidy tibbles. 
+
+This makes it easy to report results, create plots and consistently work with large numbers of models at once. 
+
+We briefly illustrate the three essential verbs of `broom`: `tidy()`, `glance()` and `augment()`.
+
+
+```r
+model_1 %&gt;% broom::tidy() 
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13289.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3269.703 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.064 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gr_Liv_Area &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 111.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.066 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.061 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+```r
+model_1 %&gt;% broom::glance() 
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; r.squared &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; adj.r.squared &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; sigma &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; df &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; logLik &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; AIC &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; BIC &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; deviance &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; df.residual &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; nobs &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 0.4995 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4994 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56524 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2923 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -36218 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 72442 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 72460 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.355e+12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2928 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2930 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Tidy model output &lt;img src="img/broom.png" class="title-hex"&gt;
+
+The package {broom} allows to summarize key information about statistical objects (e.g. a linear regression model) in so-called tidy tibbles. 
+
+This makes it easy to report results, create plots and consistently work with large numbers of models at once. 
+
+We briefly illustrate the three essential verbs of `broom`: `tidy()`, `glance()` and `augment()`.
+
+
+```r
+model_1 %&gt;% broom::augment() %&gt;% slice(1:5)
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Sale_Price &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Gr_Liv_Area &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; .fitted &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; .resid &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; .std.resid &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; .hat &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; .sigma &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; .cooksd &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 215000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1656 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 198255 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16745 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2963 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4e-04 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56533 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 105000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 896 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 113367 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -8367 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.1481 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8e-04 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 172000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1329 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 161731 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10269 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1817 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4e-04 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 244000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2110 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 248964 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -4964 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0879 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8e-04 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 189900 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1629 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 195239 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -5339 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0945 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4e-04 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+class: clear
+
+.pull-left[
+
+
+```r
+g_lm_1 &lt;- ggplot(data = ames, 
+                 aes(Gr_Liv_Area, Sale_Price)) + 
+  theme_bw() +
+  geom_point(size = 1, alpha = 0.3) +
+  geom_smooth(se = TRUE, method = "lm") +
+  scale_y_continuous(labels = scales::dollar) +
+  ggtitle("Regression with AMES housing data")
+g_lm_1
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-164-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+
+```r
+g_lm_2 &lt;- model_1 %&gt;% broom::augment() %&gt;% 
+ggplot(aes(Gr_Liv_Area, Sale_Price)) + 
+    theme_bw() +
+    geom_point(size = 1, alpha = 0.3) +
+    geom_line(aes(y = .fitted), col = KULbg) +
+    scale_y_continuous(labels = scales::dollar) +
+    ggtitle("Regression with AMES housing data")
+g_lm_2
+
+```
+
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-166-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Generalized Linear Models
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=796px&gt;&lt;/html&gt;
+
+---
+
+# Linear and Generalized Linear Models
+
+.pull-left-alt[
+
+.center[
+&lt;img src="img/esbjorn_GLM.jpg" alt="Drawing" style="width: 150px; height: 220px;"/&gt;
+&lt;br&gt; &lt;br&gt; &lt;img src="img/de_jong_GLM.jpg" alt="Drawing" style="width: 150px; height: 220px;"/&gt;  
+]
+
+]
+
+.pull-right-alt[
+
+With .hi-pink[linear regression models] `lm(.)`
+
+- model specification
+
+`$$\begin{eqnarray*}
+    \color{#FFA500}{Y} = \color{#e64173}{x}^{'}\color{#20B2AA}{\beta} + \epsilon.
+\end{eqnarray*}$$`
+
+- `\(\epsilon\)` is normally distributed with mean 0 and common variance `\(\sigma^2\)`, thus: `\(\color{#FFA500}{Y}\)` is normal with mean `\(\color{#e64173}{x}^{'}\color{#20B2AA}{\beta}\)` and variance `\(\sigma^2\)`
+
+With .hi-pink[generalized linear regression models] `glm(.)`
+
+- model specification
+
+`$$\begin{eqnarray*}
+    g(E[\color{#FFA500}{Y}]) = \color{#e64173}{x}^{'}\color{#20B2AA}{\beta}.
+\end{eqnarray*}$$`
+
+- `\(g(.)\)` is the link function
+
+- `\(\color{#FFA500}{Y}\)` follows a distribution from the exponential family.
+
+]
+
+
+---
+
+name: mtpl
+
+# Motor Third Party Liability data &lt;img src="img/pipe.png" class="title-hex"&gt; &lt;img src="img/dplyr.png" class="title-hex"&gt; &lt;img src="img/ggplot2.png" class="title-hex"&gt;
+
+We will use the Motor Third Party Liability data set. There are 163,231 policyholders in this data set. 
+
+The frequency of claiming (`nclaims`) and corresponding severity (`avg`, the amount paid on average per claim reported by a policyholder) are the .KULbginline[target variables] in this data set. 
+
+Predictor variables are: 
+
+* the exposure-to-risk, the duration of the insurance coverage (max. 1 year)
+* factor variables, e.g. gender, coverage, fuel
+* continuous, numeric variables, e.g. age of the policyholder, age of the car
+* spatial information: postal code (in Belgium) of the municipality where the policyholder resides.
+
+More details in [Henckaerts et al. (2018, Scandinavian Actuarial Journal)](https://katrienantonio.github.io/projects/2019/06/13/machine-learning/#data-driven) and [Henckaerts et al. (2020, North American Actuarial Journal)](https://katrienantonio.github.io/projects/2019/06/13/machine-learning/#tree-based-pricing).
+
+---
+
+name: mtpl
+
+# Motor Third Party Liability data &lt;img src="img/pipe.png" class="title-hex"&gt; &lt;img src="img/dplyr.png" class="title-hex"&gt; &lt;img src="img/ggplot2.png" class="title-hex"&gt;
+
+You can load the data from the `data` folder as follows:
+
+```r
+# install.packages("rstudioapi")
+dir &lt;- dirname(rstudioapi::getActiveDocumentContext()$path)
+setwd(dir)
+mtpl_orig &lt;- read.table('../data/PC_data.txt',
+                        header = TRUE, 
+                        stringsAsFactors = TRUE)
+mtpl_orig &lt;- as_tibble(mtpl_orig)
+```
+
+Alternatively, you can also go for:
+
+```r
+# install.packages("here")
+dir &lt;- here::here()   
+setwd(dir) 
+mtpl_orig &lt;- read.table('../data/PC_data.txt', 
+                        header = TRUE,
+                        stringsAsFactors = TRUE)
+mtpl_orig &lt;- as_tibble(mtpl_orig)
+```
+
+Some basic exploratory steps with this data follow on the next sheet.
+
+---
+
+name: mtpl
+
+# Motor Third Party Liability data &lt;img src="img/pipe.png" class="title-hex"&gt; &lt;img src="img/dplyr.png" class="title-hex"&gt; &lt;img src="img/ggplot2.png" class="title-hex"&gt;
+
+Note that the data `mtpl_orig` uses capitals for the variable names
+
+
+```r
+mtpl_orig %&gt;% slice(1:3) %&gt;% select(-LONG, -LAT) %&gt;% kable(format = 'html')
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; ID &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NCLAIMS &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; AMOUNT &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; AVG &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; EXP &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; COVERAGE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; FUEL &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; USE &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; FLEET &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; SEX &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; AGEPH &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; BM &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; AGEC &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; POWER &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; PC &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; TOWN &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1618 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1618 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; TPL &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; gasoline &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; private &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; N &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 77 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BRUSSEL &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PO &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; gasoline &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; private &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; N &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 64 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 66 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BRUSSEL &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; TPL &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; diesel &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; private &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; N &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BRUSSEL &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+We change this to lower case variables, and rename `exp` to `expo`.
+
+
+```r
+mtpl &lt;- mtpl_orig %&gt;% rename_all(tolower) %&gt;% rename(expo = exp)
+names(mtpl)
+##  [1] "id"       "nclaims"  "amount"   "avg"      "expo"     "coverage" "fuel"     "use"      "fleet"    "sex"      "ageph"    "bm"      
+## [13] "agec"     "power"    "pc"       "town"     "long"     "lat"
+```
+
+---
+
+class: clear
+name: first-steps-MTPL
+
+.pull-left[
+
+```r
+dim(mtpl)
+```
+
+
+```
+## [1] 163231     18
+```
+
+
+```r
+mtpl %&gt;% 
+  summarize(emp_freq = sum(nclaims) / sum(expo))
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; emp_freq &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 0.1393 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+```r
+mtpl %&gt;% 
+  group_by(sex) %&gt;% 
+  summarize(emp_freq = sum(nclaims) / sum(expo))
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; sex &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; emp_freq &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1484 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1361 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+
+```r
+g &lt;- ggplot(mtpl, aes(nclaims)) + theme_bw() + 
+     geom_bar(aes(weight = expo),
+              col = KULbg, fill = KULbg) + 
+     labs(y = "Abs freq (in exposure)") +
+     ggtitle("MTPL - number of claims")
+g
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-174-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Generalized Linear Models (GLMs) 
+
+Modeling claim .hi-pink[frequency] and .hi-pink[severity] in the `mtpl` data set.
+
+.pull-left[
+
+Target variable `nclaims` (frequency)
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-175-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
+
+
+Suitable distributions: Poisson, Negative Binomial.
+
+]
+
+.pull-right[
+
+...  and `avg` (severity).
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-176-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
+
+
+Suitable distributions: log-normal, gamma.
+
+]
+
+---
+
+# A Poisson GLM
+
+.pull-left[
+
+
+```r
+freq_glm_1 &lt;- `glm`(nclaims ~ sex, offset = log(expo), 
+                  `family = poisson(link = "log")`, 
+                  `data = mtpl`) 
+```
+
+]
+
+.pull-right[
+  
+Fit a .KULbginline[Poisson GLM], with .KULbginline[logarithmic link] function.
+
+This implies: 
+
+`\(\color{#FFA500}{Y}\)` ~ Poisson, with
+
+`$$\begin{eqnarray*}
+    \log(E[\color{#FFA500}{Y}]) &amp;=&amp; \color{#e64173}{x}^{'}\color{#20B2AA}{\beta},
+\end{eqnarray*}$$`
+
+or, 
+
+`$$E[\color{#FFA500}{Y}] = \exp{(\color{#e64173}{x}^{'}\color{#20B2AA}{\beta})}.$$`
+
+Fit this model on `data = mtpl`. 
+  
+]
+
+---
+  
+# A Poisson GLM (cont.)
+
+.pull-left[
+
+
+```r
+freq_glm_1 &lt;- glm(`nclaims ~ sex`, `offset = log(expo)`, 
+                  family = poisson(link = "log"), 
+                  data = mtpl)
+```
+
+]
+
+.pull-right[
+  
+Use `nclaims` as `\(\color{#FFA500}{Y}\)`. 
+
+Use `gender` as the only (factor) variable in the linear predictor.
+
+Include `log(expo)` as an offset term in the linear predictor.
+
+Then, 
+
+`$$\begin{eqnarray*}
+\color{#e64173}{x}^{'}\color{#20B2AA}{\beta} = \log{(\texttt{expo})}+\beta_0 + \beta_1 \mathbb{I}(\texttt{male}). \end{eqnarray*}$$`
+
+Put otherwise, 
+
+`$$\begin{eqnarray*}
+E[\color{#FFA500}{Y}] = \texttt{expo} \cdot \exp{(\beta_0 + \beta_1 \mathbb{I}(\texttt{male}))} \end{eqnarray*},$$`
+where `\(\texttt{expo}\)` refers to `expo` the exposure variable.
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+
+```r
+freq_glm_1 &lt;- glm(nclaims ~ sex, `offset = log(expo)`, 
+                  family = poisson(link = "log"), 
+                  data = mtpl)
+```
+
+
+```r
+freq_glm_1 %&gt;% broom::tidy()
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.9076 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0133 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -143.186 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sexmale &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0866 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0157 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -5.523 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+Mind the specification of `type.predict` when using `augment` with a GLM!
+
+
+```r
+freq_glm_1 %&gt;% broom::augment(type.predict = "response")
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; nclaims &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; sex &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; .fitted &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1361 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1484 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+]
+
+.pull-right[
+
+The `predict` function of a GLM object offers 3 options: `"link"`, `"response"` or `"terms"`. 
+
+The same options hold when `augment()` is applied to a GLM object.
+
+Let's see how the fitted values at `"response"` level are constructed:
+
+
+```r
+exp(coef(freq_glm_1)[1])
+## (Intercept) 
+##      0.1484
+exp(coef(freq_glm_1)[1] + coef(freq_glm_1)[2])
+## (Intercept) 
+##      0.1361
+```
+
+Do you recognize these numbers?
+
+Last step: 
+
+try `freq_glm_1 %&gt;% glance()` or `summary(freq_glm_1)` for deviances. 
+
+]
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+You will further explore GLMs in R with the `glm(.)` function.
+
+.hi-pink[Q]: continue with the `freq_glm_1` object that was created, you will now explicitly call the `predict()` function on this object. 
+
+1. Verify the arguments of `predict.glm` using `? predict.glm`.
+
+2. The help reveals the following structure `predict(.object, .newdata, type = ("..."))` where `.object` is the fitted GLM object, `.newdata` is (optionally) a data frame to look for the features used in the model, and `type` is  `"link"`, `"response"` or `"terms"`. &lt;br&gt; Use `predict` with `freq_glm_1` and a newly created data frame. &lt;br&gt; Explore the different options for `type`, and their connections. 
+
+3. Fit a gamma GLM for `avg` (the claim severity) with log link. &lt;br&gt;
+Use `sex` as the only variable in the model. What do you conclude?
+]
+
+---
+
+class: clear
+
+.pull-left[
+.hi-pink[Q.1] You can access the documentation via `? predict.glm`.
+
+.hi-pink[Q.2] You create new data frames (or tibbles) as follows
+
+
+```r
+male_driver &lt;- data.frame(expo = 1, sex = "male")
+female_driver &lt;- data.frame(expo = 1, sex = "female")
+```
+
+
+
+Next, you apply `predict` with the GLM object `freq_glm_1` and one of these data frames, e.g.
+
+
+```r
+predict(freq_glm_1, newdata = male_driver, 
+                    type = "response")
+```
+
+
+```
+##      1 
+## 0.1361
+```
+
+]
+
+.pull-right[
+
+.hi-pink[Q.2] Next, you apply `predict` with the GLM object `freq_glm_1` and one of these data frames, e.g.
+
+
+```r
+predict(freq_glm_1, newdata = male_driver, 
+                    type = "response")
+```
+
+
+```
+##      1 
+## 0.1361
+```
+
+At the level of the linear predictor: 
+
+
+```r
+predict(freq_glm_1, newdata = male_driver, 
+                    type = "link")
+```
+
+
+```
+##      1 
+## -1.994
+```
+
+
+```r
+exp(predict(freq_glm_1, newdata = male_driver, 
+                        type = "link"))
+```
+
+
+```
+##      1 
+## 0.1361
+```
+
+]
+
+---
+
+class: clear
+
+.hi-pink[Q.3] For the gamma regression model
+
+
+```r
+sev_glm_1 &lt;- glm(avg ~ sex, family = Gamma(link = "log"), data = mtpl)
+sev_glm_1
+```
+
+
+```
+## 
+## Call:  glm(formula = avg ~ sex, family = Gamma(link = "log"), data = mtpl)
+## 
+## Coefficients:
+## (Intercept)      sexmale  
+##       7.573       -0.258  
+## 
+## Degrees of Freedom: 18294 Total (i.e. Null);  18293 Residual
+##   (144936 observations deleted due to missingness)
+## Null Deviance:	    46700 
+## Residual Deviance: 46400 	AIC: 3e+05
+```
+
+---
+
+class: inverse, center, middle
+
+# Generalized Additive Models with {mgcv}
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=796px&gt;&lt;/html&gt;
+
+
+---
+
+# Generalized Additive Models (GAMs)
+
+.pull-left-alt[
+
+.center[
+&lt;img src="img/GAM_Hastie_Tibshirani.jpg" alt="Drawing" style="width: 150px; height: 220px;"/&gt;
+&lt;br&gt; &lt;br&gt; &lt;img src="img/GAM_Wood.jpg" alt="Drawing" style="width: 150px; height: 220px;"/&gt;  
+]
+
+]
+
+.pull-right-alt[
+
+With .hi-pink[GLMs] `glm(.)`
+
+- transformation of the mean modelled with a linear predictor `$$\color{#e64173}{x}^{'}\color{#20B2AA}{\beta}$$`
+
+- not well suited for continuous risk factors that relate to the response in
+a non-linear way.
+
+With .hi-pink[Generalized Additive Models (GAMs)] 
+
+- the predictor allows for smooth effects of continuous risk factors and spatial covariates, next to the linear terms, e.g.
+
+`$$\color{#e64173}{x}^{'}\color{#20B2AA}{\beta}+\sum_j f_j(x_j) + f(\texttt{lat}, \texttt{long})$$`
+
+- predictor is still additive
+
+- preferred R package is {mgcv} by Simon Wood.
+
+
+]
+
+---
+
+# A Poisson GAM
+
+.pull-left[
+We continue working with `mtpl` and now focus on `ageph`.
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-197-1.svg" width="75%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+We will now explore .hi-pink[four different model specifications]: 
+
+1. `ageph` as linear effect in `glm`
+
+2. `ageph` as factor variable in `glm`
+
+3. `ageph` split manually into bins using `cut`, then used as factor in `glm`
+
+4. a smooth effect of `ageph` in `mgcv::gam`.
+
+Let's go!
+
+Grid of observed `ageph` values
+
+
+```r
+a &lt;- min(mtpl$ageph):max(mtpl$ageph)
+```
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Model 1]: linear effect of `ageph`
+
+
+```r
+freq_glm_age &lt;- glm(nclaims ~ `ageph`, 
+                    offset = log(expo), 
+                    data = mtpl, 
+                    family = poisson(link = "log"))
+pred_glm_age &lt;- predict(freq_glm_age, 
+          newdata = data.frame(ageph = a, expo = 1), 
+          `type = "terms"`, se.fit = TRUE)
+b_glm_age &lt;- pred_glm_age$fit
+l_glm_age &lt;- pred_glm_age$fit 
+                  - qnorm(0.975)*pred_glm_age$se.fit
+u_glm_age &lt;- pred_glm_age$fit 
+                  + qnorm(0.975)*pred_glm_age$se.fit
+df &lt;- data.frame(a, b_glm_age, l_glm_age, u_glm_age)
+```
+
+
+
+
+]
+
+.pull-right[
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-201-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Model 2]: `ageph` as factor variable in `glm`
+
+
+```r
+freq_glm_age_f &lt;- glm(nclaims ~ `as.factor(ageph)`, 
+                    offset = log(expo), 
+                    data = mtpl, 
+                    family = poisson(link = "log"))
+pred_glm_age_f &lt;- predict(freq_glm_age_f, 
+          newdata = data.frame(ageph = a, expo = 1), 
+          `type = "terms"`, se.fit = TRUE)
+b_glm_age_f &lt;- pred_glm_age_f$fit
+l_glm_age_f &lt;- pred_glm_age_f$fit 
+                  - qnorm(0.975)*pred_glm_age_f$se.fit
+u_glm_age_f &lt;- pred_glm_age_f$fit 
+                  + qnorm(0.975)*pred_glm_age_f$se.fit
+df &lt;- data.frame(a, b_glm_age_f, 
+                    l_glm_age_f, u_glm_age_f)
+```
+
+
+
+
+]
+
+.pull-right[
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-204-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Model 3]: `ageph` split into 5-year bins and then used in `glm`
+
+
+```r
+*level &lt;- seq(min(mtpl$ageph), max(mtpl$ageph), by = 5)
+freq_glm_age_c &lt;- glm(nclaims ~ `cut(ageph, level)`, 
+                    offset = log(expo), 
+                    data = mtpl, 
+                    family = poisson(link = "log"))
+pred_glm_age_c &lt;- predict(freq_glm_age_c, 
+          newdata = data.frame(ageph = a, expo = 1), 
+          `type = "terms"`, se.fit = TRUE)
+b_glm_age_c &lt;- pred_glm_age_c$fit
+l_glm_age_c &lt;- pred_glm_age_c$fit 
+                  - qnorm(0.975)*pred_glm_age_c$se.fit
+u_glm_age_c &lt;- pred_glm_age_c$fit 
+                  + qnorm(0.975)*pred_glm_age_c$se.fit
+df &lt;- data.frame(a, b_glm_age_c, 
+                    l_glm_age_c, u_glm_age_c)
+```
+
+
+
+
+]
+
+.pull-right[
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-207-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Model 4]: smooth effect of `ageph` in `mgcv::gam`
+
+
+```r
+library(mgcv)
+freq_gam_age &lt;- gam(nclaims ~ `s(ageph)`, 
+                    offset = log(expo), 
+                    data = mtpl, 
+                    family = poisson(link = "log"))
+pred_gam_age &lt;- predict(freq_gam_age, 
+          newdata = data.frame(ageph = a, expo = 1), 
+          `type = "terms"`, se.fit = TRUE)
+b_gam_age &lt;- pred_gam_age$fit
+l_gam_age &lt;- pred_gam_age$fit -
+                  qnorm(0.975)*pred_gam_age$se.fit
+u_gam_age &lt;- pred_gam_age$fit +
+                  qnorm(0.975)*pred_gam_age$se.fit
+df &lt;- data.frame(a, b_gam_age, 
+                    l_gam_age, u_gam_age)
+```
+
+
+
+
+]
+
+.pull-right[
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-210-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+class: clear
+
+.hi-pink[Model 4] (revisited): picture smooth effect of `ageph` in `mgcv::gam` with built-in `plot`.
+
+
+```r
+library(mgcv)
+freq_gam &lt;- gam(nclaims ~ s(ageph), offset = log(expo), family = poisson(link = "log"), data = mtpl)
+plot(freq_gam, scheme = 4)
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-211-1.svg" width="35%" height="10%" style="display: block; margin: auto;" /&gt;
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+You will further explore GAMs in R with the `gam(.)` function from the {mgcv} package.
+
+.hi-pink[Q]: you will combine insights from building `glm` as well as `gam` objects by working through the following coding steps. 
+
+1. Fit a `gam` including some factor variables as well as a smooth effect of `ageph` and `bm`. Visualize the fitted smooth effects.
+
+2. Specify risk profiles of drivers. Calculate their expected annual claim frequency from the constructed `gam`.
+
+3. Explain (in words) which profiles would represent high vs low risk according to the constructed model. 
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Q.1] examine the following `gam` fit
+
+
+```r
+freq_gam_2 &lt;- gam(nclaims ~ sex + fuel + use + 
+                    s(ageph) + s(bm),
+                  offset = log(expo), data = mtpl,
+                  family = poisson(link = "log"))
+```
+
+
+```r
+summary(freq_gam_2)
+## 
+## Family: poisson 
+## Link function: log 
+## 
+## Formula:
+## nclaims ~ sex + fuel + use + s(ageph) + s(bm)
+## 
+## Parametric coefficients:
+##              Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)  -1.91780    0.01812 -105.82   &lt;2e-16 ***
+## sexmale       0.00918    0.01604    0.57    0.567    
+## fuelgasoline -0.15276    0.01510  -10.12   &lt;2e-16 ***
+## usework      -0.05516    0.03309   -1.67    0.096 .  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Approximate significance of smooth terms:
+##           edf Ref.df Chi.sq p-value    
+## s(ageph) 5.45   6.50    229  &lt;2e-16 ***
+## s(bm)    8.49   8.87   1228  &lt;2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## R-sq.(adj) =  0.0155   Deviance explained = 2.85%
+## UBRE = -0.46446  Scale est. = 1         n = 163231
+```
+
+
+]
+
+.pull-right[
+
+
+```r
+plot(freq_gam_2, select = 1)
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-214-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+
+
+
+```r
+plot(freq_gam_2, select = 2)
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-215-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Q.2] define some risk profiles 
+
+
+```r
+drivers &lt;- data.frame(expo = c(1, 1, 1), 
+                      sex = c("female", "female", "female"), 
+                      fuel = c("diesel", "diesel", "diesel"), 
+                      use = c("private", "private", "private"), 
+                      ageph = c(18, 45, 65), bm = c(20, 5, 0))
+drivers 
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; expo &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; sex &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; fuel &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; use &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; ageph &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; bm &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; diesel &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; private &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; diesel &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; private &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 45 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; diesel &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; private &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 65 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+Now, you predict the annual expected claim frequency for these profiles. 
+
+
+```r
+predict(freq_gam_2, newdata = drivers, 
+        type = "response")
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; x &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 0.3969 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 0.1727 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 0.0951 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+
+---
+
+class: inverse, center, middle
+
+# Regularized (G)LMs met {glmnet}
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=796px&gt;&lt;/html&gt;
+
+
+---
+
+
+# Statistical learning with sparsity
+
+.pull-left-alt[
+
+.center[
+&lt;img src="img/sparsity_book.jpg" alt="Drawing" style="width: 150px; height: 220px;"/&gt;
+&lt;br&gt; &lt;br&gt; &lt;img src="img/boehmke_greenwell.jpg" alt="Drawing" style="width: 150px; height: 220px;"/&gt;  
+]
+
+]
+
+.pull-right-alt[
+
+Why?
+
+* Sort through the mass of information and bring it down to .hi-pink[its bare essentials].
+
+* One form of simplicity is .hi-pink[sparsity].
+
+* Only a relatively small number of predictors play a role.
+
+How? &amp;nbsp; &amp;nbsp; .KULbginline[Automatic feature selection!]
+
+* Fit a model with all *p* predictors, but constrain or .hi-pink[regularize] the coefficient estimates. 
+
+* Shrinking the coeffcient estimates can signifcantly reduce their variance. 
+
+* Some types of shrinkage put some of the coefficients .KULbginline[exactly equal to zero]!
+
+]
+
+---
+
+# Ridge and lasso (least squares) regression
+
+.pull-left[
+.KULbginline[Ridge] considers the least-squares optimization problem
+
+`$$\begin{eqnarray*}
+\min_{\beta_0,\boldsymbol{\beta}} \ \sum_{i=1}^n \left(y_i - \beta_0 - \sum_{j=1}^p \beta_j x_{ij}\right)^2 = \min_{\beta_0,\boldsymbol{\beta}} \ \text{RSS}
+\end{eqnarray*}$$`
+
+subject to a .hi-pink[budget constraint]
+
+`$$\begin{eqnarray*}
+\sum_{j=1}^p \beta_j^2 \leq \color{#e64173}{t},
+\end{eqnarray*}$$`
+
+i.e. an `\(\ell_2\)` penalty.
+
+Shrinks the coefficient estimates (not the intercept) to zero. 
+
+
+]
+
+.pull-right[
+.KULbginline[Lasso] considers the least-squares optimization problem
+
+`$$\begin{eqnarray*}
+\min_{\beta_0,\boldsymbol{\beta}} \ \sum_{i=1}^n \left(y_i - \beta_0 - \sum_{j=1}^p \beta_j x_{ij}\right)^2 = \min_{\beta_0,\boldsymbol{\beta}} \ \text{RSS}
+\end{eqnarray*}$$`
+
+subject to a .hi-pink[budget constraint]
+
+`$$\begin{eqnarray*}
+\sum_{j=1}^p |\beta_j| \leq \color{#e64173}{t},
+\end{eqnarray*}$$`
+
+i.e. an `\(\ell_1\)` penalty.
+
+Shrinks the coefficient estimates (not the intercept) to zero and does variable selection!
+
+Lasso is for .hi-pink[L]east .hi-pink[a]bsolute .hi-pink[s]hrinkage and .hi-pink[s]election .hi-pink[o]perator.
+
+
+]
+
+---
+
+# Ridge and lasso (least squares) regression (cont.)
+
+.pull-left[
+
+The .KULbginline[dual problem] formulation:
+
+* with ridge penalty: 
+
+`$$\begin{eqnarray*}
+\min_{\beta_0,\boldsymbol{\beta}} \ \text{RSS} + \color{#e64173}{\lambda} \sum_{j=1}^p \beta_j^2
+\end{eqnarray*}$$`
+
+* with lasso penalty:
+`$$\begin{eqnarray*}
+\min_{\beta_0,\boldsymbol{\beta}} \ \text{RSS}+\color{#e64173}{\lambda} \sum_{j=1}^p |\beta_j|.
+\end{eqnarray*}$$`
+
+`\(\color{#e64173}{\lambda}\)` is a tuning parameter; use resampling methods to pick a value!
+
+Both ridge and lasso require .hi-pink[centering and scaling] of the features. 
+
+]
+
+.pull-right[
+
+.center[
+&lt;img src="img/6.7_ISL.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+Ellipses (around least-squares solution) represent regions of constant RSS. 
+
+Lasso budget on the left and ridge budget on the right.
+
+Source: James et al. (2013) on [An introduction to statistical learning](http://faculty.marshall.usc.edu/gareth-james/ISL/).
+
+]
+
+---
+
+# Regularized GLMs 
+
+.pull-left[
+
+We now focus on generalizations of linear models and the lasso.
+
+Minimize
+
+`$$\begin{eqnarray*}
+\min_{\beta_0,\ \beta} -\frac{1}{n} \mathcal{L}(\beta_0,\ \beta;\ y,\ X)+\lambda \|\boldsymbol{\beta}\|_1.
+\end{eqnarray*}$$`
+
+Here: 
+
+* `\(\mathcal{L}\)` is the log-likelihood of a GLM.
+
+* `\(n\)` is the sample size
+
+* `\(\|\boldsymbol{\beta}\|_1 = \sum_{j=1}^p \beta_j\)` the `\(\ell_1\)` penalty.
+
+What happens if: 
+
+* `\(\lambda \to 0\)`?
+
+* `\(\lambda \to \infty\)`?
+
+]
+
+.pull-right[
+
+.center[
+&lt;img src="img/lasso_path.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+The R package {glmnet} fits linear, logistic and multinomial, Poisson, and Cox regression models.
+
+]
+---
+
+# Fit a GLM with lasso regularization in {glmnet}
+
+{glmnet} is a package that fits a generalized linear model via penalized maximum likelihood.
+
+Main function call (with a selection of arguments, see `? glmnet` for a complete list)
+
+
+```r
+fit &lt;- glmnet(x, y, family = ., alpha = ., weights = ., offset = ., nlambda = ., standardize = ., intercept = .)
+```
+
+where
+
+* `x` is the input matrix and `y` is the response variable
+* `family` the response type, e.g. `family = poisson`
+* `weights` and `offset` 
+* `nlambda` is the number of `\(\lambda\)` values, default is 100
+* `standardize` should `x` be standardized prior to fitting the model sequence?
+* `intercept` should incercept be fitted?
+* `alpha` a value between 0 and 1, such that the penalty becomes
+`$$\begin{eqnarray*}
+\lambda P_{\alpha}(\boldsymbol{\beta}) = \lambda \cdot \sum_{j=1}^p \left\{\frac{(1-\alpha)}{2}\beta_j^2 + \alpha |\beta_j|\right\}.
+\end{eqnarray*}$$`
+Thus, with `\(\alpha = 1\)` the lasso penalty and `\(\alpha = 0\)` the ridge penalty results.
+
+---
+
+# A first example of {glmnet}
+
+.pull-left[
+
+Following [the vignette](https://web.stanford.edu/~hastie/Papers/Glmnet_Vignette.pdf) we start with penalized linear regression
+
+
+```r
+library(glmnet)
+data(QuickStartExample)
+```
+
+This example loads an input matrix `x` and vector `y` of outcomes. The input matrix `x` is not standardized yet (check this!).
+
+We calibrate a lasso linear regression model
+
+
+```r
+fit &lt;- glmnet(x, y, family = "gaussian", 
+              `alpha = 1`, standardize = TRUE, 
+              intercept = TRUE)
+summary(fit)
+```
+
+
+]
+
+.pull-right[
+
+
+
+Note that the formula notation `y ~ x` can not be used with `glmnet`.
+
+Some `tidy` instructions are available for `glmnet` objects (but not all), e.g.
+
+
+```r
+library(broom)
+tidy(fit)
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; step &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; lambda &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; dev.ratio &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6608 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.631 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6312 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.486 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0553 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5875 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.354 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1459 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5476 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.234 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2211 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5112 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.124 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2836 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+
+```r
+plot(fit, `label = TRUE`)
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-229-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+
+```r
+plot(fit, label = TRUE, `xvar = 'lambda'`)
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-231-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+
+```r
+plot(fit, `xvar = 'dev'`, label = TRUE)
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-233-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+
+```r
+print(fit) 
+## 
+## Call:  glmnet(x = x, y = y, family = "gaussian", alpha = 1, standardize = TRUE,      intercept = TRUE) 
+## 
+##    Df %Dev Lambda
+## 1   0  0.0  1.630
+## 2   2  5.5  1.490
+## 3   2 14.6  1.350
+## 4   2 22.1  1.230
+## 5   2 28.4  1.120
+## 6   2 33.5  1.020
+## 7   4 39.0  0.933
+## 8   5 45.6  0.850
+## 9   5 51.5  0.775
+## 10  6 57.4  0.706
+## 11  6 62.5  0.643
+## 12  6 66.9  0.586
+## 13  6 70.5  0.534
+## 14  6 73.4  0.487
+## 15  7 76.2  0.443
+## 16  7 78.6  0.404
+## 17  7 80.5  0.368
+## 18  7 82.2  0.335
+## 19  7 83.5  0.306
+## 20  7 84.6  0.278
+## 21  7 85.6  0.254
+## 22  7 86.3  0.231
+## 23  8 87.1  0.211
+## 24  8 87.7  0.192
+## 25  8 88.2  0.175
+## 26  8 88.7  0.159
+## 27  8 89.0  0.145
+## 28  8 89.3  0.132
+## 29  8 89.6  0.121
+## 30  8 89.8  0.110
+## 31  9 89.9  0.100
+## 32  9 90.1  0.091
+## 33  9 90.2  0.083
+## 34  9 90.3  0.076
+## 35 10 90.4  0.069
+## 36 11 90.5  0.063
+## 37 11 90.6  0.057
+## 38 12 90.7  0.052
+## 39 15 90.8  0.048
+## 40 16 90.9  0.043
+## 41 16 90.9  0.040
+## 42 16 91.0  0.036
+## 43 17 91.0  0.033
+## 44 17 91.1  0.030
+## 45 18 91.1  0.027
+## 46 18 91.1  0.025
+## 47 19 91.2  0.023
+## 48 19 91.2  0.021
+## 49 19 91.2  0.019
+## 50 19 91.2  0.017
+## 51 19 91.2  0.016
+## 52 19 91.3  0.014
+## 53 19 91.3  0.013
+## 54 19 91.3  0.012
+## 55 19 91.3  0.011
+## 56 19 91.3  0.010
+## 57 19 91.3  0.009
+## 58 19 91.3  0.008
+## 59 19 91.3  0.007
+## 60 19 91.3  0.007
+## 61 19 91.3  0.006
+## 62 20 91.3  0.006
+## 63 20 91.3  0.005
+## 64 20 91.3  0.005
+## 65 20 91.3  0.004
+## 66 20 91.3  0.004
+## 67 20 91.3  0.004
+```
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+Get estimated coefficients for handpicked value
+
+
+```r
+coef(fit, `s = 0.1`)
+```
+
+
+```
+## 21 x 1 sparse Matrix of class "dgCMatrix"
+##                     1
+## (Intercept)  0.150928
+## V1           1.320597
+## V2           .       
+## V3           0.675110
+## V4           .       
+## V5          -0.817412
+## V6           0.521437
+## V7           0.004829
+## V8           0.319416
+## V9           .       
+## V10          .       
+## V11          0.142499
+## V12          .       
+## V13          .       
+## V14         -1.059979
+## V15          .       
+## V16          .       
+## V17          .       
+## V18          .       
+## V19          .       
+## V20         -1.021874
+```
+
+
+]
+
+.pull-right[
+
+`glmnet` returns a sequence of models for the users to choose from, i.e. a model for every `lambda`. 
+
+How do we select the most appropriate model? 
+
+Use cross-validation to pick a `lambda` value. The default is 10-folds cross-validation.
+
+
+```r
+cv_fit &lt;- cv.glmnet(x, y)
+```
+
+
+
+We can pick the `lambda` that minimizes the cross-validation error. 
+
+
+```r
+cv_fit$lambda.min
+## [1] 0.07569
+```
+
+Or we use the one-standard-error-rule. 
+
+
+```r
+cv_fit$lambda.1se
+## [1] 0.1593
+```
+
+]
+
+---
+
+class: clear
+
+We plot the cross-validation error for the inspected grid of `lambda` values. 
+
+
+```r
+plot(cv_fit)
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-242-1.svg" width="45%" height="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: clear
+
+.pull-left[
+
+For the selected `lambda` (via `cv_fit$lambda.min`) we inspect which parameters are non-zero (on the right).
+
+Now, compare this to the selected variables obtained via `cv_fit$lambda.1se`.
+
+]
+
+.pull-right[
+
+
+```r
+coef(fit, s = cv_fit$lambda.min)
+```
+
+
+```
+## 21 x 1 sparse Matrix of class "dgCMatrix"
+##                    1
+## (Intercept)  0.14867
+## V1           1.33378
+## V2           .      
+## V3           0.69788
+## V4           .      
+## V5          -0.83727
+## V6           0.54334
+## V7           0.02669
+## V8           0.33741
+## V9           .      
+## V10          .      
+## V11          0.17105
+## V12          .      
+## V13          .      
+## V14         -1.07553
+## V15          .      
+## V16          .      
+## V17          .      
+## V18          .      
+## V19          .      
+## V20         -1.05279
+```
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+The variables `V1`, `V3`, `V5-8`, `V11`, `V14` and `V20` are selected in the regression model. 
+
+However, the corresponding estimates (on the left) are biased, and shrunk to zero. 
+
+To remove this bias, we refit the model, only using the selected variables. 
+
+
+```r
+subset &lt;- data.frame(y = y, V1 = x[, 1], V3 = x[, 3], 
+                     V5 = x[, 5], V6 = x[, 6], 
+                     V7 = x[, 7], V8 = x[, 8], 
+                     V11 = x[, 11], V14 = x[, 14], 
+                     V20 = x[, 20])
+final_model &lt;- lm(y ~ V1 + V3 + V5 + V6 + V7 + V8 + 
+                      V11 + V14 + V20, data = subset)
+final_model %&gt;% broom::tidy()
+```
+
+What is your judgement about `V7` (see coefficients on the right)?
+
+]
+
+.pull-right[
+
+What do you observe when comparing the estimates below with those shown on the previous sheet?
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1417 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0996 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4231 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1582 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; V1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3747 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0968 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.1980 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; V3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7688 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0943 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.1567 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; V5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.8992 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1034 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -8.6981 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; V6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6116 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0901 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.7888 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; V7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0947 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0973 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.9736 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3329 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; V8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3934 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0920 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.2738 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; V11 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2601 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0994 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.6159 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0104 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; V14 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.1240 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0885 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -12.6963 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; V20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.1491 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1117 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -10.2863 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+
+# {glmnet} and the MTPL data set
+
+.pull-left[
+
+Next, we fit a .KULbginline[Poisson regression model with lasso penalty] on the `mtpl` data set. 
+
+The regularization penalty helps us to select the interesting features from the data set. 
+
+`glmnet` requires the features as input matrix `x` and the target as a vector `y`.
+
+Recall: 
+
+* `mtpl` has .hi-pink[continuous] features (e.g. `ageph`, `bm`, `power`)
+
+* `mtpl` has .hi-pink[factor] variables with .hi-pink[two levels] (e.g. `sex`, `fleet`)
+
+* but also factor variables with .hi-pink[more than 2 levels] (`coverage`)
+
+]
+
+.pull-right[
+
+Consider different types of coding factor variables.
+
+Apply the `contrasts` function to the variable `coverage`
+
+
+```r
+map(mtpl[, c("coverage")], contrasts, 
+    contrasts = FALSE)
+## $coverage
+##     FO PO TPL
+## FO   1  0   0
+## PO   0  1   0
+## TPL  0  0   1
+```
+
+
+```r
+map(mtpl[, c("coverage")], contrasts, 
+    contrasts = TRUE)
+## $coverage
+##     PO TPL
+## FO   0   0
+## PO   1   0
+## TPL  0   1
+```
+
+What's the difference?
+]
+
+---
+
+# {glmnet} and the MTPL data set (cont.)
+
+We construct the input matrix for `glmnet`.
+
+
+```r
+*y &lt;- mtpl$nclaims
+
+x &lt;- model.matrix( ~ coverage + fuel + use + fleet + sex + ageph + bm +
+                     agec + power, data = mtpl, 
+                   contrasts.arg = map(mtpl[, c("coverage")], contrasts, 
+                                       contrasts = FALSE))[,-1]
+
+x[1:10,]
+```
+
+Put the response or outcome variable in `y`. 
+
+In the `mtpl` data set we build a Poisson model for `nclaims`. 
+
+---
+
+# {glmnet} and the MTPL data set (cont.)
+
+We construct the input matrix for `glmnet`.
+
+
+```r
+y &lt;- mtpl$nclaims
+
+x &lt;- `model.matrix`( ~ coverage + fuel + use + fleet + sex + ageph + bm +
+                     agec + power, data = mtpl, 
+                     `contrasts.arg = map(mtpl[, c("coverage")], contrasts,` 
+                                      `contrasts = FALSE)`)[,-1]
+
+```
+
+Use `model.matrix` to create the input matrix `x`.
+
+We code the factor variable `coverage` with one-hot-encoding. Here, three dummy variables will be created for the three levels of `coverage`. 
+
+The other factor variables `fuel`, `use`, `fleet`, `sex` are dummy coded, with one dummy variable. 
+
+---
+
+# {glmnet} and the MTPL data set (cont.)
+
+We construct the input matrix for `glmnet`.
+
+
+```r
+y &lt;- mtpl$nclaims
+
+x &lt;- model.matrix( ~ coverage + fuel + use + fleet + sex + ageph + bm +
+                     agec + power, data = mtpl, 
+                     contrasts.arg = map(mtpl[, c("coverage")], contrasts, 
+                                       contrasts = FALSE))`[,-1]`
+
+```
+
+Use `model.matrix` to create the input matrix `x`.
+
+We remove the first column, representing the intercept, from the `model.matrix`. 
+
+---
+
+# {glmnet} and the MTPL data set (cont.)
+
+Let's check the input matrix `x`
+
+
+```
+##   coverageFO coveragePO coverageTPL fuelgasoline usework fleetY sexmale ageph bm agec power
+## 1          0          0           1            1       0      0       1    50  5   12    77
+## 2          0          1           0            1       0      0       0    64  5    3    66
+## 3          0          0           1            0       0      0       1    60  0   10    70
+## 4          0          0           1            1       0      0       1    77  0   15    57
+## 5          0          0           1            1       0      0       0    28  9    7    70
+## 6          0          0           1            1       0      0       1    26 11   12    70
+```
+
+You are now ready to fit a regularized Poisson GLM for `y` with input `x`. 
+
+Let's go!
+
+---
+
+name: yourturn
+class: clear
+
+.left-column[
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+## &lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;br&gt; Your turn
+
+
+]
+
+.right-column[
+
+You will fit a regularized Poisson GLM on the `mtpl` data with the {glmnet} package.
+
+.hi-pink[Q]: using the constructed `y` and `x` 
+
+1. Fit a `glmnet` with lasso penalty and store the fitted object in `mtpl_glmnet`. Use the following arguments `family = "poisson", offset = ___`.
+
+2. Display the order of the variables and their names via `row.names(mtpl_glmnet$beta)`.
+
+3. Plot the solutions path. Pick a meaningful value for `lambda` via cross-validation.
+
+4. Which variables are selected in the lasso model? As a last step, you will fit a Poisson GLM with the selected variables. What do you see?
+
+5. List some pros and cons of the above strategy.
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Q.1] fit a regularized Poisson GLM
+
+
+```r
+alpha &lt;- 1 # for lasso penalty
+mtpl_glmnet &lt;- glmnet(x = x, y = y, 
+                      family = "poisson", 
+                      offset = log(mtpl$expo), 
+                      alpha = alpha, 
+                      standardize = TRUE, 
+                      intercept = TRUE)
+```
+
+
+
+.hi-pink[Q.2] display the variables via
+
+
+```r
+row.names(mtpl_glmnet$beta) 
+##  [1] "coverageFO"   "coveragePO"   "coverageTPL"  "fuelgasoline" "usework"      "fleetY"       "sexmale"      "ageph"        "bm"          
+## [10] "agec"         "power"
+```
+
+]
+
+.pull-right[
+
+.hi-pink[Q.3] plot the solutions path
+
+
+```r
+plot(mtpl_glmnet, xvar = 'lambda', label = TRUE)  
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-256-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Q.3] pick a value for `lambda`
+
+
+```r
+set.seed(123)
+fold_id &lt;- sample(rep(1:10, length.out = nrow(mtpl)), 
+                  nrow(mtpl))
+mtpl_glmnet_cv &lt;- cv.glmnet(x, y, family = "poisson", 
+                            alpha = alpha, 
+                            nfolds = 10, 
+                            foldid = fold_id, 
+                            type.measure = "deviance", 
+                            standardize = TRUE, 
+                            intercept = TRUE)
+plot(mtpl_glmnet_cv)
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-257-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+.pull-right[
+
+
+```r
+coef(mtpl_glmnet_cv, s = "lambda.min")
+## 12 x 1 sparse Matrix of class "dgCMatrix"
+##                      1
+## (Intercept)  -2.106681
+## coverageFO   -0.006500
+## coveragePO    .       
+## coverageTPL   0.050002
+## fuelgasoline -0.165865
+## usework      -0.069292
+## fleetY       -0.049284
+## sexmale      -0.013718
+## ageph        -0.006347
+## bm            0.058564
+## agec         -0.002004
+## power         0.003448
+```
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Q.3] pick a value for `lambda`
+
+
+```r
+set.seed(123)
+fold_id &lt;- sample(rep(1:10, length.out = nrow(mtpl)), 
+                  nrow(mtpl))
+mtpl_glmnet_cv &lt;- cv.glmnet(x, y, family = "poisson", 
+                            alpha = alpha, 
+                            nfolds = 10, 
+                            foldid = fold_id,
+                            type.measure = "deviance", 
+                            standardize = TRUE, 
+                            intercept = TRUE)
+plot(mtpl_glmnet_cv)
+```
+
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-259-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+.pull-right[
+
+
+```r
+coef(mtpl_glmnet_cv, s = "lambda.1se")
+## 12 x 1 sparse Matrix of class "dgCMatrix"
+##                      1
+## (Intercept)  -2.124040
+## coverageFO    .       
+## coveragePO    .       
+## coverageTPL   .       
+## fuelgasoline  .       
+## usework       .       
+## fleetY        .       
+## sexmale       .       
+## ageph        -0.002917
+## bm            0.046164
+## agec          .       
+## power         .
+```
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+.hi-pink[Q.4] refit the models using only the selected features
+
+
+```r
+mtpl$coverage &lt;- relevel(mtpl$coverage, "PO")
+mtpl_formula_refit &lt;- nclaims ~ 1 + coverage + 
+                      fuel + use + fleet + sex + 
+                      ageph + bm + agec + power
+mtpl_glm_refit &lt;- glm(mtpl_formula_refit, 
+                      data = mtpl, 
+                      offset = log(mtpl$expo), 
+                      family = poisson())
+```
+
+]
+
+.pull-right[
+
+The selection obtained via `lambda.min`
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.9893 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0401 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -49.5680 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; coverageFO &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0044 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0244 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1813 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8561 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; coverageTPL &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0744 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0172 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.3153 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; fuelgasoline &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.1731 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0153 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -11.2945 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; usework &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0863 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0334 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -2.5797 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0099 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; fleetY &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.1226 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0435 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -2.8177 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0048 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sexmale &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0253 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0162 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.5585 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1191 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ageph &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0074 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -13.7765 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; bm &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0639 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0017 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.8902 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; agec &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0019 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.2426 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8083 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; power &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0039 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0004 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.1421 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+class: clear
+
+.pull-left[
+
+.hi-pink[Q.4] refit the models using only the selected features
+
+
+```r
+mtpl_formula_refit_2 &lt;- nclaims ~ 1 + ageph + bm 
+mtpl_glm_refit_2 &lt;- glm(mtpl_formula_refit_2, 
+                        data = mtpl, 
+                        offset = log(mtpl$expo), 
+                        family = poisson())
+```
+
+]
+
+.pull-right[
+
+The selection obtained via `lambda.1se`
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.8251 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0282 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -64.64 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ageph &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0084 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -15.90 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; bm &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0626 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0017 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.51 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+name: wrap-up
+
+# Thanks!  &lt;img src="img/xaringan.png" class="title-hex"&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+Slides created with the R package [xaringan](https://github.com/yihui/xaringan).
+&lt;br&gt; &lt;br&gt; &lt;br&gt;
+Course material available via 
+&lt;br&gt;
+&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; https://github.com/katrienantonio/hands-on-machine-learning-R-module-1
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightLanguage": "R",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"highlightSpans": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
