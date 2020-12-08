@@ -8,7 +8,7 @@ Course materials for the *Hands-on Machine Learning in R* course
 Instituut.
 
 📆 Module 1 on December 10 and 17, 2020, Module 2 on Jan 14 and 21, 2021
-and Module 3 on Jan 28 and Feb 4, 2021 <br> 🕑 From 9.30 am to 12.30 pm
+and Module 3 on Jan 28 and Feb 4, 2021 <br> 🕖 From 9.30 am to 12.30 pm
 or from 1.30 pm to 4.30 pm <br> 📍 online, organized by Actuarieel
 Instituut
 
@@ -65,18 +65,18 @@ own.
 The schedule will gradually be completed over the next days. The
 detailed schedule is subject to small changes.
 
-|  Module  |  Session  | Duration                | Description                                              | Lecture material                                                                                                 | R script | R solutions |
-| :------: | :-------: | ----------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
-| Prework  |           | your own pace           | check the Prework and Software Requirements instructions |                                                                                                                  |          |             |
-| Prework  |           | day before the workshop | download the course material from the GitHub repo        |                                                                                                                  |          |             |
-| Module 1 | Session 1 | 13.30 - 13.40           | Statistical and machine learning                         | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#knowing)     |          |             |
-|          |           | 13.40 - 13.50           | Model accuracy and loss functions                        | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#accuracy)    |          |             |
-|          |           | 13.50 - 14.00           | Overfitting and bias-variance trade off                  | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#overfit)     |          |             |
-|          |           | 14.00 - 14.30           | Data splitting and resampling methods                    | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#resampling)  |          |             |
-|          |           | 14.40 - 14.50           | (cont.)                                                  |                                                                                                                  |          |             |
-|          |           | 14.50 - 15.30           | Parameter tuning                                         | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#tuning)      |          |             |
-|          |           | 15.40 - 16.30           | Target and feature engineering                           | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#engineering) |          |             |
-| Module 1 | Session 2 |                         |                                                          |                                                                                                                  |          |             |
+|  Module  |  Session  | Duration                | Description                                              | Lecture material                                                                                                 | R script                                                                                                            | R solutions |
+| :------: | :-------: | ----------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Prework  |           | your own pace           | check the Prework and Software Requirements instructions |                                                                                                                  |                                                                                                                     |             |
+| Prework  |           | day before the workshop | download the course material from the GitHub repo        |                                                                                                                  |                                                                                                                     |             |
+| Module 1 | Session 1 | 13.30 - 13.40           | Statistical and machine learning                         | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#knowing)     |                                                                                                                     |             |
+|          |           | 13.40 - 13.50           | Model accuracy and loss functions                        | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#accuracy)    |                                                                                                                     |             |
+|          |           | 13.50 - 14.00           | Overfitting and bias-variance trade off                  | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#overfit)     | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/1_overfitting.R)             |             |
+|          |           | 14.00 - 14.30           | Data splitting and resampling methods                    | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#resampling)  | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/2_data_split_resample.R)     |             |
+|          |           | 14.40 - 14.50           | (cont.)                                                  |                                                                                                                  |                                                                                                                     |             |
+|          |           | 14.50 - 15.30           | Parameter tuning                                         | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#tuning)      | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/3_parameter_tuning.R)        |             |
+|          |           | 15.40 - 16.30           | Target and feature engineering                           | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#engineering) | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/4_target_feature_engineer.R) |             |
+| Module 1 | Session 2 |                         |                                                          |                                                                                                                  |                                                                                                                     |             |
 
 ##### Module 1: Machine learning foundations, regression methods
 
