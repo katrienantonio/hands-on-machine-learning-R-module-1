@@ -120,6 +120,42 @@ holdout_results <- function(s, k_val) {
 
 
 
+## ----------------------------------------------------------------------------------------------
+df <- tibble(RMSE, SE, k = hyper_grid$k)
+df <- df %>% mutate(lower = RMSE-SE, upper = RMSE + SE)
+best <- df %>% filter(RMSE == min(RMSE)) 
+best 
+
+
+## ----------------------------------------------------------------------------------------------
+one_SE <- df %>% filter(RMSE <= best$upper) %>% filter(k == max(k)) 
+one_SE
+
+
+## ----one-SE-rule-------------------------------------------------------------------------------
+big_g <- ggplot(data = df) + theme_bw() +
+  geom_line(aes(k, RMSE)) +
+  geom_point(aes(k, RMSE)) +
+  geom_pointrange(aes(k, RMSE, ymin = lower, ymax = upper), alpha = 0.5) +
+  geom_point(data = best,
+             aes(k, RMSE),
+             shape = 21,
+             fill = "yellow",
+             color = "black",
+             stroke = 1,
+             size = 2) +
+  geom_point(data = one_SE,
+             aes(k, RMSE),
+             shape = 21,
+             fill = "yellow",
+             color = "black",
+             stroke = 1,
+             size = 3) +
+  geom_hline(data = best,
+             aes(yintercept = upper)) +
+  scale_y_continuous("Error (RMSE)")
+big_g
+
 
 
 

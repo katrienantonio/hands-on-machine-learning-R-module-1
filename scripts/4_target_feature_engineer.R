@@ -17,15 +17,12 @@ summary(ames_train$Sale_Price)
 summary(ames_test$Sale_Price)
 
 
-## Your Turn!
+## Your Turn! fill in the blanks
 ## --------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
+ggplot(data = ames_train, aes(x = ___)) + 
+  geom_histogram(bins = 50, fill = KULbg, col = KULbg, alpha = 0.5) +
+  theme_bw() + ggtitle("AMES - original target")
 
 
 
@@ -76,19 +73,6 @@ juice(mod_rec_trained) %>% group_by(Neighborhood) %>%
 
 ## Your Turn!
 ## --------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

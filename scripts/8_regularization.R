@@ -68,7 +68,6 @@ final_model %>% broom::tidy()
 
 ## --------------------------------------------------------------------------------------------------------------------------------------------------
 dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
-dir <- here::here()   
 setwd(dir) 
 mtpl_orig <- read.table('../data/PC_data.txt', 
                         header = TRUE,

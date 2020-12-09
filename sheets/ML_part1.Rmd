@@ -1,7 +1,7 @@
 ---
 title: "Hands-on Machine Learning with R - Module 1"
 author: "Katrien Antonio & Roel Henckaerts"
-date: '[hands-on-machine-learning-R-module-1](https://github.com/katrienantonio/hands-on-machine-learning-R) | December 10 & 17, 2020'
+date: '[hands-on-machine-learning-R-module-1](https://github.com/katrienantonio/hands-on-machine-learning-R-module-1) | December 10 & 17, 2020'
 output:
   xaringan::moon_reader:
     css:
@@ -94,7 +94,7 @@ name: introduction
 
 ### Course
 
-`r fa(name = "github", fill = KULbg)` https://github.com/katrienantonio/hands-on-machine-learning-R
+`r fa(name = "github", fill = KULbg)` https://github.com/katrienantonio/hands-on-machine-learning-R-module-1
 
 The course repo on GitHub, where you can find the data sets, lecture sheets, R scripts and R markdown files.
 
@@ -515,7 +515,7 @@ $$
 \begin{aligned}
   \mathop{E}\left[ \left\{ \color{#FFA500}{y} - \hat{\color{#FFA500}{y}} \right\}^2 \right]
   &=
-  \mathop{E}\left[ \left\{ \color{#3b3b9a}{f}(\color{#e64173}{x}) + \epsilon + \hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}) \right\}^2 \right] \\
+  \mathop{E}\left[ \left\{ \color{#3b3b9a}{f}(\color{#e64173}{x}) + \epsilon - \hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}) \right\}^2 \right] \\
   &= \underbrace{\left[ \color{#3b3b9a}{f}(\color{#e64173}{x}) - \hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}) \right]^2}_{\text{Reducible}} + \underbrace{\mathop{\text{Var}} \left( \color{#e64173}{\epsilon} \right)}_{\text{Irreducible}}
 \end{aligned}
 $$
@@ -681,7 +681,7 @@ class: clear
 
 Data are generated from: $\color{#FFA500}{y} = \color{#3b3b9a}{f}(\color{#e64173}{x})+\epsilon$, with the black curve as the true $\color{#3b3b9a}{f}$. The orange (linear regression), blue (smoothing splines) and green (smoothing splines) curves are three estimates for $\color{#3b3b9a}{f}$, with increasing level of complexity.
 
-.hi-pink[Q]: which model do you prefer (orange, blue, green) for each of the following examples? Why? Discuss with your neighbour.
+.hi-pink[Q]: which model do you prefer (orange, blue, green) for each of the following examples? Why? 
 
 .center[
 <img src="img/2.9 ISL.png" alt="Drawing" style="width: 500px;"/> 
@@ -710,7 +710,7 @@ class: clear
 
 Data are generated from: $\color{#FFA500}{y} = \color{#3b3b9a}{f}(\color{#e64173}{x})+\epsilon$, with the black curve as the true $\color{#3b3b9a}{f}$. The orange (linear regression), blue (smoothing splines) and green (smoothing splines) curves are three estimates for $\color{#3b3b9a}{f}$, with increasing level of complexity.
 
-.hi-pink[Q]: which model do you prefer (orange, blue, green) for each of the following examples? Why? Discuss with your neighbour.
+.hi-pink[Q]: which model do you prefer (orange, blue, green) for each of the following examples? Why? 
 
 .center[
 <img src="img/2.10 ISL.png" alt="Drawing" style="width: 500px;"/> 
@@ -739,7 +739,7 @@ class: clear
 
 Data are generated from: $\color{#FFA500}{y} = \color{#3b3b9a}{f}(\color{#e64173}{x})+\epsilon$, with the black curve as the true $\color{#3b3b9a}{f}$. The orange (linear regression), blue (smoothing splines) and green (smoothing splines) curves are three estimates for $\color{#3b3b9a}{f}$, with increasing level of complexity.
 
-.hi-pink[Q]: which model do you prefer (orange, blue, green) for each of the following examples? Why? Discuss with your neighbour.
+.hi-pink[Q]: which model do you prefer (orange, blue, green) for each of the following examples? Why? 
 
 .center[
 <img src="img/2.11 ISL.png" alt="Drawing" style="width: 500px;"/> 
@@ -781,7 +781,7 @@ $$\begin{eqnarray*}
 <img src="img/2.14 ISL.png" alt="Drawing" style="width: 300px;"/> 
 ]
 
-.hi-pink[Q]: is KNN a supervised learning or unsupervised learning method? Discuss with your neighbour.
+.hi-pink[Q]: is KNN a supervised learning or unsupervised learning method? Discuss.
 
 ]
 
@@ -1568,7 +1568,7 @@ map_dbl(cv_folds,
 
 We apply the function `mean(ames[___, ]$Sale_Price)` over all `k` elements of the list `cv_folds`.
 
-`map_dbl(.x, .f)` is one of the `map` functions from the `purrr` package (part of `tidyverse`), used for functional programming in R.
+`map_dbl(.x, .f)` is one of the `map` functions from the {purrr} package (part of {tidyverse}), used for functional programming in R.
 
 `map_dbl(.x, .f)` applies function `.f` to each element of list `.x`.
 
@@ -2817,7 +2817,7 @@ class: clear
 
 Now you will extend the existing recipe in `mod_rec`, prepare and bake it again!
 
-.hi-pink[Q]: consult the [`recipes` manual](https://tidymodels.github.io/recipes/reference/index.html) and specify a recipe for the housing data that includes the following pre-processing steps (in this order)
+.hi-pink[Q]: consult the [{recipes} manual](https://tidymodels.github.io/recipes/reference/index.html) and specify a recipe for the housing data that includes the following pre-processing steps (in this order)
 
 * log-transform the outcome variable
 * remove any zero-variance predictors
@@ -2889,7 +2889,7 @@ names(ames_train)[nzv$nzv]
 names(ames_train)[nzv$nzv]
 ```
 
-So, no features have zero- variance, but 21 features have near-zero-variance.
+So, no features have zero- variance, but 20 features have near-zero-variance.
 
 ---
 
