@@ -8,8 +8,8 @@ Course materials for the *Hands-on Machine Learning in R* course
 Instituut.
 
 📆 Module 1 on December 10 and 17, 2020, Module 2 on Jan 14 and 21, 2021
-and Module 3 on Jan 28 and Feb 4, 2021 <br> 🕖 From 9.30 am to 12.30 pm
-or from 1.30 pm to 4.30 pm <br> 📍 online, organized by Actuarieel
+and Module 3 on Jan 28 and Feb 4, 2021 <br> 🕥 From 9.30 am to 12.30 pm
+or from 1.30 pm to 4.30 pm <br> 📌 online, organized by Actuarieel
 Instituut
 
 Course materials will be posted in the week before the workshop. You are
@@ -76,7 +76,12 @@ detailed schedule is subject to small changes.
 |          |           | 14.40 - 14.50           | (cont.)                                                  |                                                                                                                  |                                                                                                                     |             |
 |          |           | 14.50 - 15.30           | Parameter tuning                                         | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#tuning)      | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/3_parameter_tuning.R)        |             |
 |          |           | 15.40 - 16.30           | Target and feature engineering                           | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#engineering) | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/4_target_feature_engineer.R) |             |
-| Module 1 | Session 2 |                         |                                                          |                                                                                                                  |                                                                                                                     |             |
+| Module 1 | Session 2 | 13.30 - 14.10           | Target and feature engineering                           | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#engineering) | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/4_target_feature_engineer.R) |             |
+|          |           | 14.10 - 14.20           | Linear regression                                        | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#121)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/5_regression_tidy.R)         |             |
+|          |           | 14.30 - 15.00           | GLMs                                                     | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#128)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/6_glm.R)                     |             |
+|          |           | 15.10 - 15.30           | GAMs                                                     | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#144)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/7_gam.R)                     |             |
+|          |           | 15.40 - 15.50           | GAMs                                                     | (continued)                                                                                                      |                                                                                                                     |             |
+|          |           | 15.50 - 16.30           | Regularized GLMs                                         | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#157)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/8_regularization.R)          |             |
 
 ##### Module 1: Machine learning foundations, regression methods
 
