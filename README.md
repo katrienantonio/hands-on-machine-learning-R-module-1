@@ -7,7 +7,7 @@ Course materials for the *Hands-on Machine Learning in R* course
 (September 2021).
 
 📆 Module 1 on September 7 & 8, 2021, Module 2 on September 9 & 10, 2021
-and Module 3 on September 13 & 14, 2021 <br> 🕓 From 9.00 am to 12.00 pm
+and Module 3 on September 13 & 14, 2021 <br> 🕗 From 9.00 am to 12.00 pm
 or from 1.30 pm to 4.30 pm <br> 📌 online, organized by Capgemini Academy
 and Nationale Nederlanden
 
@@ -122,8 +122,8 @@ Here are the steps you should take (before the workshop):
   - join the space
   - at the top of your screen you see ‘Projects’, click ‘Projects’
   - with the ‘copy’ button (on the right) you can make your own version
-    of the ‘day 1 on loss modelling’ project; in this copy you can work
-    on the exercises, add comments etc.
+    of the ‘Module 1 - Foundations of ML and regression’ project; in
+    this copy you can work on the exercises, add comments etc.
   - you should now be able to visit the project and see the ‘scripts’
     and ‘data’ folders on the right. Open and run the
     ‘installation-instructions.R’ script from the scripts folder, to
