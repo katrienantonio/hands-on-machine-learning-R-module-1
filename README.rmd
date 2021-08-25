@@ -18,17 +18,17 @@ library(emo)
 library(reticulate)
 ```
 
-## Workshop Hands-on Machine Learning in R, 2020 - 2021
+## Workshop Hands-on Machine Learning in R, September 2021 edition
 
-by Katrien Antonio and Roel Henckaerts
+by Katrien Antonio, Jonas Crevecoeur and Roel Henckaerts
 
-Course materials for the *Hands-on Machine Learning in R* course (December 2020 - February 2021) in collaboration with Actuarieel Instituut.
+Course materials for the *Hands-on Machine Learning in R* course (September 2021).
 
-`r emo::ji("calendar")` Module 1 on December 10 and 17, 2020, Module 2 on Jan 14 and 21, 2021 and Module 3 on Jan 28 and Feb 4, 2021
+`r emo::ji("calendar")` Module 1 on September 7 & 8, 2021, Module 2 on September 9 & 10, 2021 and Module 3 on September 13 & 14, 2021
 <br>
-`r emo::ji("clock")` From 9.30 am to 12.30 pm or from 1.30 pm to 4.30 pm
+`r emo::ji("clock")` From 9.00 am to 12.00 pm or from 1.30 pm to 4.30 pm
 <br>
-`r emo::ji("location")` online, organized by Actuarieel Instituut
+`r emo::ji("location")` online, organized by Capgemini Academy and Nationale Nederlanden
 
 Course materials will be posted in the week before the workshop. You are now on the landing page for **Module 1: ML foundations and regression models**.
 
@@ -55,13 +55,13 @@ The schedule will gradually be completed over the next days. The detailed schedu
 |:-----:|:-------:|-----------|-------------|------|------|------|
 | Prework | | your own pace | check the Prework and Software Requirements instructions | | |
 | Prework | | day before the workshop | download the course material from the GitHub repo | | | 
-| Module 1 | Session 1   | 13.30 - 13.40 | Statistical and machine learning | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#knowing) | | |
-| |         | 13.40 - 13.50 | Model accuracy and loss functions | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#accuracy)| | |
-| |        | 13.50 - 14.00 | Overfitting and bias-variance trade off | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#overfit)| [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/1_overfitting.R)| |
-| |        | 14.00 - 14.30 | Data splitting and resampling methods | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#resampling)| [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/2_data_split_resample.R)| |
-| |        | 14.40 - 14.50 | (cont.) | | | |
-| |        | 14.50 - 15.30 | Parameter tuning | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#tuning) | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/3_parameter_tuning.R) |  |
-| |        | 15.40 - 16.30 | Target and feature engineering | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#engineering)|[script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/4_target_feature_engineer.R) | |
+| Module 1 | Session 1   | 9.00 - 9.10 | Statistical and machine learning | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#knowing) | | |
+| |         | 9.10 - 9.20 | Model accuracy and loss functions | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#accuracy)| | |
+| |        | 9.20 - 9.30 | Overfitting and bias-variance trade off | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#overfit)| [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/1_overfitting.R)| |
+| |        | 9.30 - 10.00 | Data splitting and resampling methods | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#resampling)| [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/2_data_split_resample.R)| |
+| |        | 10.10 - 10.20 | (cont.) | | | |
+| |        | 10.20 - 11.00 | Parameter tuning | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#tuning) | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/3_parameter_tuning.R) |  |
+| |        | 11.10 - 12.00  | Target and feature engineering | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#engineering)|[script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/4_target_feature_engineer.R) | |
 | Module 1 |  Session 2      | 13.30 - 14.10 | Target and feature engineering | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#engineering)|[script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/4_target_feature_engineer.R) | |
 | | | 14.10 - 14.20 | Linear regression | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#121)|[script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/5_regression_tidy.R) | |
 | | | 14.30 - 15.00 | GLMs | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#128)|[script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/6_glm.R) | |
@@ -81,43 +81,37 @@ In two sessions we cover:
 Download lecture sheets in [pdf](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_module1.pdf). 
 
 
-## After the workshop: want to more know?
-
-An excellent collection of tutorials, books, workshops, events is available via
-
-[http://www.actuarialdatascience.org](http://www.actuarialdatascience.org)
-
-
 ## Software Requirements
 
 You have **two options** to join the coding exercises covered during the
 workshop. Either you join the RStudio cloud workspace dedicated to the
 workshop, and then you'll run R in the cloud, from your browser. Or you
-use your local installation of R and RStudio. The first option is very easy and accessible. Make sure one of these options works smoothly before coming to the workshop. A technical test session will be organized to get you started in case of problems or doubts.
+use your local installation of R and RStudio.
 
-### RStudio Cloud
+We kindly ask participants to **join the RStudio Cloud as default**! 
 
-If you prefer not to work with a local installation of R (and the
-necessary packages), you can join our workspace on RStudio Cloud. This
-should be a **very accessible set-up** for working with R in the cloud
+### RStudio Cloud - default!
+
+You will join our workspace on R Studio Cloud. This
+enables a **very accessible set-up** for working with R in the cloud
 for the less experienced user!
 
 [https://rstudio.cloud/spaces/109060/join?access_code=s3jVNlJn6J8SlZpSXmwvBsCMUC3XicxoFv5kCbCO](https://rstudio.cloud/spaces/109060/join?access_code=s3jVNlJn6J8SlZpSXmwvBsCMUC3XicxoFv5kCbCO)
 
-Here are the steps you should take (before the workshop): 
+Here are the steps you should take (before the workshop):
 
 - visit the above link
-- log in by creating an account for RStudio or by using your Google or GitHub login credentials
+- log in by creating an account for RStudio Cloud or by using your Google or GitHub login credentials
 - join the space
-- at the top of your screen you see 'Projects', click 'Projects'
-- with the 'copy' button (on the right) you can make your own version of the 'Module 1 - Foundations of ML and regression' project; in this copy you can work on the exercises, add comments etc.
-- you should now be able to visit the 'Module 1' project and see the 'scripts' and 'data' folders on the right. Open and run the 'installation-instructions.R' script from the scripts folder, to see if everything works fine.
+- at the top of your screen you see ‘Projects’, click ‘Projects’
+- with the ‘copy’ button (on the right) you can make your own version of the ‘day 1 on loss modelling’ project; in this copy you can work on the exercises, add comments etc.
+- you should now be able to visit the project and see the ‘scripts’ and ‘data’ folders on the right. Open and run the ‘installation-instructions.R’ script from the scripts folder, to see if everything works fine.
 
-We will have everything set up for you in the correct way. You only have to login and open your copy of the project!
+We will have everything set up for you in the correct way. You only have to login!
 
 ### Local installation
 
-Please bring a laptop with a recent version of R and RStudio installed. You can visit the folder 'prework' on the GitHub repo to find installation instructions for both.
+Alternatively, you can bring a laptop with a recent version of R and RStudio installed.
 Make sure you can connect your laptop to the internet (or download the
 course material one day before the start of the workshop). You will
 need:
@@ -129,7 +123,7 @@ need:
 In the `prework` folder you will find a step-by-step guide to installing R and RStudio (though a bit outdated). 
 
 Please **run the below script** in your R session to install the
-required packages (for Module 1, more packages will be added later).
+required packages.
 
 Make sure to **download the course material** (including scripts and data sets) from the GitHub repo one day before the workshop. Use the green button Code > Download ZIP on the GitHub repo website. As a final step, after downloading, unpack the ZIP folder and make sure you can easily access the material (in particular scripts and data sets).
 
@@ -162,6 +156,8 @@ University of Amsterdam. She teaches courses on data science for
 insurance, life and non-life insurance mathematics and loss models.
 Research-wise Katrien puts focus on pricing, reserving and fraud
 analytics, as well as mortality dynamics.</p>
+
+<p align="justify">*Jonas Crevecoeur* is a post-doctoral researcher in biostatistics at KU Leuven. He recently obtained his PhD within the insurance research group at KU Leuven and holds the degrees of MSc in Mathematics, MSc in Insurance Studies and MSc in Financial and Actuarial Engineering (KU Leuven). Before starting the PhD program he worked as an intern with QBE Re (Belgium office) where he studied multiline products and copulas. Jonas was a PhD fellow of the Research Foundation - Flanders (FWO, PhD fellowship fundamental research).</p> 
 
 <p align="justify"> *Roel Henckaerts* is a PhD student in insurance data science at KU
 Leuven. Roel holds the degrees of
