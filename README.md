@@ -7,8 +7,8 @@ Course materials for the *Hands-on Machine Learning in R* course
 (September 2021).
 
 📆 Module 1 on September 7 & 8, 2021, Module 2 on September 9 & 10, 2021
-and Module 3 on September 13 & 14, 2021 <br> 🕗 From 9.00 am to 12.00 pm
-or from 1.30 pm to 4.30 pm <br> 📌 online, organized by Capgemini Academy
+and Module 3 on September 13 & 14, 2021 <br> 🕣 From 9.00 am to 12.00 pm
+or from 1.30 pm to 4.30 pm <br> 📍 online, organized by Capgemini Academy
 and Nationale Nederlanden
 
 Course materials will be posted in the week before the workshop. You are
@@ -208,7 +208,10 @@ Leuven. Roel holds the degrees of MSc in Mathematical Engineering, MSc
 in Insurance Studies and Financial and Actuarial Engineering (KU
 Leuven). Before starting the PhD program he worked as an intern with AIG
 (London office) and KBC. Roel is PhD fellow of the Research Foundation -
-Flanders (FWO, PhD fellowship strategic basic research).
+Flanders (FWO, PhD fellowship strategic basic research). After the
+completion of his PhD, Roel will join [Prophecy
+Labs](https://prophecylabs.com/): an AI/ML startup with experience in
+building end-to-end data solutions that provide concrete business value.
 
 </p>
 
