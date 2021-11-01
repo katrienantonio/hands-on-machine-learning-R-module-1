@@ -1,15 +1,14 @@
 
-## Workshop Hands-on Machine Learning in R, September 2021 edition
+## Workshop Hands-on Machine Learning in R, November 2021 edition
 
 by Katrien Antonio, Jonas Crevecoeur and Roel Henckaerts
 
 Course materials for the *Hands-on Machine Learning in R* course
-(September 2021).
+(November 2021).
 
-📆 Module 1 on September 7 & 8, 2021, Module 2 on September 9 & 10, 2021
-and Module 3 on September 13 & 14, 2021 <br> 🕣 From 9.00 am to 12.00 pm
-or from 1.30 pm to 4.30 pm <br> 📍 online, organized by Capgemini Academy
-and Nationale Nederlanden
+📆 Module 1 on November 8 & 10, 2021, Module 2 on November 15 & 17, 2021
+and Module 3 on November 22 & 24, 2021 <br> 🕓 From 9.00 am to 12.00 pm
+<br> 📌 online, organized by Capgemini Academy and Nationale Nederlanden
 
 Course materials will be posted in the week before the workshop. You are
 now on the landing page for **Module 1: ML foundations and regression
@@ -75,12 +74,12 @@ detailed schedule is subject to small changes.
 |          |           | 10.10 - 10.20           | (cont.)                                                  |                                                                                                                  |                                                                                                                     |             |
 |          |           | 10.20 - 11.00           | Parameter tuning                                         | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#tuning)      | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/3_parameter_tuning.R)        |             |
 |          |           | 11.10 - 12.00           | Target and feature engineering                           | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#engineering) | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/4_target_feature_engineer.R) |             |
-| Module 1 | Session 2 | 13.30 - 14.10           | Target and feature engineering                           | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#engineering) | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/4_target_feature_engineer.R) |             |
-|          |           | 14.10 - 14.20           | Linear regression                                        | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#121)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/5_regression_tidy.R)         |             |
-|          |           | 14.30 - 15.00           | GLMs                                                     | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#128)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/6_glm.R)                     |             |
-|          |           | 15.10 - 15.30           | GAMs                                                     | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#144)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/7_gam.R)                     |             |
-|          |           | 15.40 - 15.50           | GAMs                                                     | (continued)                                                                                                      |                                                                                                                     |             |
-|          |           | 15.50 - 16.30           | Regularized GLMs                                         | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#157)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/8_regularization.R)          |             |
+| Module 1 | Session 2 | 09.00 - 09.40           | Target and feature engineering                           | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#engineering) | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/4_target_feature_engineer.R) |             |
+|          |           | 09.40 - 09.50           | Linear regression                                        | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#121)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/5_regression_tidy.R)         |             |
+|          |           | 10.00 - 10.30           | GLMs                                                     | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#128)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/6_glm.R)                     |             |
+|          |           | 10.30 - 10.50           | GAMs                                                     | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#144)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/7_gam.R)                     |             |
+|          |           | 11.00 - 11.10           | GAMs                                                     | (continued)                                                                                                      |                                                                                                                     |             |
+|          |           | 11.10 - 12.00           | Regularized GLMs                                         | [sheets](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/sheets/ML_part1.html#157)         | [script](https://katrienantonio.github.io/hands-on-machine-learning-R-module-1/scripts/8_regularization.R)          |             |
 
 ##### Module 1: Machine learning foundations, regression methods
 
