@@ -7,8 +7,8 @@ Course materials for the *Hands-on Machine Learning in R* course
 (November 2021).
 
 📆 Module 1 on November 8 & 10, 2021, Module 2 on November 15 & 17, 2021
-and Module 3 on November 22 & 24, 2021 <br> 🕓 From 9.00 am to 12.00 pm
-<br> 📌 online, organized by Capgemini Academy and Nationale Nederlanden
+and Module 3 on November 22 & 24, 2021 <br> 🕧 From 9.00 am to 12.00 pm
+<br> 📍 online, organized by Capgemini Academy and Nationale Nederlanden
 
 Course materials will be posted in the week before the workshop. You are
 now on the landing page for **Module 1: ML foundations and regression
@@ -202,15 +202,15 @@ fellowship fundamental research).
 
 <p align="justify">
 
-*Roel Henckaerts* is a PhD student in insurance data science at KU
-Leuven. Roel holds the degrees of MSc in Mathematical Engineering, MSc
-in Insurance Studies and Financial and Actuarial Engineering (KU
-Leuven). Before starting the PhD program he worked as an intern with AIG
-(London office) and KBC. Roel is PhD fellow of the Research Foundation -
-Flanders (FWO, PhD fellowship strategic basic research). After the
-completion of his PhD, Roel will join [Prophecy
-Labs](https://prophecylabs.com/): an AI/ML startup with experience in
-building end-to-end data solutions that provide concrete business value.
+*Roel Henckaerts* holds the degrees of MSc in Mathematical Engineering,
+MSc in Insurance Studies and Financial and Actuarial Engineering (KU
+Leuven) and PhD in Business Economics (KU Leuven). Before starting the
+PhD program he worked as an intern with AIG (London office) and KBC.
+Roel is PhD fellow of the Research Foundation - Flanders (FWO, PhD
+fellowship strategic basic research). After the completion of his PhD,
+Roel joined [Prophecy Labs](https://prophecylabs.com/): an AI/ML startup
+with experience in building end-to-end data solutions that provide
+concrete business value.
 
 </p>
 
