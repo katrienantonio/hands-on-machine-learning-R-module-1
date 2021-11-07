@@ -4,10 +4,11 @@
     <title>Hands-on Machine Learning with R - Module 1</title>
     <meta charset="utf-8" />
     <meta name="author" content="Katrien Antonio, Jonas Crevecoeur &amp; Roel Henckaerts" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/metropolis.css" type="text/css" />
-    <link rel="stylesheet" href="css/metropolis-fonts.css" type="text/css" />
-    <link rel="stylesheet" href="css/my-css.css" type="text/css" />
+    <link rel="stylesheet" href="css\metropolis.css" type="text/css" />
+    <link rel="stylesheet" href="css\metropolis-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css\my-css.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -22,7 +23,7 @@ class: center, middle, inverse, title-slide
 <hr align='center' color='#116E8A' size=1px width=97%>
 </html>
 ### Katrien Antonio, Jonas Crevecoeur &amp; Roel Henckaerts
-### <a href="https://github.com/katrienantonio/hands-on-machine-learning-R-module-1">hands-on-machine-learning-R-module-1</a> | September 7 &amp; 8, 2021
+### <a href="https://github.com/katrienantonio/hands-on-machine-learning-R-module-1">hands-on-machine-learning-R-module-1</a> | November 8 &amp; 10, 2021
 
 ---
 
@@ -62,7 +63,7 @@ The course repo on GitHub, where you can find the data sets, lecture sheets, R s
 
 &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 640 512"&gt;&lt;path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/&gt;&lt;/svg&gt; (Jonas) Postdoc and consultant in statistics and data science
 
-&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 640 512"&gt;&lt;path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/&gt;&lt;/svg&gt; (Roel) PhD student in insurance data science
+&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 640 512"&gt;&lt;path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/&gt;&lt;/svg&gt; (Roel) PhD in insurance data science, now consultant in data science with AI start up [Prophecy Labs](https://www.prophecylabs.com/)
 
 ---
 
@@ -587,7 +588,7 @@ The expected value of the .hi-pink[test MSE]:
 &lt;img src="img/bias_variance_trade_off.png" alt="Drawing" style="width: 600px;"/&gt;  
 ]
 
-Source: James et al. (2013) on [http://faculty.marshall.usc.edu/gareth-james/ISL/](An introduction to statistical learning).
+Source: James et al. (2021, 2nd edition) on [https://www.statlearning.com/](An introduction to statistical learning).
 
 ---
 
@@ -614,7 +615,7 @@ Data are generated from: `\(\color{#FFA500}{y} = \color{#3b3b9a}{f}(\color{#e641
 &lt;img src="img/2.9 ISL.png" alt="Drawing" style="width: 500px;"/&gt; 
 ]
 
-.footnote[Example from James et al. (2013) on [http://faculty.marshall.usc.edu/gareth-james/ISL/](An introduction to statistical learning).]
+.footnote[Example from James et al. (2021) on [https://www.statlearning.com/](An introduction to statistical learning).]
 
 ]
 
@@ -643,7 +644,7 @@ Data are generated from: `\(\color{#FFA500}{y} = \color{#3b3b9a}{f}(\color{#e641
 &lt;img src="img/2.10 ISL.png" alt="Drawing" style="width: 500px;"/&gt; 
 ]
 
-.footnote[Example from James et al. (2013) on [http://faculty.marshall.usc.edu/gareth-james/ISL/](An introduction to statistical learning).]
+.footnote[Example from James et al. (2021) on [https://www.statlearning.com/](An introduction to statistical learning).]
 
 ]
 
@@ -672,7 +673,7 @@ Data are generated from: `\(\color{#FFA500}{y} = \color{#3b3b9a}{f}(\color{#e641
 &lt;img src="img/2.11 ISL.png" alt="Drawing" style="width: 500px;"/&gt; 
 ]
 
-.footnote[Example from James et al. (2013) on [http://faculty.marshall.usc.edu/gareth-james/ISL/](An introduction to statistical learning).]
+.footnote[Example from James et al. (2021) on [https://www.statlearning.com/](An introduction to statistical learning).]
 
 ]
 
@@ -702,7 +703,7 @@ class: clear
 \text{Pr}(\color{#FFA500}{Y}=j|\color{#e64173}{X} = \color{#e64173}{x}_0) &amp;=&amp; \frac{1}{K} \sum_{i \in \mathcal{N}_0} \mathbb{I}(\color{#FFA500}{y}_i=j).
 \end{eqnarray*}$$`
 
-- KNN then assigns the test observation `\(\color{#e64173}{x}_0\)` to the class `\(j\)` with the highest probability, e.g. with *K=3* (from James et al., 2013)
+- KNN then assigns the test observation `\(\color{#e64173}{x}_0\)` to the class `\(j\)` with the highest probability, e.g. with *K=3* (from James et al., 2021)
 
 .center[
 &lt;img src="img/2.14 ISL.png" alt="Drawing" style="width: 300px;"/&gt; 
@@ -1023,7 +1024,7 @@ The percentage of data that goes to training is `p`.
 
 # Data splitting in {rsample}  &lt;img src="img/rsample.png" class="title-hex"&gt;
 
-The {rsample} package, part of the {tidymodels} initiative of RStudio, is home to a wide very variety of resampling functions. 
+The {rsample} package, part of the {tidymodels} initiative of RStudio, is home to a wide variety of resampling functions. 
 
 The documentation is at [rsample: the basics](https://tidymodels.github.io/rsample/articles/Basics.html).
 
@@ -2357,7 +2358,7 @@ Examples of common pre-processing steps:
 &lt;br&gt;
 .hi-pink[Centering (C)] and .hi-pink[scaling (S)] the predictors can be used for this purpose.
 
-* Other models are very sensitive to correlations between the predictors and filters or PCA signal extraction can improve the model.
+* Other models are very sensitive to correlations between the predictors and filters or PCA signal extraction can improve these models.
 
 * Some models find .hi-pink[(near) zero-variance (NZV)] predictors problematic, and these should be removed before fitting the model. 
 
@@ -4920,7 +4921,7 @@ Ellipses (around least-squares solution) represent regions of constant RSS.
 
 Lasso budget on the left and ridge budget on the right.
 
-Source: James et al. (2013) on [An introduction to statistical learning](http://faculty.marshall.usc.edu/gareth-james/ISL/).
+Source: James et al. (2021) on [An introduction to statistical learning](https://www.statlearning.com/).
 
 ]
 
@@ -5980,6 +5981,11 @@ Slides created with the R package [xaringan](https://github.com/yihui/xaringan).
 Course material available via 
 &lt;br&gt;
 &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; https://github.com/katrienantonio/hands-on-machine-learning-R-module-1
+
+
+
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -6029,32 +6035,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -6072,6 +6052,17 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
 
 <script>
 slideshow._releaseMath = function(el) {
