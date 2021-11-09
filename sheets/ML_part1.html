@@ -75,7 +75,7 @@ name: checklist
   
   ```r
   version$version.string
-  ## [1] "R version 4.0.3 (2020-10-10)"
+  ## [1] "R version 3.6.2 (2019-12-12)"
   ```
 
 ☑ Do you have a fairly recent version of RStudio? 
@@ -447,7 +447,7 @@ how does target `\(\color{#FFA500}{y}\)` depend on features `\(\color{#e64173}{x
 --
 .pull-right[
 
-&lt;img src="img/prediction_inference.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/prediction_inference.png" width="2200" style="display: block; margin: auto;" /&gt;
 ]
 
 
@@ -1309,7 +1309,7 @@ This list has `k` elements, each storing the row numbers of the observations in 
 
 
 ```
-## [1] 180954
+## [1] 180954.3
 ```
 
 
@@ -1322,8 +1322,8 @@ map_dbl(cv_folds,
 
 
 ```
-##  Fold1  Fold2  Fold3  Fold4  Fold5 
-## 180954 180782 180646 180563 181035
+##    Fold1    Fold2    Fold3    Fold4    Fold5 
+## 180954.3 180781.8 180646.4 180563.0 181034.7
 ```
 
 ]
@@ -1356,7 +1356,7 @@ mean(ames[cv_folds$Fold1, ]$Sale_Price)
 
 
 ```
-## [1] 180954
+## [1] 180954.3
 ```
 
 
@@ -1369,8 +1369,8 @@ mean(ames[cv_folds$Fold1, ]$Sale_Price)
 
 
 ```
-##  Fold1  Fold2  Fold3  Fold4  Fold5 
-## 180954 180782 180646 180563 181035
+##    Fold1    Fold2    Fold3    Fold4    Fold5 
+## 180954.3 180781.8 180646.4 180563.0 181034.7
 ```
 
 
@@ -1406,24 +1406,19 @@ cv_rsample$splits
 
 
 ```
-## [[1]]
-## &lt;Analysis/Assess/Total&gt;
+## $`1`
 ## &lt;2344/586/2930&gt;
 ## 
-## [[2]]
-## &lt;Analysis/Assess/Total&gt;
+## $`2`
 ## &lt;2344/586/2930&gt;
 ## 
-## [[3]]
-## &lt;Analysis/Assess/Total&gt;
+## $`3`
 ## &lt;2344/586/2930&gt;
 ## 
-## [[4]]
-## &lt;Analysis/Assess/Total&gt;
+## $`4`
 ## &lt;2344/586/2930&gt;
 ## 
-## [[5]]
-## &lt;Analysis/Assess/Total&gt;
+## $`5`
 ## &lt;2344/586/2930&gt;
 ```
 
@@ -1450,24 +1445,19 @@ cv_rsample &lt;- rsample::vfold_cv(ames, v = 5)
 
 
 ```
-## [[1]]
-## &lt;Analysis/Assess/Total&gt;
+## $`1`
 ## &lt;2344/586/2930&gt;
 ## 
-## [[2]]
-## &lt;Analysis/Assess/Total&gt;
+## $`2`
 ## &lt;2344/586/2930&gt;
 ## 
-## [[3]]
-## &lt;Analysis/Assess/Total&gt;
+## $`3`
 ## &lt;2344/586/2930&gt;
 ## 
-## [[4]]
-## &lt;Analysis/Assess/Total&gt;
+## $`4`
 ## &lt;2344/586/2930&gt;
 ## 
-## [[5]]
-## &lt;Analysis/Assess/Total&gt;
+## $`5`
 ## &lt;2344/586/2930&gt;
 ```
 
@@ -1504,7 +1494,6 @@ cv_rsample &lt;- rsample::vfold_cv(ames, v = 5)
 
 
 ```
-## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ```
 
@@ -1561,7 +1550,6 @@ cv_rsample$splits[[1]]
 
 
 ```
-## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ```
 
@@ -1613,7 +1601,8 @@ map_dbl(cv_rsample$splits,
 
 
 ```
-## [1] 181311 180991 180840 181269 179570
+##        1        2        3        4        5 
+## 181310.8 180991.0 180840.0 181268.6 179569.9
 ```
 
 
@@ -1626,7 +1615,8 @@ map_dbl(cv_rsample$splits,
 
 
 ```
-## [1] 2344 2344 2344 2344 2344
+##    1    2    3    4    5 
+## 2344 2344 2344 2344 2344
 ```
 
 ]
@@ -1709,7 +1699,8 @@ cv_rsample &lt;- rsample::vfold_cv(train_rsample, v = 5)
 
 map_dbl(cv_rsample$splits,
         ~ nrow(rsample::assessment(.)))
-## [1] 489 489 488 488 488
+##   1   2   3   4   5 
+## 489 489 488 488 488
 nrow(test_rsample)
 ## [1] 488
 ```
@@ -1992,16 +1983,13 @@ cv_rsample$splits[1:3]
 
 
 ```
-## [[1]]
-## &lt;Analysis/Assess/Total&gt;
+## $`1`
 ## &lt;286/72/358&gt;
 ## 
-## [[2]]
-## &lt;Analysis/Assess/Total&gt;
+## $`2`
 ## &lt;286/72/358&gt;
 ## 
-## [[3]]
-## &lt;Analysis/Assess/Total&gt;
+## $`3`
 ## &lt;286/72/358&gt;
 ```
 ]
@@ -2095,7 +2083,7 @@ sqrt(sum((res$obs - res$pred)^2)/nrow(res))
 
 
 ```
-## [1] 0.3609
+## [1] 0.3608923
 ```
 ]
 
@@ -2132,11 +2120,11 @@ for(i in 1:nrow(hyper_grid)){
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 0.2917 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0247 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2917121 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0247127 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.267 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.3164 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2669995 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3164248 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2154,11 +2142,11 @@ for(i in 1:nrow(hyper_grid)){
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 0.3158 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0285 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3157639 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0284855 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 70 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2873 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.3442 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2872784 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3442495 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2539,7 +2527,7 @@ mod_rec
 ## 
 ## Operations:
 ## 
-## Log transformation on all_outcomes()
+## Log transformation on all_outcomes
 ## Collapsing factor levels for Neighborhood
 ```
 
@@ -2567,7 +2555,7 @@ mod_rec_trained &lt;- prep(mod_rec, training = ames_train, verbose = TRUE, retai
 mod_rec_trained &lt;- prep(mod_rec, training = ames_train, verbose = TRUE, retain = TRUE)
 ## oper 1 step log [training] 
 ## oper 2 step other [training] 
-## The retained training set is ~ 0.82 Mb  in memory.
+## The retained training set is ~ 0.78 Mb  in memory.
 ```
 
 The `retain = TRUE` indicates that the preprocessed training set should be saved.
@@ -2842,9 +2830,12 @@ names(ames_train)[nzv$nzv]
 
 
 ```
-##  [1] "Street"             "Alley"              "Land_Contour"       "Utilities"          "Land_Slope"         "Condition_2"       
-##  [7] "Roof_Matl"          "Bsmt_Cond"          "BsmtFin_Type_2"     "Heating"            "Low_Qual_Fin_SF"    "Kitchen_AbvGr"     
-## [13] "Functional"         "Enclosed_Porch"     "Three_season_porch" "Screen_Porch"       "Pool_Area"          "Pool_QC"           
+##  [1] "Street"             "Alley"              "Land_Contour"      
+##  [4] "Utilities"          "Land_Slope"         "Condition_2"       
+##  [7] "Roof_Matl"          "Bsmt_Cond"          "BsmtFin_Type_2"    
+## [10] "Heating"            "Low_Qual_Fin_SF"    "Kitchen_AbvGr"     
+## [13] "Functional"         "Enclosed_Porch"     "Three_season_porch"
+## [16] "Screen_Porch"       "Pool_Area"          "Pool_QC"           
 ## [19] "Misc_Feature"       "Misc_Val"
 ```
 
@@ -2942,13 +2933,13 @@ mod_rec
 ## 
 ## Operations:
 ## 
-## Log transformation on all_outcomes()
+## Log transformation on all_outcomes
 ## Collapsing factor levels for Neighborhood
 ## Collapsing factor levels for House_Style
-## Zero variance filter on all_predictors()
-## Sparse, unbalanced variable filter on all_predictors()
-## Centering for all_numeric(), -all_outcomes()
-## Scaling for all_numeric(), -all_outcomes()
+## Zero variance filter on all_predictors
+## Sparse, unbalanced variable filter on all_predictors
+## Centering for all_numeric, -, all_outcomes()
+## Scaling for all_numeric, -, all_outcomes()
 ```
 
 ]
@@ -2974,7 +2965,7 @@ mod_rec_trained &lt;- prep(mod_rec,
 ## oper 5 step nzv [training] 
 ## oper 6 step center [training] 
 ## oper 7 step scale [training] 
-## The retained training set is ~ 0.77 Mb  in memory.
+## The retained training set is ~ 0.73 Mb  in memory.
 ```
 
 and bake it on the `ames_test` data
@@ -3252,7 +3243,7 @@ class: clear
 
 You will now fit some linear regression models on the `ames` housing data. 
 &lt;br&gt; &lt;br&gt; 
-You will explore the model fits with `base` R instructions as well as the functionalities offered by the `broom` package.
+You will explore the model fits with `base` R instructions as well as the functionalities offered by the {broom} package.
 &lt;br&gt; &lt;br&gt;
 .hi-pink[Q]: load the `ames` housing data set via `ames &lt;- AmesHousing::make_ames()`
 
@@ -3356,7 +3347,7 @@ The package {broom} allows to summarize key information about statistical object
 
 This makes it easy to report results, create plots and consistently work with large numbers of models at once. 
 
-We briefly illustrate the three essential verbs of `broom`: `tidy()`, `glance()` and `augment()`.
+We briefly illustrate the three essential verbs of {broom}: `tidy()`, `glance()` and `augment()`.
 
 
 ```r
@@ -3410,7 +3401,6 @@ model_1 %&gt;% broom::glance()
    &lt;th style="text-align:right;"&gt; BIC &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; deviance &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; df.residual &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; nobs &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
@@ -3420,13 +3410,12 @@ model_1 %&gt;% broom::glance()
    &lt;td style="text-align:right;"&gt; 56524 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 2923 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -36218 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 72442 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 72460 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 9.355e+12 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 2928 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2930 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -3452,11 +3441,12 @@ model_1 %&gt;% broom::augment() %&gt;% slice(1:5)
    &lt;th style="text-align:right;"&gt; Sale_Price &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; Gr_Liv_Area &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; .fitted &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; .se.fit &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; .resid &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; .std.resid &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; .hat &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; .sigma &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; .cooksd &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; .std.resid &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
@@ -3464,51 +3454,56 @@ model_1 %&gt;% broom::augment() %&gt;% slice(1:5)
    &lt;td style="text-align:right;"&gt; 215000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1656 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 198255 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1093 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 16745 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2963 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 4e-04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 56533 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2963 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 105000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 896 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 113367 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1627 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -8367 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.1481 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 8e-04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.1481 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 172000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1329 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 161731 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1102 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 10269 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1817 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 4e-04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1817 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 244000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 2110 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 248964 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1637 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -4964 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0879 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 8e-04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0879 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 189900 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1629 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 195239 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1078 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -5339 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0945 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 4e-04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0945 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -3665,7 +3660,7 @@ Note that the data `mtpl_orig` uses capitals for the variable names
 
 
 ```r
-mtpl_orig %&gt;% slice(1:3) %&gt;% select(-LONG, -LAT) %&gt;% kable(format = 'html')
+mtpl_orig %&gt;% slice(1:3) %&gt;% dplyr::select(-LONG, -LAT)
 ```
 
 &lt;table&gt;
@@ -3693,8 +3688,8 @@ mtpl_orig %&gt;% slice(1:3) %&gt;% select(-LONG, -LAT) %&gt;% kable(format = 'ht
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1618 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1618 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1618.001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1618.001 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; TPL &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; gasoline &lt;/td&gt;
@@ -3711,7 +3706,7 @@ mtpl_orig %&gt;% slice(1:3) %&gt;% select(-LONG, -LAT) %&gt;% kable(format = 'ht
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; PO &lt;/td&gt;
@@ -3729,7 +3724,7 @@ mtpl_orig %&gt;% slice(1:3) %&gt;% select(-LONG, -LAT) %&gt;% kable(format = 'ht
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; TPL &lt;/td&gt;
@@ -3753,7 +3748,8 @@ We change this to lower case variables, and rename `exp` to `expo`.
 ```r
 mtpl &lt;- mtpl_orig %&gt;% rename_all(tolower) %&gt;% rename(expo = exp)
 names(mtpl)
-##  [1] "id"       "nclaims"  "amount"   "avg"      "expo"     "coverage" "fuel"     "use"      "fleet"    "sex"      "ageph"    "bm"      
+##  [1] "id"       "nclaims"  "amount"   "avg"      "expo"     "coverage"
+##  [7] "fuel"     "use"      "fleet"    "sex"      "ageph"    "bm"      
 ## [13] "agec"     "power"    "pc"       "town"     "long"     "lat"
 ```
 
@@ -3787,7 +3783,7 @@ mtpl %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 0.1393 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1393352 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -3809,11 +3805,11 @@ mtpl %&gt;%
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1484 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1484325 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1361 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1361164 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -3824,13 +3820,13 @@ mtpl %&gt;%
 ```r
 g &lt;- ggplot(mtpl, aes(nclaims)) + theme_bw() + 
      geom_bar(aes(weight = expo),
-              col = KULbg, fill = KULbg) + 
+              alpha = .5, col = KULbg, fill = KULbg) + 
      labs(y = "Abs freq (in exposure)") +
      ggtitle("MTPL - number of claims")
 g
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-174-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-175-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -3879,11 +3875,11 @@ class: clear
 ggplot(data = mtpl, aes(ageph)) + theme_bw() +
   geom_histogram(binwidth = 2, alpha = .5,
                  col = KULbg, fill = KULbg) +
-  labs(y = "Absolure frequency") +
+  labs(y = "Absolute frequency") +
   ggtitle("MTPL - age policyholder")
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-175-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-176-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -3988,7 +3984,7 @@ ggplot(data = freq_by_age,
 
 &lt;br&gt;
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-179-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-180-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4004,7 +4000,7 @@ Modeling claim .hi-pink[frequency] and .hi-pink[severity] in the `mtpl` data set
 
 Target variable `nclaims` (frequency)
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-180-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-181-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
 
 
 Suitable distributions: Poisson, Negative Binomial.
@@ -4015,7 +4011,7 @@ Suitable distributions: Poisson, Negative Binomial.
 
 ...  and `avg` (severity).
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-181-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-182-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
 
 
 Suitable distributions: log-normal, gamma.
@@ -4381,7 +4377,7 @@ With .hi-pink[Generalized Additive Models (GAMs)]
 .pull-left[
 We continue working with `mtpl` and now focus on `ageph`.
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-202-1.svg" width="75%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-203-1.svg" width="75%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4440,7 +4436,7 @@ df &lt;- data.frame(a, b_glm_age, l_glm_age, u_glm_age)
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-206-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-207-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 ---
@@ -4476,7 +4472,7 @@ df &lt;- data.frame(a, b_glm_age_f,
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-209-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-210-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4514,7 +4510,7 @@ df &lt;- data.frame(a, b_glm_age_c,
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-212-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-213-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4552,7 +4548,7 @@ df &lt;- data.frame(a, b_gam_age,
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-215-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-216-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4569,7 +4565,7 @@ freq_gam &lt;- gam(nclaims ~ s(ageph), offset = log(expo), family = poisson(link
 plot(freq_gam, scheme = 4)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-216-1.svg" width="35%" height="10%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-217-1.svg" width="35%" height="10%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -4596,7 +4592,7 @@ GAMs avoid overfitting by adding a .hi-pink[wiggliness penalty] to the likelihoo
 `$$\int \left( f_j(x)'' \right)^2 = \beta_j^t \mathbf{S}_j\beta_j.$$`
 GAMs then balance goodness-of-fit and wiggliness via
 
-`$$\log \mathcal{L}(\beta,\beta_j) - \lambda_j \cdot \beta_j^t \mathbf{S}_j\beta_j,$$`
+`$$- \log \mathcal{L}(\beta,\beta_j) + \lambda_j \cdot \beta_j^t \mathbf{S}_j\beta_j,$$`
 
 with `\(\lambda_j\)` the .hi-pink[smoothing parameter].
 
@@ -4609,7 +4605,7 @@ class: clear
 
 Let's run some experiments to illustrate the effect of the smoothing parameter (   `sp = .`), the number (`k = .`) and type of basis functions (`bs = .`). We use the `mcycle` data from {MASS}.
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-217-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-218-1.svg" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -4696,7 +4692,7 @@ summary(freq_gam_2)
 plot(freq_gam_2, select = 1)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-220-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-221-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -4704,7 +4700,7 @@ plot(freq_gam_2, select = 1)
 plot(freq_gam_2, select = 2)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-221-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-222-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4936,12 +4932,12 @@ We now focus on generalizations of linear models and the lasso.
 Minimize
 
 `$$\begin{eqnarray*}
-\min_{\beta_0,\ \beta} -\frac{1}{n} \mathcal{L}(\beta_0,\ \beta;\ y,\ X)+\lambda \|\boldsymbol{\beta}\|_1.
+\min_{\beta_0,\ \beta} -\frac{1}{n} \log \mathcal{L}(\beta_0,\ \beta;\ y,\ X)+\lambda \|\boldsymbol{\beta}\|_1.
 \end{eqnarray*}$$`
 
 Here: 
 
-* `\(\mathcal{L}\)` is the log-likelihood of a GLM.
+* `\(\log \mathcal{L}\)` is the log-likelihood of a GLM.
 
 * `\(n\)` is the sample size
 
@@ -5060,25 +5056,25 @@ tidy(fit)
    &lt;td style="text-align:right;"&gt; 0.0552832 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; V1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1392650 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.485890 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0552832 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; V14 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0058786 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.485890 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0552832 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.5874616 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1.353887 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.1458910 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.5475769 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.233612 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2211153 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.5112354 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.124021 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2835678 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -5096,7 +5092,7 @@ class: clear
 plot(fit, `label = TRUE`)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-235-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-236-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -5107,7 +5103,7 @@ plot(fit, `label = TRUE`)
 plot(fit, label = TRUE, `xvar = 'lambda'`)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-237-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-238-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -5122,7 +5118,7 @@ class: clear
 plot(fit, `xvar = 'dev'`, label = TRUE)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-239-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-240-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -5134,74 +5130,74 @@ print(fit)
 ## 
 ## Call:  glmnet(x = x, y = y, family = "gaussian", alpha = 1, standardize = TRUE,      intercept = TRUE) 
 ## 
-##    Df  %Dev  Lambda
-## 1   0  0.00 1.63100
-## 2   2  5.53 1.48600
-## 3   2 14.59 1.35400
-## 4   2 22.11 1.23400
-## 5   2 28.36 1.12400
-## 6   2 33.54 1.02400
-## 7   4 39.04 0.93320
-## 8   5 45.60 0.85030
-## 9   5 51.54 0.77470
-## 10  6 57.35 0.70590
-## 11  6 62.55 0.64320
-## 12  6 66.87 0.58610
-## 13  6 70.46 0.53400
-## 14  6 73.44 0.48660
-## 15  7 76.21 0.44330
-## 16  7 78.57 0.40400
-## 17  7 80.53 0.36810
-## 18  7 82.15 0.33540
-## 19  7 83.50 0.30560
-## 20  7 84.62 0.27840
-## 21  7 85.55 0.25370
-## 22  7 86.33 0.23120
-## 23  8 87.06 0.21060
-## 24  8 87.69 0.19190
-## 25  8 88.21 0.17490
-## 26  8 88.65 0.15930
-## 27  8 89.01 0.14520
-## 28  8 89.31 0.13230
-## 29  8 89.56 0.12050
-## 30  8 89.76 0.10980
-## 31  9 89.94 0.10010
-## 32  9 90.10 0.09117
-## 33  9 90.23 0.08307
-## 34  9 90.34 0.07569
-## 35 10 90.43 0.06897
-## 36 11 90.53 0.06284
-## 37 11 90.62 0.05726
-## 38 12 90.70 0.05217
-## 39 15 90.78 0.04754
-## 40 16 90.86 0.04331
-## 41 16 90.93 0.03947
-## 42 16 90.98 0.03596
-## 43 17 91.03 0.03277
-## 44 17 91.07 0.02985
-## 45 18 91.11 0.02720
-## 46 18 91.14 0.02479
-## 47 19 91.17 0.02258
-## 48 19 91.20 0.02058
-## 49 19 91.22 0.01875
-## 50 19 91.24 0.01708
-## 51 19 91.25 0.01557
-## 52 19 91.26 0.01418
-## 53 19 91.27 0.01292
-## 54 19 91.28 0.01178
-## 55 19 91.29 0.01073
-## 56 19 91.29 0.00978
-## 57 19 91.30 0.00891
-## 58 19 91.30 0.00812
-## 59 19 91.31 0.00739
-## 60 19 91.31 0.00674
-## 61 19 91.31 0.00614
-## 62 20 91.31 0.00559
-## 63 20 91.31 0.00510
-## 64 20 91.31 0.00464
-## 65 20 91.32 0.00423
-## 66 20 91.32 0.00386
-## 67 20 91.32 0.00351
+##       Df    %Dev   Lambda
+##  [1,]  0 0.00000 1.631000
+##  [2,]  2 0.05528 1.486000
+##  [3,]  2 0.14590 1.354000
+##  [4,]  2 0.22110 1.234000
+##  [5,]  2 0.28360 1.124000
+##  [6,]  2 0.33540 1.024000
+##  [7,]  4 0.39040 0.933200
+##  [8,]  5 0.45600 0.850300
+##  [9,]  5 0.51540 0.774700
+## [10,]  6 0.57350 0.705900
+## [11,]  6 0.62550 0.643200
+## [12,]  6 0.66870 0.586100
+## [13,]  6 0.70460 0.534000
+## [14,]  6 0.73440 0.486600
+## [15,]  7 0.76210 0.443300
+## [16,]  7 0.78570 0.404000
+## [17,]  7 0.80530 0.368100
+## [18,]  7 0.82150 0.335400
+## [19,]  7 0.83500 0.305600
+## [20,]  7 0.84620 0.278400
+## [21,]  7 0.85550 0.253700
+## [22,]  7 0.86330 0.231200
+## [23,]  8 0.87060 0.210600
+## [24,]  8 0.87690 0.191900
+## [25,]  8 0.88210 0.174900
+## [26,]  8 0.88650 0.159300
+## [27,]  8 0.89010 0.145200
+## [28,]  8 0.89310 0.132300
+## [29,]  8 0.89560 0.120500
+## [30,]  8 0.89760 0.109800
+## [31,]  9 0.89940 0.100100
+## [32,]  9 0.90100 0.091170
+## [33,]  9 0.90230 0.083070
+## [34,]  9 0.90340 0.075690
+## [35,] 10 0.90430 0.068970
+## [36,] 11 0.90530 0.062840
+## [37,] 11 0.90620 0.057260
+## [38,] 12 0.90700 0.052170
+## [39,] 15 0.90780 0.047540
+## [40,] 16 0.90860 0.043310
+## [41,] 16 0.90930 0.039470
+## [42,] 16 0.90980 0.035960
+## [43,] 17 0.91030 0.032770
+## [44,] 17 0.91070 0.029850
+## [45,] 18 0.91110 0.027200
+## [46,] 18 0.91140 0.024790
+## [47,] 19 0.91170 0.022580
+## [48,] 19 0.91200 0.020580
+## [49,] 19 0.91220 0.018750
+## [50,] 19 0.91240 0.017080
+## [51,] 19 0.91250 0.015570
+## [52,] 19 0.91260 0.014180
+## [53,] 19 0.91270 0.012920
+## [54,] 19 0.91280 0.011780
+## [55,] 19 0.91290 0.010730
+## [56,] 19 0.91290 0.009776
+## [57,] 19 0.91300 0.008908
+## [58,] 19 0.91300 0.008116
+## [59,] 19 0.91310 0.007395
+## [60,] 19 0.91310 0.006738
+## [61,] 19 0.91310 0.006140
+## [62,] 20 0.91310 0.005594
+## [63,] 20 0.91310 0.005097
+## [64,] 20 0.91310 0.004644
+## [65,] 20 0.91320 0.004232
+## [66,] 20 0.91320 0.003856
+## [67,] 20 0.91320 0.003513
 ```
 
 ]
@@ -5293,7 +5289,7 @@ We plot the cross-validation error for the inspected grid of `lambda` values.
 plot(cv_fit)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-248-1.svg" width="45%" height="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-249-1.svg" width="45%" height="40%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -5587,20 +5583,20 @@ Let's check the input matrix `x`
 
 
 ```
-##   coverageFO coveragePO coverageTPL fuelgasoline usework fleetY sexmale ageph bm agec
-## 1          0          0           1            1       0      0       1    50  5   12
-## 2          0          1           0            1       0      0       0    64  5    3
-## 3          0          0           1            0       0      0       1    60  0   10
-## 4          0          0           1            1       0      0       1    77  0   15
-## 5          0          0           1            1       0      0       0    28  9    7
-## 6          0          0           1            1       0      0       1    26 11   12
-##   power
-## 1    77
-## 2    66
-## 3    70
-## 4    57
-## 5    70
-## 6    70
+##   coverageFO coveragePO coverageTPL fuelgasoline usework fleetY sexmale ageph
+## 1          0          0           1            1       0      0       1    50
+## 2          0          1           0            1       0      0       0    64
+## 3          0          0           1            0       0      0       1    60
+## 4          0          0           1            1       0      0       1    77
+## 5          0          0           1            1       0      0       0    28
+## 6          0          0           1            1       0      0       1    26
+##   bm agec power
+## 1  5   12    77
+## 2  5    3    66
+## 3  0   10    70
+## 4  0   15    57
+## 5  9    7    70
+## 6 11   12    70
 ```
 
 You are now ready to fit a regularized Poisson GLM for `y` with input `x`. 
@@ -5681,7 +5677,7 @@ row.names(mtpl_glmnet$beta)
 plot(mtpl_glmnet, xvar = 'lambda', label = TRUE)  
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-262-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-263-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -5709,7 +5705,7 @@ mtpl_glmnet_cv &lt;- cv.glmnet(x, y, family = "poisson",
 plot(mtpl_glmnet_cv)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-263-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-264-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -5721,18 +5717,18 @@ plot(mtpl_glmnet_cv)
 coef(mtpl_glmnet_cv, s = "lambda.min")
 ## 12 x 1 sparse Matrix of class "dgCMatrix"
 ##                         1
-## (Intercept)  -2.106680933
-## coverageFO   -0.006499730
+## (Intercept)  -2.106819680
+## coverageFO   -0.006176604
 ## coveragePO    .          
-## coverageTPL   0.050002173
-## fuelgasoline -0.165864612
-## usework      -0.069292342
-## fleetY       -0.049283838
-## sexmale      -0.013718073
-## ageph        -0.006347490
-## bm            0.058564280
-## agec         -0.002004356
-## power         0.003448081
+## coverageTPL   0.049766930
+## fuelgasoline -0.165608774
+## usework      -0.068810620
+## fleetY       -0.048777365
+## sexmale      -0.013449726
+## ageph        -0.006346123
+## bm            0.058548170
+## agec         -0.001967125
+## power         0.003440618
 ```
 
 ]
@@ -5760,7 +5756,7 @@ mtpl_glmnet_cv &lt;- cv.glmnet(x, y, family = "poisson",
 plot(mtpl_glmnet_cv)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-265-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-266-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 
 ]
