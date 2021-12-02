@@ -4,11 +4,11 @@
 by Katrien Antonio, Jonas Crevecoeur and Roel Henckaerts
 
 Course materials for the *Hands-on Machine Learning in R* course
-(November 2021).
+(December 2021).
 
 📆 Module 1 on December 2 & 9, 2021, Module 2 on January 13 & 20, 2021
-and Module 3 on January 27 & February 3, 2021 <br> 🕘 From 9.30 am to
-12.30 pm <br> 📌 online, organized by Actuarieel Instituut
+and Module 3 on January 27 & February 3, 2021 <br> 🕠 From 9.30 am to
+12.30 pm <br> 📍 online, organized by Actuarieel Instituut
 
 Course materials will be posted in the week before the workshop. You are
 now on the landing page for **Module 1: ML foundations and regression
