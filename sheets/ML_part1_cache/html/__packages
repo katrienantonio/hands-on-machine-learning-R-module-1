@@ -1,4 +1,3 @@
-base
 knitr
 tidyverse
 ggplot2
@@ -9,6 +8,7 @@ purrr
 dplyr
 stringr
 forcats
+lubridate
 fontawesome
 DiagrammeR
 emo
@@ -18,11 +18,10 @@ here
 lattice
 caret
 rsample
-gridExtra
 recipes
 nlme
 mgcv
+MASS
 Matrix
 glmnet
 broom
-MASS

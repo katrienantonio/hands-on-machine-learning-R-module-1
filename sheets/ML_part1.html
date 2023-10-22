@@ -6,31 +6,38 @@
     <meta name="author" content="Katrien Antonio, Jonas Crevecoeur &amp; Roel Henckaerts" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css\metropolis.css" type="text/css" />
-    <link rel="stylesheet" href="css\metropolis-fonts.css" type="text/css" />
-    <link rel="stylesheet" href="css\my-css.css" type="text/css" />
+    <link rel="stylesheet" href="css/metropolis.css" type="text/css" />
+    <link rel="stylesheet" href="css/metropolis-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/my-css.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+
+
+
+
+class: bottom, left, title-slide, clear
+
+background-image: url('img/beamer_title_KUL.png')
+background-size: contain
+
+name: titlepage
 
 # Hands-on Machine Learning with R - Module 1
-## Hands-on webinar
-<html>
-<div style="float:left">
 
-</div>
-<hr align='center' color='#116E8A' size=1px width=97%>
-</html>
-### Katrien Antonio, Jonas Crevecoeur &amp; Roel Henckaerts
-### <a href="https://github.com/katrienantonio/hands-on-machine-learning-R-module-1">hands-on-machine-learning-R-module-1</a> | December 2 &amp; 9, 2021
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#FAFAFA' size=1px width=100%&gt;&lt;/html&gt;
+
+&lt;span style="color:#FAFAFA;font-size:18.0pt"&gt;
+Katrien Antonio &amp; Roel Henckaerts &amp; Jonas Crevecoeur &lt;br&gt; &lt;br&gt; 
+&lt;/span&gt;
+
+&lt;span style="color:#FAFAFA;font-size:14.0pt"&gt;
+Webinar | October - November, 2023&lt;br&gt;
+&lt;/span&gt;
 
 ---
-
-
-
-
-
 
 class: inverse, center, middle
 name: prologue
@@ -47,7 +54,7 @@ name: introduction
 
 ### Course
 
-&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; https://github.com/katrienantonio/hands-on-machine-learning-R-module-1
+<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> https://github.com/katrienantonio/hands-on-machine-learning-R-module-1
 
 The course repo on GitHub, where you can find the data sets, lecture sheets, R scripts and R markdown files.
 
@@ -55,15 +62,15 @@ The course repo on GitHub, where you can find the data sets, lecture sheets, R s
 
 ### Us
 
-&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/&gt;&lt;/svg&gt; [https://katrienantonio.github.io/](https://katrienantonio.github.io/) &amp; [https://jonascrevecoeur.github.io/](https://jonascrevecoeur.github.io/) &amp; [https://henckr.github.io/](https://henckr.github.io/)
+<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg> [https://katrienantonio.github.io/](https://katrienantonio.github.io/) &amp; [https://be.linkedin.com/in/jonascrevecoeur](LinkedIn Jonas) &amp; [https://be.linkedin.com/in/roelhenckaerts](LinkedIn Roel)
 
-&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/&gt;&lt;/svg&gt; [katrien.antonio@kuleuven.be](mailto:katrien.antonio@kuleuven.be) &amp; [jonas.crevecoeur@kuleuven.be](mailto:jonas.crevecoeur@kuleuven.be) &amp;  [roel.henckaerts@kuleuven.be](mailto:roel.henckaerts@kuleuven.be)
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376V479.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z"/></svg> [katrien.antonio@kuleuven.be](mailto:katrien.antonio@kuleuven.be) &amp;  [roel.henckaerts@kuleuven.be](mailto:roel.henckaerts@kuleuven.be)
 
-&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 640 512"&gt;&lt;path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/&gt;&lt;/svg&gt; (Katrien) Professor in insurance data science
+<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></svg> (Katrien) Professor in insurance data science
 
-&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 640 512"&gt;&lt;path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/&gt;&lt;/svg&gt; (Jonas) Postdoc and consultant in statistics and data science
+<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></svg> (Jonas) PhD in insurance data science, now consultant in statistics, data science and data engineering with Data Minded
 
-&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 640 512"&gt;&lt;path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/&gt;&lt;/svg&gt; (Roel) PhD in insurance data science, now consultant in data science with AI start up [Prophecy Labs](https://www.prophecylabs.com/)
+<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></svg> (Roel) PhD in insurance data science, now consultant in data science with AI start up [Prophecy Labs](https://www.prophecylabs.com/)
 
 ---
 
@@ -72,24 +79,14 @@ name: checklist
 # Checklist
 
 ☑ Do you have a fairly recent version of R?
-  
-  ```r
-  version$version.string
-  ## [1] "R version 3.6.2 (2019-12-12)"
-  ```
-
+ 
 ☑ Do you have a fairly recent version of RStudio? 
-  
-  ```r
-  RStudio.Version()$version
-  ## Requires an interactive session but should return something like "[1] ‘1.3.1093’"
-  ```
-
+ 
 ☑ Have you installed the R packages listed in the software requirements? 
 
 or
 
-☑ Have you created an account on RStudio Cloud (to avoid any local installation issues)?
+☑ Have you created an account on posit cloud (to avoid any local installation issues)?
   
 ---
 
@@ -97,7 +94,7 @@ name: why-this-course # inspired by Grant McDermott intro lecture
 
 # Why this course?
 
-### The goals of this course .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M505.05 19.1a15.89 15.89 0 0 0-12.2-12.2C460.65 0 435.46 0 410.36 0c-103.2 0-165.1 55.2-211.29 128H94.87A48 48 0 0 0 52 154.49l-49.42 98.8A24 24 0 0 0 24.07 288h103.77l-22.47 22.47a32 32 0 0 0 0 45.25l50.9 50.91a32 32 0 0 0 45.26 0L224 384.16V488a24 24 0 0 0 34.7 21.49l98.7-49.39a47.91 47.91 0 0 0 26.5-42.9V312.79c72.59-46.3 128-108.4 128-211.09.1-25.2.1-50.4-6.85-82.6zM384 168a40 40 0 1 1 40-40 40 40 0 0 1-40 40z"/&gt;&lt;/svg&gt;]
+### The goals of this course .font140[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg>]
 
 --
 
@@ -294,14 +291,14 @@ name: what's-in-a-name
 .KULbginline[Data science] applies mathematics, statistics, machine learning, engineering, etc. to extract knowledge form data.
 --
 
-&gt; *"Data Science is statistics on a Mac &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 384 512"&gt;&lt;path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/&gt;&lt;/svg&gt;. "*
+&gt; *"Data Science is statistics on a Mac <svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>. "*
 
 .center[
 &lt;img src="img/ElementsStatLearning.png" alt="Drawing" style="height: 250px;"/&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;img src="img/ISL.png" alt="Drawing" style="height: 250px;"/&gt; 
 &amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;img src="img/AppliedPredMod.png" alt="Drawing" style="height: 250px;"/&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;img src="img/boehmke_greenwell.jpg" alt="Drawing" style="height: 250px;"/&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;img src="img/molnar.png" alt="Drawing" style="height: 250px;"/&gt;
 ]
 
-Source: Brandon M. Greenwell on [Introduction to Machine Learning in &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#F92672;" viewBox="0 0 581 512"&gt;&lt;path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/&gt;&lt;/svg&gt;](https://github.com/bgreenwell/intro-ml-r).
+Source: Brandon M. Greenwell on [Introduction to Machine Learning in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#F92672;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>](https://github.com/bgreenwell/intro-ml-r).
 
 ---
 
@@ -427,7 +424,7 @@ How do I .KULbginline[estimate] `\(\color{#3b3b9a}{f}(.)\)` - one way to phrase 
 
 --
 
-.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] &amp;nbsp; - &amp;nbsp; main reasons we want to .KULbginline[learn about] `\(\color{#3b3b9a}{f}(.)\)` 
+.font140[.KULbginline[Take-aways]] .font160[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L381.7 53c-48 48-113.1 75-181 75H192 160 64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64l0 128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352l8.7 0c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7V240 371.3C357.2 317.8 280.5 288 200.7 288H192V192h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>] &amp;nbsp; - &amp;nbsp; main reasons we want to .KULbginline[learn about] `\(\color{#3b3b9a}{f}(.)\)` 
 
 --
 
@@ -436,13 +433,13 @@ How do I .KULbginline[estimate] `\(\color{#3b3b9a}{f}(.)\)` - one way to phrase 
 &lt;br&gt;
 predict the target `\(\color{#FFA500}{y}\)` as `\(\hat{\color{#3b3b9a}{f}}(\color{#e64173}{x})\)`
 &lt;br&gt;
-.font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M509.5 184.6L458.9 32.8C452.4 13.2 434.1 0 413.4 0H272v192h238.7c-.4-2.5-.4-5-1.2-7.4zM240 0H98.6c-20.7 0-39 13.2-45.5 32.8L2.5 184.6c-.8 2.4-.8 4.9-1.2 7.4H240V0zM0 224v240c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224H0z"/&gt;&lt;/svg&gt;] - as black box setting? 
+.font140[<svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M50.7 58.5L0 160H208V32H93.7C75.5 32 58.9 42.3 50.7 58.5zM240 160H448L397.3 58.5C389.1 42.3 372.5 32 354.3 32H240V160zm208 32H0V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192z"/></svg>] - as black box setting? 
 &lt;br&gt; &lt;br&gt;
 .font120[.KULbginline[inference]]
 &lt;br&gt;
 how does target `\(\color{#FFA500}{y}\)` depend on features `\(\color{#e64173}{x}\)`? 
 &lt;br&gt;
-.font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 640 512"&gt;&lt;path d="M425.7 256c-16.9 0-32.8-9-41.4-23.4L320 126l-64.2 106.6c-8.7 14.5-24.6 23.5-41.5 23.5-4.5 0-9-.6-13.3-1.9L64 215v178c0 14.7 10 27.5 24.2 31l216.2 54.1c10.2 2.5 20.9 2.5 31 0L551.8 424c14.2-3.6 24.2-16.4 24.2-31V215l-137 39.1c-4.3 1.3-8.8 1.9-13.3 1.9zm212.6-112.2L586.8 41c-3.1-6.2-9.8-9.8-16.7-8.9L320 64l91.7 152.1c3.8 6.3 11.4 9.3 18.5 7.3l197.9-56.5c9.9-2.9 14.7-13.9 10.2-23.1zM53.2 41L1.7 143.8c-4.6 9.2.3 20.2 10.1 23l197.9 56.5c7.1 2 14.7-1 18.5-7.3L320 64 69.8 32.1c-6.9-.8-13.5 2.7-16.6 8.9z"/&gt;&lt;/svg&gt;] - as white box setting? 
+.font140[<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z"/></svg>] - as white box setting? 
 ]
 --
 .pull-right[
@@ -502,7 +499,7 @@ Use .KULbginline[loss functions], i.e. metrics that compare predicted values to 
 
 Recall: `\(\color{#FFA500}{y}_i - \hat{\color{#FFA500}{y}}_i = \color{#FFA500}{y}_i - \hat{\color{#3b3b9a}{f}}(\color{#e64173}{x}_i)\)` is the prediction error.
 
-Objective &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 496 512"&gt;&lt;path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"/&gt;&lt;/svg&gt; : minimize!]
+Objective <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg> : minimize!]
 
 --
 
@@ -511,7 +508,7 @@ Objective &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;"
 -\frac{1}{n} \sum_{i=1}^n \left(\color{#FFA500}{y}_i \cdot \log{(p_i)} + (1-\color{#FFA500}{y}_i) \cdot \log{(1-p_i)}\right).
 \end{eqnarray*}$$`
  
-Objective &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 496 512"&gt;&lt;path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"/&gt;&lt;/svg&gt; : minimize!
+Objective <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg> : minimize!
 
 ]
 
@@ -521,7 +518,7 @@ Objective &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;"
 
 .KULbginline[Many other useful loss functions] (e.g. deviance in regression, Gini index in classification).
 
-.font140[.KULbginline[Take-away]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] &amp;nbsp; - &amp;nbsp; a loss function emphasizes certain types of errors over others &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 448 512"&gt;&lt;path d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"/&gt;&lt;/svg&gt; pick a meaningful one!
+.font140[.KULbginline[Take-away]] .font160[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L381.7 53c-48 48-113.1 75-181 75H192 160 64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64l0 128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352l8.7 0c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7V240 371.3C357.2 317.8 280.5 288 200.7 288H192V192h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>] &amp;nbsp; - &amp;nbsp; a loss function emphasizes certain types of errors over others, thus pick a meaningful one!
 
 
 ---
@@ -546,7 +543,7 @@ Which of the following three models (in green-blue-ish) will best generalize to 
 
 &lt;img src="ML_part1_files/figure-html/overfitting-linear-regression-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
-.footnote[Inspired by Brandon Greenwell's [Introduction to Machine Learning in &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#F92672;" viewBox="0 0 581 512"&gt;&lt;path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/&gt;&lt;/svg&gt;](https://github.com/bgreenwell/intro-ml-r).]
+.footnote[Inspired by Brandon Greenwell's [Introduction to Machine Learning in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#F92672;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>](https://github.com/bgreenwell/intro-ml-r).]
 
 ---
 
@@ -566,13 +563,13 @@ The expected value of the .hi-pink[test MSE]:
 
 .font140[.KULbginline[In general]] - with more flexible methods
 
-* variance .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"/&gt;&lt;/svg&gt;] and bias .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"/&gt;&lt;/svg&gt;]
+* variance .font140[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>] and bias .font140[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM127 281c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l71 71L232 136c0-13.3 10.7-24 24-24s24 10.7 24 24l0 182.1 71-71c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L273 393c-9.4 9.4-24.6 9.4-33.9 0L127 281z"/></svg>]
 
 * their relative rate of change determines whether the test error increases or decreases
 
 --
 
-.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;]
+.font140[.KULbginline[Take-aways]] .font160[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L381.7 53c-48 48-113.1 75-181 75H192 160 64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64l0 128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352l8.7 0c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7V240 371.3C357.2 317.8 280.5 288 200.7 288H192V192h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>]
 
 * U-shape curves of .hi-pink[test MSE] w.r.t model flexibility
 
@@ -806,7 +803,7 @@ and get `\(\hat{\color{#3b3b9a}{f}}\)`.
 
 &lt;img src="img/data_splitting.png" width="70%" style="display: block; margin: auto;" /&gt;
 
-&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; .footnote[Picture taken from [Introduction to Machine Learning in &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#F92672;" viewBox="0 0 581 512"&gt;&lt;path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/&gt;&lt;/svg&gt;](https://github.com/bgreenwell/intro-ml-r).]
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; .footnote[Picture taken from [Introduction to Machine Learning in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#F92672;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>](https://github.com/bgreenwell/intro-ml-r).]
 
 
 ]
@@ -1119,7 +1116,7 @@ As a check, we plot the `Sale_Price` as available in the train (in black) vs tes
 
 
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-19-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-17-1.svg" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -1135,7 +1132,7 @@ In [Data splitting](#data-splitting), we discussed *training* and *test* set. Le
 
 - calculate the loss function on this validation set, as approximation of the true test error
 
-- .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M466.27 225.31c4.674-22.647.864-44.538-8.99-62.99 2.958-23.868-4.021-48.565-17.34-66.99C438.986 39.423 404.117 0 327 0c-7 0-15 .01-22.22.01C201.195.01 168.997 40 128 40h-10.845c-5.64-4.975-13.042-8-21.155-8H32C14.327 32 0 46.327 0 64v240c0 17.673 14.327 32 32 32h64c11.842 0 22.175-6.438 27.708-16h7.052c19.146 16.953 46.013 60.653 68.76 83.4 13.667 13.667 10.153 108.6 71.76 108.6 57.58 0 95.27-31.936 95.27-104.73 0-18.41-3.93-33.73-8.85-46.54h36.48c48.602 0 85.82-41.565 85.82-85.58 0-19.15-4.96-34.99-13.73-49.84zM64 296c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm330.18 16.73H290.19c0 37.82 28.36 55.37 28.36 94.54 0 23.75 0 56.73-47.27 56.73-18.91-18.91-9.46-66.18-37.82-94.54C206.9 342.89 167.28 272 138.92 272H128V85.83c53.611 0 100.001-37.82 171.64-37.82h37.82c35.512 0 60.82 17.12 53.12 65.9 15.2 8.16 26.5 36.44 13.94 57.57 21.581 20.384 18.699 51.065 5.21 65.62 9.45 0 22.36 18.91 22.27 37.81-.09 18.91-16.71 37.82-37.82 37.82z"/&gt;&lt;/svg&gt;] high variability + inefficient use of data
+- .font140[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M323.8 477.2c-38.2 10.9-78.1-11.2-89-49.4l-5.7-20c-3.7-13-10.4-25-19.5-35l-51.3-56.4c-8.9-9.8-8.2-25 1.6-33.9s25-8.2 33.9 1.6l51.3 56.4c14.1 15.5 24.4 34 30.1 54.1l5.7 20c3.6 12.7 16.9 20.1 29.7 16.5s20.1-16.9 16.5-29.7l-5.7-20c-5.7-19.9-14.7-38.7-26.6-55.5c-5.2-7.3-5.8-16.9-1.7-24.9s12.3-13 21.3-13L448 288c8.8 0 16-7.2 16-16c0-6.8-4.3-12.7-10.4-15c-7.4-2.8-13-9-14.9-16.7s.1-15.8 5.3-21.7c2.5-2.8 4-6.5 4-10.6c0-7.8-5.6-14.3-13-15.7c-8.2-1.6-15.1-7.3-18-15.2s-1.6-16.7 3.6-23.3c2.1-2.7 3.4-6.1 3.4-9.9c0-6.7-4.2-12.6-10.2-14.9c-11.5-4.5-17.7-16.9-14.4-28.8c.4-1.3 .6-2.8 .6-4.3c0-8.8-7.2-16-16-16H286.5c-12.6 0-25 3.7-35.5 10.7l-61.7 41.1c-11 7.4-25.9 4.4-33.3-6.7s-4.4-25.9 6.7-33.3l61.7-41.1c18.4-12.3 40-18.8 62.1-18.8H384c34.7 0 62.9 27.6 64 62c14.6 11.7 24 29.7 24 50c0 4.5-.5 8.8-1.3 13c15.4 11.7 25.3 30.2 25.3 51c0 6.5-1 12.8-2.8 18.7C504.8 238.3 512 254.3 512 272c0 35.3-28.6 64-64 64l-92.3 0c4.7 10.4 8.7 21.2 11.8 32.2l5.7 20c10.9 38.2-11.2 78.1-49.4 89zM32 384c-17.7 0-32-14.3-32-32V128c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H32z"/></svg>] high variability + inefficient use of data
 
 - picture .hi-KUL[validation set (30%)] and .hi-pink[training set (70%)]
 
@@ -1157,7 +1154,7 @@ In [Data splitting](#data-splitting), we discussed *training* and *test* set. Le
 
 - average the folds' loss to estimate the true test error
 
-- .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z"/&gt;&lt;/svg&gt;] greater accuracy (compared to validation set).
+- .font140[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M323.8 34.8c-38.2-10.9-78.1 11.2-89 49.4l-5.7 20c-3.7 13-10.4 25-19.5 35l-51.3 56.4c-8.9 9.8-8.2 25 1.6 33.9s25 8.2 33.9-1.6l51.3-56.4c14.1-15.5 24.4-34 30.1-54.1l5.7-20c3.6-12.7 16.9-20.1 29.7-16.5s20.1 16.9 16.5 29.7l-5.7 20c-5.7 19.9-14.7 38.7-26.6 55.5c-5.2 7.3-5.8 16.9-1.7 24.9s12.3 13 21.3 13L448 224c8.8 0 16 7.2 16 16c0 6.8-4.3 12.7-10.4 15c-7.4 2.8-13 9-14.9 16.7s.1 15.8 5.3 21.7c2.5 2.8 4 6.5 4 10.6c0 7.8-5.6 14.3-13 15.7c-8.2 1.6-15.1 7.3-18 15.1s-1.6 16.7 3.6 23.3c2.1 2.7 3.4 6.1 3.4 9.9c0 6.7-4.2 12.6-10.2 14.9c-11.5 4.5-17.7 16.9-14.4 28.8c.4 1.3 .6 2.8 .6 4.3c0 8.8-7.2 16-16 16H286.5c-12.6 0-25-3.7-35.5-10.7l-61.7-41.1c-11-7.4-25.9-4.4-33.3 6.7s-4.4 25.9 6.7 33.3l61.7 41.1c18.4 12.3 40 18.8 62.1 18.8H384c34.7 0 62.9-27.6 64-62c14.6-11.7 24-29.7 24-50c0-4.5-.5-8.8-1.3-13c15.4-11.7 25.3-30.2 25.3-51c0-6.5-1-12.8-2.8-18.7C504.8 273.7 512 257.7 512 240c0-35.3-28.6-64-64-64l-92.3 0c4.7-10.4 8.7-21.2 11.8-32.2l5.7-20c10.9-38.2-11.2-78.1-49.4-89zM32 192c-17.7 0-32 14.3-32 32V448c0 17.7 14.3 32 32 32H96c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H32z"/></svg>] greater accuracy (compared to validation set).
 
 
 
@@ -1177,7 +1174,7 @@ In [Data splitting](#data-splitting), we discussed *training* and *test* set. Le
 
 - average the folds' loss to estimate the true test error
 
-- .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M466.27 286.69C475.04 271.84 480 256 480 236.85c0-44.015-37.218-85.58-85.82-85.58H357.7c4.92-12.81 8.85-28.13 8.85-46.54C366.55 31.936 328.86 0 271.28 0c-61.607 0-58.093 94.933-71.76 108.6-22.747 22.747-49.615 66.447-68.76 83.4H32c-17.673 0-32 14.327-32 32v240c0 17.673 14.327 32 32 32h64c14.893 0 27.408-10.174 30.978-23.95 44.509 1.001 75.06 39.94 177.802 39.94 7.22 0 15.22.01 22.22.01 77.117 0 111.986-39.423 112.94-95.33 13.319-18.425 20.299-43.122 17.34-66.99 9.854-18.452 13.664-40.343 8.99-62.99zm-61.75 53.83c12.56 21.13 1.26 49.41-13.94 57.57 7.7 48.78-17.608 65.9-53.12 65.9h-37.82c-71.639 0-118.029-37.82-171.64-37.82V240h10.92c28.36 0 67.98-70.89 94.54-97.46 28.36-28.36 18.91-75.63 37.82-94.54 47.27 0 47.27 32.98 47.27 56.73 0 39.17-28.36 56.72-28.36 94.54h103.99c21.11 0 37.73 18.91 37.82 37.82.09 18.9-12.82 37.81-22.27 37.81 13.489 14.555 16.371 45.236-5.21 65.62zM88 432c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z"/&gt;&lt;/svg&gt;] greater accuracy (compared to validation set).
+- .font140[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M323.8 34.8c-38.2-10.9-78.1 11.2-89 49.4l-5.7 20c-3.7 13-10.4 25-19.5 35l-51.3 56.4c-8.9 9.8-8.2 25 1.6 33.9s25 8.2 33.9-1.6l51.3-56.4c14.1-15.5 24.4-34 30.1-54.1l5.7-20c3.6-12.7 16.9-20.1 29.7-16.5s20.1 16.9 16.5 29.7l-5.7 20c-5.7 19.9-14.7 38.7-26.6 55.5c-5.2 7.3-5.8 16.9-1.7 24.9s12.3 13 21.3 13L448 224c8.8 0 16 7.2 16 16c0 6.8-4.3 12.7-10.4 15c-7.4 2.8-13 9-14.9 16.7s.1 15.8 5.3 21.7c2.5 2.8 4 6.5 4 10.6c0 7.8-5.6 14.3-13 15.7c-8.2 1.6-15.1 7.3-18 15.1s-1.6 16.7 3.6 23.3c2.1 2.7 3.4 6.1 3.4 9.9c0 6.7-4.2 12.6-10.2 14.9c-11.5 4.5-17.7 16.9-14.4 28.8c.4 1.3 .6 2.8 .6 4.3c0 8.8-7.2 16-16 16H286.5c-12.6 0-25-3.7-35.5-10.7l-61.7-41.1c-11-7.4-25.9-4.4-33.3 6.7s-4.4 25.9 6.7 33.3l61.7 41.1c18.4 12.3 40 18.8 62.1 18.8H384c34.7 0 62.9-27.6 64-62c14.6-11.7 24-29.7 24-50c0-4.5-.5-8.8-1.3-13c15.4-11.7 25.3-30.2 25.3-51c0-6.5-1-12.8-2.8-18.7C504.8 273.7 512 257.7 512 240c0-35.3-28.6-64-64-64l-92.3 0c4.7-10.4 8.7-21.2 11.8-32.2l5.7-20c10.9-38.2-11.2-78.1-49.4-89zM32 192c-17.7 0-32 14.3-32 32V448c0 17.7 14.3 32 32 32H96c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H32z"/></svg>] greater accuracy (compared to validation set).
 
 &lt;img src="ML_part1_files/figure-html/plot-CV3-set-1.svg" style="display: block; margin: auto;" /&gt;
 
@@ -1207,7 +1204,7 @@ In [Data splitting](#data-splitting), we discussed *training* and *test* set. Le
 
 - average the folds' loss to estimate the true test error
 
-- .font140[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 512 512"&gt;&lt;path d="M466.27 225.31c4.674-22.647.864-44.538-8.99-62.99 2.958-23.868-4.021-48.565-17.34-66.99C438.986 39.423 404.117 0 327 0c-7 0-15 .01-22.22.01C201.195.01 168.997 40 128 40h-10.845c-5.64-4.975-13.042-8-21.155-8H32C14.327 32 0 46.327 0 64v240c0 17.673 14.327 32 32 32h64c11.842 0 22.175-6.438 27.708-16h7.052c19.146 16.953 46.013 60.653 68.76 83.4 13.667 13.667 10.153 108.6 71.76 108.6 57.58 0 95.27-31.936 95.27-104.73 0-18.41-3.93-33.73-8.85-46.54h36.48c48.602 0 85.82-41.565 85.82-85.58 0-19.15-4.96-34.99-13.73-49.84zM64 296c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm330.18 16.73H290.19c0 37.82 28.36 55.37 28.36 94.54 0 23.75 0 56.73-47.27 56.73-18.91-18.91-9.46-66.18-37.82-94.54C206.9 342.89 167.28 272 138.92 272H128V85.83c53.611 0 100.001-37.82 171.64-37.82h37.82c35.512 0 60.82 17.12 53.12 65.9 15.2 8.16 26.5 36.44 13.94 57.57 21.581 20.384 18.699 51.065 5.21 65.62 9.45 0 22.36 18.91 22.27 37.81-.09 18.91-16.71 37.82-37.82 37.82z"/&gt;&lt;/svg&gt;] very computationally demanding. 
+- .font140[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M323.8 477.2c-38.2 10.9-78.1-11.2-89-49.4l-5.7-20c-3.7-13-10.4-25-19.5-35l-51.3-56.4c-8.9-9.8-8.2-25 1.6-33.9s25-8.2 33.9 1.6l51.3 56.4c14.1 15.5 24.4 34 30.1 54.1l5.7 20c3.6 12.7 16.9 20.1 29.7 16.5s20.1-16.9 16.5-29.7l-5.7-20c-5.7-19.9-14.7-38.7-26.6-55.5c-5.2-7.3-5.8-16.9-1.7-24.9s12.3-13 21.3-13L448 288c8.8 0 16-7.2 16-16c0-6.8-4.3-12.7-10.4-15c-7.4-2.8-13-9-14.9-16.7s.1-15.8 5.3-21.7c2.5-2.8 4-6.5 4-10.6c0-7.8-5.6-14.3-13-15.7c-8.2-1.6-15.1-7.3-18-15.2s-1.6-16.7 3.6-23.3c2.1-2.7 3.4-6.1 3.4-9.9c0-6.7-4.2-12.6-10.2-14.9c-11.5-4.5-17.7-16.9-14.4-28.8c.4-1.3 .6-2.8 .6-4.3c0-8.8-7.2-16-16-16H286.5c-12.6 0-25 3.7-35.5 10.7l-61.7 41.1c-11 7.4-25.9 4.4-33.3-6.7s-4.4-25.9 6.7-33.3l61.7-41.1c18.4-12.3 40-18.8 62.1-18.8H384c34.7 0 62.9 27.6 64 62c14.6 11.7 24 29.7 24 50c0 4.5-.5 8.8-1.3 13c15.4 11.7 25.3 30.2 25.3 51c0 6.5-1 12.8-2.8 18.7C504.8 238.3 512 254.3 512 272c0 35.3-28.6 64-64 64l-92.3 0c4.7 10.4 8.7 21.2 11.8 32.2l5.7 20c10.9 38.2-11.2 78.1-49.4 89zM32 384c-17.7 0-32-14.3-32-32V128c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H32z"/></svg>] very computationally demanding. 
 
 
 
@@ -1406,19 +1403,24 @@ cv_rsample$splits
 
 
 ```
-## $`1`
+## [[1]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ## 
-## $`2`
+## [[2]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ## 
-## $`3`
+## [[3]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ## 
-## $`4`
+## [[4]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ## 
-## $`5`
+## [[5]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ```
 
@@ -1445,19 +1447,24 @@ cv_rsample &lt;- rsample::vfold_cv(ames, v = 5)
 
 
 ```
-## $`1`
+## [[1]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ## 
-## $`2`
+## [[2]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ## 
-## $`3`
+## [[3]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ## 
-## $`4`
+## [[4]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ## 
-## $`5`
+## [[5]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ```
 
@@ -1494,6 +1501,7 @@ cv_rsample &lt;- rsample::vfold_cv(ames, v = 5)
 
 
 ```
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ```
 
@@ -1550,6 +1558,7 @@ cv_rsample$splits[[1]]
 
 
 ```
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;2344/586/2930&gt;
 ```
 
@@ -1601,8 +1610,7 @@ map_dbl(cv_rsample$splits,
 
 
 ```
-##        1        2        3        4        5 
-## 181310.8 180991.0 180840.0 181268.6 179569.9
+## [1] 181310.8 180991.0 180840.0 181268.6 179569.9
 ```
 
 
@@ -1615,8 +1623,7 @@ map_dbl(cv_rsample$splits,
 
 
 ```
-##    1    2    3    4    5 
-## 2344 2344 2344 2344 2344
+## [1] 2344 2344 2344 2344 2344
 ```
 
 ]
@@ -1699,10 +1706,9 @@ cv_rsample &lt;- rsample::vfold_cv(train_rsample, v = 5)
 
 map_dbl(cv_rsample$splits,
         ~ nrow(rsample::assessment(.)))
-##   1   2   3   4   5 
-## 489 489 488 488 488
+## [1] 489 488 488 488 488
 nrow(test_rsample)
-## [1] 488
+## [1] 489
 ```
 
 ]
@@ -1727,7 +1733,7 @@ name: tuning
 
 .hi-pink[Variance] : the amount `\(\hat{\color{#3b3b9a}{f}}\)` would change with a different training sample.
 
-.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] : high variance models more prone to overfitting
+.font140[.KULbginline[Take-aways]] .font160[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L381.7 53c-48 48-113.1 75-181 75H192 160 64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64l0 128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352l8.7 0c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7V240 371.3C357.2 317.8 280.5 288 200.7 288H192V192h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>] : high variance models more prone to overfitting
 
 * use .hi-pink[resampling methods] to reduce this risk
 
@@ -1772,13 +1778,13 @@ and thus the bias-variance trade-off
 
 - refit the model on entire training data with final tuning parameters
 
-- evaluate performance of the model on the test data (under &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 448 512"&gt;&lt;path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/&gt;&lt;/svg&gt;). 
+- evaluate performance of the model on the test data (under <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>). 
 
 .hi-pink[Model selection] 
 
 - repeat the above steps for different models 
 
-- compare performance of these models that will generalize to new data (via test data, under &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 448 512"&gt;&lt;path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/&gt;&lt;/svg&gt;).
+- compare performance of these models that will generalize to new data (via test data, under <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>).
 
 .footnote[Flow chart from Kuhn &amp; Johnson (2013) on [Applied predictive modeling](http://appliedpredictivemodeling.com/).]
 ]
@@ -1950,7 +1956,7 @@ What happens when you change to `selectionFunction = "oneSE"`?
 ## 18 36
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-69-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-67-1.svg" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1962,7 +1968,7 @@ What happens when you change to `selectionFunction = "oneSE"`?
 ## 27 54
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-70-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-68-1.svg" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1983,13 +1989,16 @@ cv_rsample$splits[1:3]
 
 
 ```
-## $`1`
+## [[1]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;286/72/358&gt;
 ## 
-## $`2`
+## [[2]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;286/72/358&gt;
 ## 
-## $`3`
+## [[3]]
+## &lt;Analysis/Assess/Total&gt;
 ## &lt;286/72/358&gt;
 ```
 ]
@@ -2065,11 +2074,14 @@ hyper_grid %&gt;% slice(1:3)
 ```
 
 
+
 |  k|
 |--:|
 |  2|
 |  4|
 |  6|
+
+
 
 .hi-pink[Q.2] We apply the function `holdout_results(.s, .k)` on the 
 third resample, with the first value for *K* in the grid.
@@ -2129,6 +2141,8 @@ for(i in 1:nrow(hyper_grid)){
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+
+
 .hi-pink[Q.5] Choose *K* via the one-standard-error rule
 &lt;table&gt;
  &lt;thead&gt;
@@ -2151,6 +2165,8 @@ for(i in 1:nrow(hyper_grid)){
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+
+
 ]
 
 ---
@@ -2168,7 +2184,7 @@ class: clear
 
 During the tuning process we inspect plots like the one on the right. 
 
-.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] &amp;nbsp; &amp;nbsp; *Less is more*: 
+.font140[.KULbginline[Take-aways]] .font160[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L381.7 53c-48 48-113.1 75-181 75H192 160 64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64l0 128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352l8.7 0c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7V240 371.3C357.2 317.8 280.5 288 200.7 288H192V192h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>] &amp;nbsp; &amp;nbsp; *Less is more*: 
 
 - we prefer simple over more complex 
 
@@ -2179,13 +2195,13 @@ numerically best value
 
 - use the .hi-pink['one-standard-error' rule].
 
-With the selected tuning parameters, we refit the model on the complete training set and use it to predict the test set (under &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 448 512"&gt;&lt;path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/&gt;&lt;/svg&gt;). 
+With the selected tuning parameters, we refit the model on the complete training set and use it to predict the test set (under <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>). 
 
 ]
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-81-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-79-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -2235,7 +2251,7 @@ See Kuhn &amp; Johnson (2019) on [Feature Engineering and Selection: A Practical
 name: black-white-box
 class: clear
 
-.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] : *different models* have *different sensitivities* to the type of target and feature values in the model.
+.font140[.KULbginline[Take-aways]] .font160[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L381.7 53c-48 48-113.1 75-181 75H192 160 64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64l0 128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352l8.7 0c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7V240 371.3C357.2 317.8 280.5 288 200.7 288H192V192h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>] : *different models* have *different sensitivities* to the type of target and feature values in the model.
 
 .center[
 &lt;img src="img/Applied_Pred_overview_models.jpg" width="65%" style="display: block; margin: auto;" /&gt;
@@ -2274,9 +2290,9 @@ summary(ames_test$Sale_Price)
 
 ```
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   13100  129500  160000  180996  213500  755000
+##   12789  129500  160000  180923  213500  755000
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   12789  129500  160000  180327  213500  625000
+##   35000  129500  160000  180502  213500  745000
 ```
 ---
 
@@ -2311,13 +2327,13 @@ class: clear
 .pull-left[
 .hi-pink[Q.1] original target
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-87-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-85-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
 
 
 ```r
 summary(ames_train$Sale_Price)
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   13100  129500  160000  180996  213500  755000
+##   12789  129500  160000  180923  213500  755000
 ```
 
 ]
@@ -2326,13 +2342,13 @@ summary(ames_train$Sale_Price)
 
 .hi-pink[Q.2] log-transformed target
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-89-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-87-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
 
 
 ```r
 summary(log(ames_train$Sale_Price))
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    9.48   11.77   11.98   12.02   12.27   13.53
+##   9.456  11.771  11.983  12.020  12.271  13.534
 ```
 ]
 
@@ -2364,7 +2380,7 @@ This list is inspired by Max Kuhn (2019) on [Applied Machine Learning](https://g
 
 # A blueprint for feature engineering
 
-.font140[.KULbginline[Take-aways]] .font160[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 576 512"&gt;&lt;path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/&gt;&lt;/svg&gt;] : *a proper implementation*
+.font140[.KULbginline[Take-aways]] .font160[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L381.7 53c-48 48-113.1 75-181 75H192 160 64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64l0 128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352l8.7 0c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7V240 371.3C357.2 317.8 280.5 288 200.7 288H192V192h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>] : *a proper implementation*
 
 .pull-left[
 
@@ -2417,29 +2433,31 @@ ames_train %&gt;% group_by(Neighborhood) %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Landmark &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Green_Hills &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Greens &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Blueste &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
   &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Northpark_Villa &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
-  &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 ]
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-94-1.svg" width="95%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-92-1.svg" width="95%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -2488,15 +2506,6 @@ mod_rec
 ```
 
 
-```
-## Data Recipe
-## 
-## Inputs:
-## 
-##       role #variables
-##    outcome          1
-##  predictor         80
-```
 
 Now, `mod_rec` knows the role of each variable (`predictor` or `outcome`). 
 
@@ -2517,18 +2526,6 @@ Extend `mod_rec` with two pre-processing steps:
 mod_rec &lt;- mod_rec %&gt;% step_log(all_outcomes()) %&gt;%
            step_other(Neighborhood, threshold = 0.05)
 mod_rec
-## Data Recipe
-## 
-## Inputs:
-## 
-##       role #variables
-##    outcome          1
-##  predictor         80
-## 
-## Operations:
-## 
-## Log transformation on all_outcomes
-## Collapsing factor levels for Neighborhood
 ```
 
 ]
@@ -2555,7 +2552,7 @@ mod_rec_trained &lt;- prep(mod_rec, training = ames_train, verbose = TRUE, retai
 mod_rec_trained &lt;- prep(mod_rec, training = ames_train, verbose = TRUE, retain = TRUE)
 ## oper 1 step log [training] 
 ## oper 2 step other [training] 
-## The retained training set is ~ 0.78 Mb  in memory.
+## The retained training set is ~ 0.82 Mb  in memory.
 ```
 
 The `retain = TRUE` indicates that the preprocessed training set should be saved.
@@ -2569,22 +2566,6 @@ mod_rec_trained
 ```
 
 
-```
-## Data Recipe
-## 
-## Inputs:
-## 
-##       role #variables
-##    outcome          1
-##  predictor         80
-## 
-## Training data contained 2053 data points and no missing data.
-## 
-## Operations:
-## 
-## Log transformation on Sale_Price [trained]
-## Collapsing factor levels for Neighborhood [trained]
-```
 
 Once the recipe is prepared, it can be applied to any data set using `bake()`. There is no need to `bake()` the data used in the `prep()` step; you get the processed training set with `juice()`.
 
@@ -2615,39 +2596,45 @@ ames_test_prep %&gt;% group_by(Neighborhood) %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Edwards &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 48 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Gilbert &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 49 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sawyer &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Northridge_Heights &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 51 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Somerset &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Gilbert &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 54 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Old_Town &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 68 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Somerset &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Edwards &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; College_Creek &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 80 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 68 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Old_Town &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 75 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; North_Ames &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 145 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 137 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; other &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 382 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 331 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 ]
 
 .pull-right[
@@ -2667,39 +2654,45 @@ juice(mod_rec_trained) %&gt;% group_by(Neighborhood) %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Northridge_Heights &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 115 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sawyer &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 108 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Gilbert &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 111 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Northridge_Heights &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 116 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Somerset &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 128 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 122 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Edwards &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 146 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 131 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Old_Town &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 171 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 164 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; College_Creek &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 187 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 199 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; North_Ames &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 298 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 306 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; other &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 892 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 792 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 ]
 
 ---
@@ -2763,41 +2756,43 @@ ames_train %&gt;% group_by(House_Style) %&gt;%
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; One_and_Half_Unf &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Two_and_Half_Unf &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; SFoyer &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 55 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 61 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; SLvl &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 84 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 91 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; One_and_Half_Fin &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 233 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 214 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Two_Story &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 614 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 609 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; One_Story &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1030 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1036 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 
 ]
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-109-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-107-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -2833,10 +2828,10 @@ names(ames_train)[nzv$nzv]
 ##  [1] "Street"             "Alley"              "Land_Contour"      
 ##  [4] "Utilities"          "Land_Slope"         "Condition_2"       
 ##  [7] "Roof_Matl"          "Bsmt_Cond"          "BsmtFin_Type_2"    
-## [10] "Heating"            "Low_Qual_Fin_SF"    "Kitchen_AbvGr"     
-## [13] "Functional"         "Enclosed_Porch"     "Three_season_porch"
-## [16] "Screen_Porch"       "Pool_Area"          "Pool_QC"           
-## [19] "Misc_Feature"       "Misc_Val"
+## [10] "BsmtFin_SF_2"       "Heating"            "Low_Qual_Fin_SF"   
+## [13] "Kitchen_AbvGr"      "Functional"         "Enclosed_Porch"    
+## [16] "Three_season_porch" "Screen_Porch"       "Pool_Area"         
+## [19] "Pool_QC"            "Misc_Feature"       "Misc_Val"
 ```
 
 So, no features have zero- variance, but 20 features have near-zero-variance.
@@ -2874,42 +2869,44 @@ summary(mod_rec) %&gt;% slice(1:6)
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; MS_SubClass &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; nominal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; factor   , unordered, nominal &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; MS_Zoning &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; nominal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; factor   , unordered, nominal &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Lot_Frontage &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; double , numeric &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Lot_Area &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; integer, numeric &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Street &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; nominal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; factor   , unordered, nominal &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Alley &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; nominal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; factor   , unordered, nominal &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; predictor &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; original &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 ]
 
@@ -2922,25 +2919,6 @@ mod_rec
 
 
 
-```
-## Data Recipe
-## 
-## Inputs:
-## 
-##       role #variables
-##    outcome          1
-##  predictor         80
-## 
-## Operations:
-## 
-## Log transformation on all_outcomes
-## Collapsing factor levels for Neighborhood
-## Collapsing factor levels for House_Style
-## Zero variance filter on all_predictors
-## Sparse, unbalanced variable filter on all_predictors
-## Centering for all_numeric, -, all_outcomes()
-## Scaling for all_numeric, -, all_outcomes()
-```
 
 ]
 
@@ -2965,7 +2943,7 @@ mod_rec_trained &lt;- prep(mod_rec,
 ## oper 5 step nzv [training] 
 ## oper 6 step center [training] 
 ## oper 7 step scale [training] 
-## The retained training set is ~ 0.73 Mb  in memory.
+## The retained training set is ~ 0.75 Mb  in memory.
 ```
 
 and bake it on the `ames_test` data
@@ -2985,7 +2963,7 @@ dim(juice(mod_rec_trained))
 
 
 ```
-## [1] 2053   61
+## [1] 2049   60
 ```
 
 ]
@@ -3004,22 +2982,22 @@ head(ames_test$Sale_Price)
 
 
 ```
-## [1] 12.28 11.56 12.06 12.18 12.27 12.37
+## [1] 11.57 11.39 11.70 11.74 11.12 11.63
 ```
 
 
 ```
-## [1] 215000 105000 172000 195500 213500 236500
+## [1] 105500  88000 120000 125000  67500 112000
 ```
 
 
 ```
-## [1] 12.40 12.15 12.16 12.13 12.26 11.57
+## [1] 11.56 12.15 12.18 12.16 12.37 12.15
 ```
 
 
 ```
-## [1] 244000 189900 191500 185000 212000 105500
+## [1] 105000 189900 195500 191500 236500 189000
 ```
 
 
@@ -3383,6 +3361,8 @@ model_1 %&gt;% broom::tidy()
 &lt;/table&gt;
 
 
+
+
 ```r
 model_1 %&gt;% broom::glance() 
 ```
@@ -3401,6 +3381,7 @@ model_1 %&gt;% broom::glance()
    &lt;th style="text-align:right;"&gt; BIC &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; deviance &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; df.residual &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; nobs &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
@@ -3410,15 +3391,18 @@ model_1 %&gt;% broom::glance()
    &lt;td style="text-align:right;"&gt; 56524 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 2923 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -36218 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 72442 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 72460 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 9.355e+12 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 2928 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2930 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 ---
 
@@ -3441,7 +3425,6 @@ model_1 %&gt;% broom::augment() %&gt;% slice(1:5)
    &lt;th style="text-align:right;"&gt; Sale_Price &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; Gr_Liv_Area &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; .fitted &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; .se.fit &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; .resid &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; .hat &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; .sigma &lt;/th&gt;
@@ -3454,7 +3437,6 @@ model_1 %&gt;% broom::augment() %&gt;% slice(1:5)
    &lt;td style="text-align:right;"&gt; 215000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1656 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 198255 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1093 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 16745 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 4e-04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 56533 &lt;/td&gt;
@@ -3465,7 +3447,6 @@ model_1 %&gt;% broom::augment() %&gt;% slice(1:5)
    &lt;td style="text-align:right;"&gt; 105000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 896 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 113367 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1627 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -8367 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 8e-04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
@@ -3476,7 +3457,6 @@ model_1 %&gt;% broom::augment() %&gt;% slice(1:5)
    &lt;td style="text-align:right;"&gt; 172000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1329 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 161731 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1102 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 10269 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 4e-04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
@@ -3487,7 +3467,6 @@ model_1 %&gt;% broom::augment() %&gt;% slice(1:5)
    &lt;td style="text-align:right;"&gt; 244000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 2110 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 248964 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1637 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -4964 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 8e-04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
@@ -3498,7 +3477,6 @@ model_1 %&gt;% broom::augment() %&gt;% slice(1:5)
    &lt;td style="text-align:right;"&gt; 189900 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1629 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 195239 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1078 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -5339 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 4e-04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 56534 &lt;/td&gt;
@@ -3507,6 +3485,8 @@ model_1 %&gt;% broom::augment() %&gt;% slice(1:5)
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 ---
 
@@ -3521,12 +3501,12 @@ g_lm_1 &lt;- ggplot(data = ames,
   theme_bw() +
   geom_point(size = 1, alpha = 0.3) +
   geom_smooth(se = TRUE, method = "lm") +
-  scale_y_continuous(labels = scales::dollar) +
+  #scale_y_continuous(labels = scales::dollar) +
   ggtitle("Regression with AMES housing data")
 g_lm_1
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-164-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-162-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -3539,14 +3519,14 @@ ggplot(aes(Gr_Liv_Area, Sale_Price)) +
     theme_bw() +
     geom_point(size = 1, alpha = 0.3) +
     geom_line(aes(y = .fitted), col = KULbg) +
-    scale_y_continuous(labels = scales::dollar) +
+    #scale_y_continuous(labels = scales::dollar) +
     ggtitle("Regression with AMES housing data")
 g_lm_2
 
 ```
 
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-166-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-164-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -3688,8 +3668,8 @@ mtpl_orig %&gt;% slice(1:3) %&gt;% dplyr::select(-LONG, -LAT)
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1618.001 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1618.001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1618 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1618 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; TPL &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; gasoline &lt;/td&gt;
@@ -3706,7 +3686,7 @@ mtpl_orig %&gt;% slice(1:3) %&gt;% dplyr::select(-LONG, -LAT)
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; PO &lt;/td&gt;
@@ -3724,7 +3704,7 @@ mtpl_orig %&gt;% slice(1:3) %&gt;% dplyr::select(-LONG, -LAT)
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; TPL &lt;/td&gt;
@@ -3741,6 +3721,8 @@ mtpl_orig %&gt;% slice(1:3) %&gt;% dplyr::select(-LONG, -LAT)
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 We change this to lower case variables, and rename `exp` to `expo`.
 
@@ -3783,10 +3765,12 @@ mtpl %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 0.1393352 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1393 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 
 ```r
@@ -3805,14 +3789,16 @@ mtpl %&gt;%
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1484325 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1484 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1361164 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1361 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 ]
 
 .pull-right[
@@ -3826,7 +3812,7 @@ g &lt;- ggplot(mtpl, aes(nclaims)) + theme_bw() +
 g
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-175-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-173-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -3879,7 +3865,7 @@ ggplot(data = mtpl, aes(ageph)) + theme_bw() +
   ggtitle("MTPL - age policyholder")
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-176-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-174-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -3909,47 +3895,49 @@ mtpl %&gt;%
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 4.621918 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.622 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 28 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 93.021918 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 93.022 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 116 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 113 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 342.284932 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 342.285 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 393 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 165 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 597.389041 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 597.389 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 701 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 202 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 778.827397 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 778.827 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 952 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 297 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1165.358904 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1165.359 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1379 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 426 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1752.249315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1752.249 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 2028 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 ]
 
@@ -3984,7 +3972,7 @@ ggplot(data = freq_by_age,
 
 &lt;br&gt;
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-180-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-178-1.svg" width="80%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4000,7 +3988,7 @@ Modeling claim .hi-pink[frequency] and .hi-pink[severity] in the `mtpl` data set
 
 Target variable `nclaims` (frequency)
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-181-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-179-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
 
 
 Suitable distributions: Poisson, Negative Binomial.
@@ -4011,7 +3999,7 @@ Suitable distributions: Poisson, Negative Binomial.
 
 ...  and `avg` (severity).
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-182-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-180-1.svg" width="65%" style="display: block; margin: auto;" /&gt;
 
 
 Suitable distributions: log-normal, gamma.
@@ -4119,20 +4107,22 @@ freq_glm_1 %&gt;% broom::tidy()
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -1.9076251 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0133227 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -143.186324 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.9076 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0133 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -143.186 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; sexmale &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0866198 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0156837 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -5.522931 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0866 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0157 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -5.523 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 Mind the specification of `type.predict` when using `augment` with a GLM!
 
@@ -4153,15 +4143,17 @@ freq_glm_1 %&gt;% broom::augment(type.predict = "response")
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1361164 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1361 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1484325 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1484 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 
 
@@ -4179,10 +4171,10 @@ Let's see how the fitted values at `"response"` level are constructed:
 ```r
 exp(coef(freq_glm_1)[1])
 ## (Intercept) 
-##   0.1484325
+##      0.1484
 exp(coef(freq_glm_1)[1] + coef(freq_glm_1)[2])
 ## (Intercept) 
-##   0.1361164
+##      0.1361
 ```
 
 Do you recognize these numbers?
@@ -4377,7 +4369,7 @@ With .hi-pink[Generalized Additive Models (GAMs)]
 .pull-left[
 We continue working with `mtpl` and now focus on `ageph`.
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-203-1.svg" width="75%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-201-1.svg" width="75%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4436,7 +4428,7 @@ df &lt;- data.frame(a, b_glm_age, l_glm_age, u_glm_age)
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-207-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-205-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 ---
@@ -4472,7 +4464,7 @@ df &lt;- data.frame(a, b_glm_age_f,
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-210-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-208-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4510,7 +4502,7 @@ df &lt;- data.frame(a, b_glm_age_c,
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-213-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-211-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4548,7 +4540,7 @@ df &lt;- data.frame(a, b_gam_age,
 
 .pull-right[
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-216-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-214-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4565,7 +4557,7 @@ freq_gam &lt;- gam(nclaims ~ s(ageph), offset = log(expo), family = poisson(link
 plot(freq_gam, scheme = 4)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-217-1.svg" width="35%" height="10%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-215-1.svg" width="35%" height="10%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -4605,7 +4597,7 @@ class: clear
 
 Let's run some experiments to illustrate the effect of the smoothing parameter (   `sp = .`), the number (`k = .`) and type of basis functions (`bs = .`). We use the `mcycle` data from {MASS}.
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-218-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-216-1.svg" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -4664,17 +4656,17 @@ summary(freq_gam_2)
 ## 
 ## Parametric coefficients:
 ##               Estimate Std. Error  z value Pr(&gt;|z|)    
-## (Intercept)  -1.917801   0.018124 -105.818   &lt;2e-16 ***
-## sexmale       0.009177   0.016043    0.572   0.5673    
-## fuelgasoline -0.152756   0.015100  -10.116   &lt;2e-16 ***
-## usework      -0.055156   0.033092   -1.667   0.0956 .  
+## (Intercept)  -1.917790   0.018124 -105.817   &lt;2e-16 ***
+## sexmale       0.009167   0.016043    0.571   0.5677    
+## fuelgasoline -0.152730   0.015100  -10.114   &lt;2e-16 ***
+## usework      -0.055345   0.033090   -1.673   0.0944 .  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Approximate significance of smooth terms:
 ##            edf Ref.df Chi.sq p-value    
 ## s(ageph) 5.451  6.502  228.8  &lt;2e-16 ***
-## s(bm)    8.490  8.866 1228.1  &lt;2e-16 ***
+## s(bm)    8.323  8.778 1227.3  &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -4692,7 +4684,7 @@ summary(freq_gam_2)
 plot(freq_gam_2, select = 1)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-221-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-219-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -4700,7 +4692,7 @@ plot(freq_gam_2, select = 1)
 plot(freq_gam_2, select = 2)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-222-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-220-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -4760,6 +4752,8 @@ drivers
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 ]
 
 .pull-right[
@@ -4779,16 +4773,18 @@ predict(freq_gam_2, newdata = drivers,
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 0.3969310 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4031766 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 0.1727430 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1727503 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 0.0951124 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0951317 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 ]
 
@@ -5056,28 +5052,30 @@ tidy(fit)
    &lt;td style="text-align:right;"&gt; 0.0552832 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; V1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1392650 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.485890 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0552832 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; V14 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0058786 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.485890 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0552832 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.5874616 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1.353887 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.1458910 &lt;/td&gt;
   &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5475769 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.233612 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2211153 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5112354 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.124021 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2835678 &lt;/td&gt;
+  &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 
 ]
 
@@ -5092,7 +5090,7 @@ class: clear
 plot(fit, `label = TRUE`)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-236-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-234-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -5103,7 +5101,7 @@ plot(fit, `label = TRUE`)
 plot(fit, label = TRUE, `xvar = 'lambda'`)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-238-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-236-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -5118,7 +5116,7 @@ class: clear
 plot(fit, `xvar = 'dev'`, label = TRUE)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-240-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-238-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -5128,76 +5126,76 @@ plot(fit, `xvar = 'dev'`, label = TRUE)
 ```r
 print(fit) 
 ## 
-## Call:  glmnet(x = x, y = y, family = "gaussian", alpha = 1, standardize = TRUE,      intercept = TRUE) 
+## Call:  glmnet(x = QuickStartExample$x, y = QuickStartExample$y, family = "gaussian",      alpha = 1, standardize = TRUE, intercept = TRUE) 
 ## 
-##       Df    %Dev   Lambda
-##  [1,]  0 0.00000 1.631000
-##  [2,]  2 0.05528 1.486000
-##  [3,]  2 0.14590 1.354000
-##  [4,]  2 0.22110 1.234000
-##  [5,]  2 0.28360 1.124000
-##  [6,]  2 0.33540 1.024000
-##  [7,]  4 0.39040 0.933200
-##  [8,]  5 0.45600 0.850300
-##  [9,]  5 0.51540 0.774700
-## [10,]  6 0.57350 0.705900
-## [11,]  6 0.62550 0.643200
-## [12,]  6 0.66870 0.586100
-## [13,]  6 0.70460 0.534000
-## [14,]  6 0.73440 0.486600
-## [15,]  7 0.76210 0.443300
-## [16,]  7 0.78570 0.404000
-## [17,]  7 0.80530 0.368100
-## [18,]  7 0.82150 0.335400
-## [19,]  7 0.83500 0.305600
-## [20,]  7 0.84620 0.278400
-## [21,]  7 0.85550 0.253700
-## [22,]  7 0.86330 0.231200
-## [23,]  8 0.87060 0.210600
-## [24,]  8 0.87690 0.191900
-## [25,]  8 0.88210 0.174900
-## [26,]  8 0.88650 0.159300
-## [27,]  8 0.89010 0.145200
-## [28,]  8 0.89310 0.132300
-## [29,]  8 0.89560 0.120500
-## [30,]  8 0.89760 0.109800
-## [31,]  9 0.89940 0.100100
-## [32,]  9 0.90100 0.091170
-## [33,]  9 0.90230 0.083070
-## [34,]  9 0.90340 0.075690
-## [35,] 10 0.90430 0.068970
-## [36,] 11 0.90530 0.062840
-## [37,] 11 0.90620 0.057260
-## [38,] 12 0.90700 0.052170
-## [39,] 15 0.90780 0.047540
-## [40,] 16 0.90860 0.043310
-## [41,] 16 0.90930 0.039470
-## [42,] 16 0.90980 0.035960
-## [43,] 17 0.91030 0.032770
-## [44,] 17 0.91070 0.029850
-## [45,] 18 0.91110 0.027200
-## [46,] 18 0.91140 0.024790
-## [47,] 19 0.91170 0.022580
-## [48,] 19 0.91200 0.020580
-## [49,] 19 0.91220 0.018750
-## [50,] 19 0.91240 0.017080
-## [51,] 19 0.91250 0.015570
-## [52,] 19 0.91260 0.014180
-## [53,] 19 0.91270 0.012920
-## [54,] 19 0.91280 0.011780
-## [55,] 19 0.91290 0.010730
-## [56,] 19 0.91290 0.009776
-## [57,] 19 0.91300 0.008908
-## [58,] 19 0.91300 0.008116
-## [59,] 19 0.91310 0.007395
-## [60,] 19 0.91310 0.006738
-## [61,] 19 0.91310 0.006140
-## [62,] 20 0.91310 0.005594
-## [63,] 20 0.91310 0.005097
-## [64,] 20 0.91310 0.004644
-## [65,] 20 0.91320 0.004232
-## [66,] 20 0.91320 0.003856
-## [67,] 20 0.91320 0.003513
+##    Df  %Dev  Lambda
+## 1   0  0.00 1.63100
+## 2   2  5.53 1.48600
+## 3   2 14.59 1.35400
+## 4   2 22.11 1.23400
+## 5   2 28.36 1.12400
+## 6   2 33.54 1.02400
+## 7   4 39.04 0.93320
+## 8   5 45.60 0.85030
+## 9   5 51.54 0.77470
+## 10  6 57.35 0.70590
+## 11  6 62.55 0.64320
+## 12  6 66.87 0.58610
+## 13  6 70.46 0.53400
+## 14  6 73.44 0.48660
+## 15  7 76.21 0.44330
+## 16  7 78.57 0.40400
+## 17  7 80.53 0.36810
+## 18  7 82.15 0.33540
+## 19  7 83.50 0.30560
+## 20  7 84.62 0.27840
+## 21  7 85.55 0.25370
+## 22  7 86.33 0.23120
+## 23  8 87.06 0.21060
+## 24  8 87.69 0.19190
+## 25  8 88.21 0.17490
+## 26  8 88.65 0.15930
+## 27  8 89.01 0.14520
+## 28  8 89.31 0.13230
+## 29  8 89.56 0.12050
+## 30  8 89.76 0.10980
+## 31  9 89.94 0.10010
+## 32  9 90.10 0.09117
+## 33  9 90.23 0.08307
+## 34  9 90.34 0.07569
+## 35 10 90.43 0.06897
+## 36 11 90.53 0.06284
+## 37 11 90.62 0.05726
+## 38 12 90.70 0.05217
+## 39 15 90.78 0.04754
+## 40 16 90.86 0.04331
+## 41 16 90.93 0.03947
+## 42 16 90.98 0.03596
+## 43 17 91.03 0.03277
+## 44 17 91.07 0.02985
+## 45 18 91.11 0.02720
+## 46 18 91.14 0.02479
+## 47 19 91.17 0.02258
+## 48 19 91.20 0.02058
+## 49 19 91.22 0.01875
+## 50 19 91.24 0.01708
+## 51 19 91.25 0.01557
+## 52 19 91.26 0.01418
+## 53 19 91.27 0.01292
+## 54 19 91.28 0.01178
+## 55 19 91.29 0.01073
+## 56 19 91.29 0.00978
+## 57 19 91.30 0.00891
+## 58 19 91.30 0.00812
+## 59 19 91.31 0.00739
+## 60 19 91.31 0.00674
+## 61 19 91.31 0.00614
+## 62 20 91.31 0.00559
+## 63 20 91.31 0.00510
+## 64 20 91.31 0.00464
+## 65 20 91.32 0.00423
+## 66 20 91.32 0.00386
+## 67 20 91.32 0.00351
 ```
 
 ]
@@ -5218,7 +5216,7 @@ coef(fit, `s = 0.1`)
 
 ```
 ## 21 x 1 sparse Matrix of class "dgCMatrix"
-##                        1
+##                       s1
 ## (Intercept)  0.150928072
 ## V1           1.320597195
 ## V2           .          
@@ -5255,7 +5253,7 @@ Use cross-validation to pick a `lambda` value. The default is 10-folds cross-val
 
 
 ```r
-cv_fit &lt;- cv.glmnet(x, y)
+cv_fit &lt;- cv.glmnet(QuickStartExample$x, QuickStartExample$y)
 ```
 
 
@@ -5289,7 +5287,7 @@ We plot the cross-validation error for the inspected grid of `lambda` values.
 plot(cv_fit)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-249-1.svg" width="45%" height="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-247-1.svg" width="45%" height="40%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -5313,7 +5311,7 @@ coef(fit, s = cv_fit$lambda.min)
 
 ```
 ## 21 x 1 sparse Matrix of class "dgCMatrix"
-##                       1
+##                      s1
 ## (Intercept)  0.14867414
 ## V1           1.33377821
 ## V2           .         
@@ -5353,6 +5351,7 @@ To remove this bias, we refit the model, only using the selected variables.
 
 
 ```r
+attach(QuickStartExample)
 subset &lt;- data.frame(y = y, V1 = x[, 1], V3 = x[, 3], 
                      V5 = x[, 5], V6 = x[, 6], 
                      V7 = x[, 7], V8 = x[, 8], 
@@ -5454,6 +5453,8 @@ What do you observe when comparing the estimates below with those shown on the p
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
 ]
 
 ---
@@ -5677,7 +5678,7 @@ row.names(mtpl_glmnet$beta)
 plot(mtpl_glmnet, xvar = 'lambda', label = TRUE)  
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-263-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-261-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -5705,7 +5706,7 @@ mtpl_glmnet_cv &lt;- cv.glmnet(x, y, family = "poisson",
 plot(mtpl_glmnet_cv)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-264-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-262-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -5716,19 +5717,19 @@ plot(mtpl_glmnet_cv)
 ```r
 coef(mtpl_glmnet_cv, s = "lambda.min")
 ## 12 x 1 sparse Matrix of class "dgCMatrix"
-##                         1
-## (Intercept)  -2.106819680
-## coverageFO   -0.006176604
+##                        s1
+## (Intercept)  -2.106680932
+## coverageFO   -0.006499730
 ## coveragePO    .          
-## coverageTPL   0.049766930
-## fuelgasoline -0.165608774
-## usework      -0.068810620
-## fleetY       -0.048777365
-## sexmale      -0.013449726
-## ageph        -0.006346123
-## bm            0.058548170
-## agec         -0.001967125
-## power         0.003440618
+## coverageTPL   0.050002173
+## fuelgasoline -0.165864612
+## usework      -0.069292342
+## fleetY       -0.049283838
+## sexmale      -0.013718073
+## ageph        -0.006347490
+## bm            0.058564280
+## agec         -0.002004356
+## power         0.003448081
 ```
 
 ]
@@ -5756,7 +5757,7 @@ mtpl_glmnet_cv &lt;- cv.glmnet(x, y, family = "poisson",
 plot(mtpl_glmnet_cv)
 ```
 
-&lt;img src="ML_part1_files/figure-html/unnamed-chunk-266-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="ML_part1_files/figure-html/unnamed-chunk-264-1.svg" width="45%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -5767,7 +5768,7 @@ plot(mtpl_glmnet_cv)
 ```r
 coef(mtpl_glmnet_cv, s = "lambda.1se")
 ## 12 x 1 sparse Matrix of class "dgCMatrix"
-##                         1
+##                        s1
 ## (Intercept)  -2.124039910
 ## coverageFO    .          
 ## coveragePO    .          
@@ -5900,6 +5901,8 @@ The selection obtained via `lambda.min`
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+
+
 ]
 
 ---
@@ -5960,6 +5963,8 @@ The selection obtained via `lambda.1se`
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+
+
 ]
 
 ---
@@ -5976,7 +5981,7 @@ Slides created with the R package [xaringan](https://github.com/yihui/xaringan).
 &lt;br&gt; &lt;br&gt; &lt;br&gt;
 Course material available via 
 &lt;br&gt;
-&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#116E8A;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; https://github.com/katrienantonio/hands-on-machine-learning-R-module-1
+<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#116E8A;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> https://github.com/katrienantonio/hands-on-machine-learning-R-module-1
 
 
 
@@ -6031,6 +6036,45 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -6048,17 +6092,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {

@@ -7,8 +7,9 @@
   padding: 1em 2em 1em 2em
 }
 
-.title-slide .inverse .remark-slide-content {
-  background-color: #FAFAFA;
+.title-slide .remark-slide-content .clear {
+  background-image: url('img_f/beamer_title_KUL.png')
+  background-size: contain
 }
 
 .inverse {
@@ -58,40 +59,6 @@ position: absolute;
   font-size: 30px;
 }
 
-.title-slide {
-  background-color: #FAFAFA;
-  border-top: 80px solid #FAFAFA;
-}
-
-.title-slide > h1  {
-  color: #1A292C;
-  font-size: 40px;
-  text-shadow: none;
-  font-weight: 400;
-  text-align: left;
-  margin-left: 15px;
-  padding-top: 80px;
-}
-.title-slide > h2  {
-  margin-top: -25px;
-  padding-bottom: -20px;
-  color: #1A292C;
-  text-shadow: none;
-  font-weight: 300;
-  font-size: 35px;
-  text-align: left;
-  margin-left: 15px;
-}
-.title-slide > h3  {
-  color: #1A292C;
-  text-shadow: none;
-  font-weight: 300;
-  font-size: 25px;
-  text-align: left;
-  margin-left: 15px;
-  margin-bottom: -30px;
-}
-
 .remark-slide-number {
   font-size: 13pt;
   font-family: 'Fira Sans';
@@ -116,6 +83,20 @@ position: absolute;
   border-radius: 3px;
   padding: 4px;
 }
+
+.bottom-text {
+  vertical-align: bottom !important; 
+  text-align: left !important;
+}
+
+.center2 {
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 
 .code10 .remark-code {
   font-size: 10%;
@@ -232,4 +213,3 @@ position: absolute;
 .font200 {
   font-size: 200%;
 }
-

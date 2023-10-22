@@ -149,6 +149,6 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
 
 .title-hex{
   height: 60px;
-  align: middle;
+  align: left;
   float: right;
 }
