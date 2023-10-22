@@ -18,13 +18,13 @@ library(emo)
 library(reticulate)
 ```
 
-## Workshop Hands-on Machine Learning in R, December 2021 edition
+## Workshop Hands-on Machine Learning in R, October - November 2023 edition
 
 by Katrien Antonio, Jonas Crevecoeur and Roel Henckaerts
 
-Course materials for the *Hands-on Machine Learning in R* course (November 2021).
+Course materials for the *Hands-on Machine Learning in R* course.
 
-`r emo::ji("calendar")` Module 1 on December 2 & 9, 2021, Module 2 on January 13 & 20, 2021 and Module 3 on January 27 & February 3, 2021
+`r emo::ji("calendar")` Module 1 on October 24 & 31, Module 2 on November 7 & 14 and Module 3 on November 21 & 28, 2023
 <br>
 `r emo::ji("clock")` From 9.30 am to 12.30 pm 
 <br>
@@ -34,8 +34,8 @@ Course materials will be posted in the week before the workshop. You are now on 
 
 ## Prework
 
-<p align="justify">The workshop requires a basic understanding of R. A good starting level is the material covered in the [werkt-U-al-met-R?](https://github.com/katrienantonio/werkt-U-al-met-R) 
-repo on Katrien's GitHub.</p>
+The workshop requires a basic understanding of R. A good starting level is the material covered in the [werkt-U-al-met-R?](https://github.com/katrienantonio/werkt-U-al-met-R) 
+repo on Katrien's GitHub.
 
 Familiarity with statistical or machine learning methods is *not* required. The workshop gradually builds up these concepts, with an emphasis on hands-on demonstrations and exercises.
 
@@ -43,9 +43,9 @@ The R and RStudio software should be up and running before coming to the worksho
 
 ## Overview
 
-<p text-align="justify"> This workshop introduces the *essential concepts of building machine learning models with R*. Throughout the workshop you will gain insights in the foundations of machine learning methods, including *resampling methods*, *data preprocessing steps* and the *tuning of parameters*. You will cover a variety of *statistical and machine learning methods*, ranging from GLMs, over tree-based machine learning methods to neural networks. You will acquire insights in the foundations of these methods, learn how to set-up the model building process, and focus on building a good understanding of the resulting model output and predictions.</p> 
+This workshop introduces the *essential concepts of building machine learning models with R*. Throughout the workshop you will gain insights in the foundations of machine learning methods, including *resampling methods*, *data preprocessing steps* and the *tuning of parameters*. You will cover a variety of *statistical and machine learning methods*, ranging from GLMs, over tree-based machine learning methods to neural networks. You will acquire insights in the foundations of these methods, learn how to set-up the model building process, and focus on building a good understanding of the resulting model output and predictions.
 
-<p align="justify">Leaving this workshop, you should have a firm grasp of the working principles of a variety of machine learning methods and be able to explore their use in practical settings. Moreover, you should have acquired the fundamental insights to explore some other methods on your own.</p> 
+Leaving this workshop, you should have a firm grasp of the working principles of a variety of machine learning methods and be able to explore their use in practical settings. Moreover, you should have acquired the fundamental insights to explore some other methods on your own.
 
 ## Schedule and Course Material
 
@@ -84,15 +84,15 @@ Download lecture sheets in [pdf](https://katrienantonio.github.io/hands-on-machi
 ## Software Requirements
 
 You have **two options** to join the coding exercises covered during the
-workshop. Either you join the RStudio cloud workspace dedicated to the
+workshop. Either you join the posit cloud workspace dedicated to the
 workshop, and then you'll run R in the cloud, from your browser. Or you
 use your local installation of R and RStudio.
 
-We kindly ask participants to **join the RStudio Cloud as default**! 
+We kindly ask participants to **join the posit cloud as default**! Please make sure you create an account in advance and are able to login and copy the project on the cloud. 
 
-### RStudio Cloud - default!
+### posit cloud - default!
 
-You will join our workspace on R Studio Cloud. This
+You will join our workspace on posit cloud. This
 enables a **very accessible set-up** for working with R in the cloud
 for the less experienced user!
 
@@ -101,7 +101,7 @@ for the less experienced user!
 Here are the steps you should take (before the workshop):
 
 - visit the above link
-- log in by creating an account for RStudio Cloud or by using your Google or GitHub login credentials
+- log in by creating an account for posit cloud or by using your Google or GitHub login credentials
 - join the space
 - at the top of your screen you see ‘Projects’, click ‘Projects’
 - with the ‘copy’ button (on the right) you can make your own version of the ‘Module 1 - Foundations of ML and regression’ project; in this copy you can work on the exercises, add comments etc.
@@ -150,21 +150,21 @@ select the code and press the Run button top right in the script window.
 
 <img src="img/Katrien.jpg" width="110"/> 
 
-<p align="justify"> [Katrien Antonio](https://katrienantonio.github.io/) is professor in
+[Katrien Antonio](https://katrienantonio.github.io/) is professor in
 insurance data science at KU Leuven and associate professor at
 University of Amsterdam. She teaches courses on data science for
 insurance, life and non-life insurance mathematics and loss models.
 Research-wise Katrien puts focus on pricing, reserving and fraud
-analytics, as well as mortality dynamics.</p>
+analytics, as well as mortality dynamics.
 
-<p align="justify">*Jonas Crevecoeur* is a post-doctoral researcher in biostatistics at KU Leuven. He recently obtained his PhD within the insurance research group at KU Leuven and holds the degrees of MSc in Mathematics, MSc in Insurance Studies and MSc in Financial and Actuarial Engineering (KU Leuven). Before starting the PhD program he worked as an intern with QBE Re (Belgium office) where he studied multiline products and copulas. Jonas was a PhD fellow of the Research Foundation - Flanders (FWO, PhD fellowship fundamental research).</p> 
+*Jonas Crevecoeur* co-designed the workshop with us, but will not teach the October - November 2023 edition. Jonas obtained his PhD within the insurance research group at KU Leuven and holds the degrees of MSc in Mathematics, MSc in Insurance Studies and MSc in Financial and Actuarial Engineering (KU Leuven). Before starting the PhD program he worked as an intern with QBE Re (Belgium office) where he studied multiline products and copulas. Jonas was a PhD fellow of the Research Foundation - Flanders (FWO, PhD fellowship fundamental research).
 
-<p align="justify"> *Roel Henckaerts* holds the degrees of
+*Roel Henckaerts* holds the degrees of
 MSc in Mathematical Engineering, MSc in Insurance Studies and Financial
 and Actuarial Engineering (KU Leuven) and PhD in Business Economics (KU Leuven). Before starting the PhD program
 he worked as an intern with AIG (London office) and KBC. Roel is PhD
 fellow of the Research Foundation - Flanders (FWO, PhD fellowship
-strategic basic research). After the completion of his PhD, Roel joined [Prophecy Labs](https://prophecylabs.com/): an AI/ML startup with experience in building end-to-end data solutions that provide concrete business value.</p>
+strategic basic research). After the completion of his PhD, Roel joined [Prophecy Labs](https://prophecylabs.com/): an AI/ML startup with experience in building end-to-end data solutions that provide concrete business value.
 
 
 Happy learning!
